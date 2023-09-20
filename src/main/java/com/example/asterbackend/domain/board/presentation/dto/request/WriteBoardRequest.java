@@ -9,8 +9,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class WriteBoardRequest {
 
-    private Long id;
-
     private String title;
 
     private String content;

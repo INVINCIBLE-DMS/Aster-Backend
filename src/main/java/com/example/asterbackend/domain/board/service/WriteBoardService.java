@@ -15,7 +15,6 @@ public class WriteBoardService {
     public void writeBoard(WriteBoardRequest request) {
         boardRepository.save(
                 Board.builder()
-                        .id(request.getId())
                         .title(request.getTitle())
                         .content(request.getContent())
                         .writeTime(request.getWriteTime())
