@@ -4,6 +4,7 @@ import com.example.asterbackend.domain.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -19,12 +20,16 @@ public class Board {
 
     @ManyToOne
     @JoinColumn(name = "user_nickname")
+    @NotNull
     private User user;
 
+    @NotNull
     private String title;
 
+    @NotNull
     private String content;
 
+    @NotNull
     private LocalDateTime writeTime;
 
 }
