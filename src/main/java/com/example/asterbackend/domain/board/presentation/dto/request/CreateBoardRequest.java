@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-public class WriteBoardRequest {
+public class CreateBoardRequest {
 
     private String title;
 

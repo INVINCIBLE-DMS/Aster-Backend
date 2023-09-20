@@ -16,6 +16,6 @@ public class User {
     private String nickname;
 
     private String username;
-    
+
 }
 
