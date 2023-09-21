@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
 public class User {
 
     @Id
-    @Size(min = 2, max = 15)
+    @Size(min = 1, max = 15)
     private String nickname;
 
     @NotNull
