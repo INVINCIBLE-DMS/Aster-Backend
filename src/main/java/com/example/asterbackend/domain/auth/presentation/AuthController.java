@@ -2,6 +2,7 @@ package com.example.asterbackend.domain.auth.presentation;
 
 import com.example.asterbackend.domain.auth.presentation.dto.request.SignupRequest;
 import com.example.asterbackend.domain.auth.presentation.dto.response.MyInfoResponse;
+import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,8 @@ public class AuthController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void signup(@RequestBody @Valid SignupRequest request){
-        authService.signup(request);
+    public TokenResponse signup(@RequestBody @Valid SignupRequest request){
+        return authService.signup(request);
     }
 
     @GetMapping("/myInfo")

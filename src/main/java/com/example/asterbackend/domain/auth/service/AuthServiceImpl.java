@@ -1,11 +1,13 @@
 package com.example.asterbackend.domain.auth.service;
 
 import com.example.asterbackend.domain.auth.presentation.dto.response.MyInfoResponse;
+import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.auth.presentation.dto.request.SignupRequest;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import com.example.asterbackend.domain.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserExistsException;
+import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +19,7 @@ public class AuthServiceImpl implements AuthService{
 
     private final UserRepository userRepository;
     private final UserFacade userFacade;
+    private final JwtTokenProvider jwtTokenProvider;
 
     public void duplicateNickname(String nickname) {
 
@@ -26,7 +29,7 @@ public class AuthServiceImpl implements AuthService{
     }
 
     @Override
-    public void signup(SignupRequest request) {
+    public TokenResponse signup(SignupRequest request) {
 
         duplicateNickname(request.getNickname());
 
@@ -38,7 +41,10 @@ public class AuthServiceImpl implements AuthService{
                 .build();
 
         userRepository.save(user);
+
+        return jwtTokenProvider.receiveToken(request.getNickname());
         }
+
 
     @Override
     public MyInfoResponse getMyInfo() {
