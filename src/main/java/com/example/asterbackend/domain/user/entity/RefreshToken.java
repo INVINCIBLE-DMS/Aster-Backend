@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.index.Indexed;
 
 @Getter
 @Builder
-@RedisHash
+@RedisHash(timeToLive = 60 * 24 * 7 * 4)
 public class RefreshToken {
 
     @Id
