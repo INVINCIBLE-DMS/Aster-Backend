@@ -1,5 +1,7 @@
 package com.example.asterbackend.global.security.jwt;
 
+import com.example.asterbackend.domain.user.entity.RefreshToken;
+import com.example.asterbackend.domain.user.repository.RefreshTokenRepository;
 import com.example.asterbackend.domain.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.token.ExpiredTokenException;
 import com.example.asterbackend.global.exception.token.InvalidTokenException;
@@ -17,7 +19,6 @@ import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.TimeZone;
 
 @Component
 @RequiredArgsConstructor
@@ -26,6 +27,8 @@ public class JwtTokenProvider {
     private final JwtProperties jwtProperties;
 
     private final CustomUserDetailsService customUserDetailsService;
+
+    private final RefreshTokenRepository refreshTokenRepository;
 
     private final UserRepository userRepository;
 
@@ -43,27 +46,27 @@ public class JwtTokenProvider {
                 .compact();
     }
 
-    //refresh token 생성
-//    public String createRefreshToken(String userId) {
-//
-//        Date now = new Date();
-//
-//        String refreshToken = Jwts.builder()
-//                .claim("type", "refresh")
-//                .setIssuedAt(now)
-//                .setExpiration(new Date(now.getTime() + jwtProperties.getRefreshExpiration() * 1000))
-//                .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecret())
-//                .compact();
-//
-//        refreshTokenRepository.save(
-//                RefreshToken.builder()
-//                        .userId(userId)
-//                        .token(refreshToken)
-//                        .timeToLive(jwtProperties.getRefreshExpiration())
-//                        .build());
-//
-//        return refreshToken;
-//    }
+    // refresh token 생성
+    public String createRefreshToken(String userId) {
+
+        Date now = new Date();
+
+        String refreshToken = Jwts.builder()
+                .claim("type", "refresh")
+                .setIssuedAt(now)
+                .setExpiration(new Date(now.getTime() + jwtProperties.getRefreshExpiration() * 1000))
+                .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecret())
+                .compact();
+
+        refreshTokenRepository.save(
+                RefreshToken.builder()
+                        .userId(userId)
+                        .token(refreshToken)
+                        .timeToLive(jwtProperties.getRefreshExpiration())
+                        .build());
+
+        return refreshToken;
+    }
 
     // 토큰에 담겨있는 userId로 SpringSecurity Authentication 정보를 반환하는 메서드
     public Authentication getAuthentication(String token) {
