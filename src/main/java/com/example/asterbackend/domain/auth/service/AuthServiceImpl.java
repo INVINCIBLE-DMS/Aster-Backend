@@ -1,7 +1,7 @@
-package com.example.asterbackend.domain.user.service;
+package com.example.asterbackend.domain.auth.service;
 
 import com.example.asterbackend.domain.user.entity.User;
-import com.example.asterbackend.domain.user.presentation.dto.request.SignupRequest;
+import com.example.asterbackend.domain.auth.presentation.dto.request.SignupRequest;
 import com.example.asterbackend.domain.user.repository.UserRepository;
 import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.presentation.dto.request;
+package com.example.asterbackend.domain.auth.presentation.dto.request;
 
 import com.example.asterbackend.domain.user.entity.type.Part;
 import com.example.asterbackend.domain.user.entity.type.Sex;
