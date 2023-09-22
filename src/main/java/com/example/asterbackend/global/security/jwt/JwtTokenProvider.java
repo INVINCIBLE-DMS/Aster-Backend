@@ -1,5 +1,6 @@
 package com.example.asterbackend.global.security.jwt;
 
+import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.entity.RefreshToken;
 import com.example.asterbackend.domain.user.repository.RefreshTokenRepository;
 import com.example.asterbackend.domain.user.repository.UserRepository;
@@ -31,6 +32,8 @@ public class JwtTokenProvider {
     private final RefreshTokenRepository refreshTokenRepository;
 
     private final UserRepository userRepository;
+
+    private final JwtTokenProvider jwtTokenProvider;
 
     // access token 생성
     public String createAccessToken(String userId) {
@@ -87,6 +90,15 @@ public class JwtTokenProvider {
         } catch (Exception e) {
             throw InvalidTokenException.EXCEPTION;
         }
+    }
+
+    public TokenResponse receiveToken(String nickname) {
+
+        return TokenResponse
+                .builder()
+                .accessToken(createAccessToken(nickname))
+                .refreshToken(createRefreshToken(nickname))
+                .build();
     }
 
     // HTTP 요청 헤더에서 토큰을 가져오는 메서드
