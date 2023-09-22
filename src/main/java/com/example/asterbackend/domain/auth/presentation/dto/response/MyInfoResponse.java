@@ -3,7 +3,6 @@ package com.example.asterbackend.domain.auth.presentation.dto.response;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.entity.type.Part;
 import com.example.asterbackend.domain.user.entity.type.Sex;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -12,7 +11,6 @@ import javax.persistence.Enumerated;
 
 @Getter
 @RequiredArgsConstructor
-@Builder
 public class MyInfoResponse {
 
     private String username;
