@@ -3,6 +3,7 @@ package com.example.asterbackend.domain.user.service;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.presentation.dto.request.SignupRequest;
 import com.example.asterbackend.domain.user.repository.UserRepository;
+import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class AuthServiceImpl implements AuthService{
 
     private final UserRepository userRepository;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Override
     public void signup(SignupRequest request) {
