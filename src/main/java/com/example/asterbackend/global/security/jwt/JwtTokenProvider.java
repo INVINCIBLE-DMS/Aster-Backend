@@ -1,8 +1,8 @@
 package com.example.asterbackend.global.security.jwt;
 
 import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
-import com.example.asterbackend.domain.user.entity.RefreshToken;
-import com.example.asterbackend.domain.user.repository.RefreshTokenRepository;
+import com.example.asterbackend.domain.auth.entity.RefreshToken;
+import com.example.asterbackend.domain.auth.respository.RefreshTokenRepository;
 import com.example.asterbackend.domain.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.token.ExpiredTokenException;
 import com.example.asterbackend.global.exception.token.InvalidTokenException;

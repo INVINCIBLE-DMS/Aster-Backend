@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.entity;
+package com.example.asterbackend.domain.auth.entity;
 
 import lombok.Builder;
 import lombok.Getter;
