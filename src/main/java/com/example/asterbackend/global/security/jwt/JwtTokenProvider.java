@@ -31,10 +31,6 @@ public class JwtTokenProvider {
 
     private final RefreshTokenRepository refreshTokenRepository;
 
-    private final UserRepository userRepository;
-
-    private final JwtTokenProvider jwtTokenProvider;
-
     // access token 생성
     public String createAccessToken(String userId) {
 
