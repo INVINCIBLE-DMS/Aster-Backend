@@ -32,4 +32,9 @@ public class Board {
     @NotNull
     private LocalDateTime writeTime;
 
+    public void updateTitleAndContent(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
 }
