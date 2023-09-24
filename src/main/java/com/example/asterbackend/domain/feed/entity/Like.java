@@ -4,7 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "table_like")
 @Getter
 @Builder
 @AllArgsConstructor
@@ -20,6 +20,6 @@ public class Like {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Feed_id")
-    private Feed Feed;
+    private Feed feed;
 
 }
