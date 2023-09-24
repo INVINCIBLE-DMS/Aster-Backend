@@ -17,7 +17,7 @@ public class UpdateBoardService {
         Board board = boardRepository.findById(boardId)
                 .orElseThrow(()-> BoardNotFoundException.EXCEPTION);
 
-        board.updateTitleAndContent(updateBoardRequest.getTitle(), updateBoardRequest.getContent());
+        board.updateTitleAndContent(updateBoardRequest.getContent());
     }
 
 }

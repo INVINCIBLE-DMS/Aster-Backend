@@ -10,8 +10,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class CreateBoardRequest {
 
-    private String title;
-
     private String content;
 
     private LocalDateTime writeTime;

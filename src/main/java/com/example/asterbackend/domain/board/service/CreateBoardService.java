@@ -20,7 +20,6 @@ public class CreateBoardService {
 
         boardRepository.save(
                 Board.builder()
-                        .title(request.getTitle())
                         .content(request.getContent())
                         .writeTime(now)
                         .build());

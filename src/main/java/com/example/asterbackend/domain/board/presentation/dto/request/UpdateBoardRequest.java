@@ -7,9 +7,5 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UpdateBoardRequest {
-
-    private String title;
-
     private String content;
-
 }

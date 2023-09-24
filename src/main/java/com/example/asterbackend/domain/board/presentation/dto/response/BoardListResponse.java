@@ -10,14 +10,11 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class BoardListResponse {
 
-    private String title;
-
     private String content;
 
     private LocalDateTime writeTime;
 
     public BoardListResponse(Board board) {
-        this.title = board.getTitle();
         this.content = board.getContent();
         this.writeTime = board.getWriteTime();
     }
