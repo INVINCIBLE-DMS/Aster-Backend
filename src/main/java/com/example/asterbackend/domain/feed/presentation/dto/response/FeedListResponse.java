@@ -12,14 +12,14 @@ public class FeedListResponse {
 
     private String content;
 
-    private LocalDateTime writeTime;
+    private LocalDateTime createAt;
 
     private int likeCount;
 
-    public FeedListResponse(Feed Feed) {
-        this.content = Feed.getContent();
-        this.writeTime = Feed.getWriteTime();
-        this.likeCount = Feed.getLikeCount();
+    public FeedListResponse(Feed feed) {
+        this.content = feed.getContent();
+        this.createAt = feed.getCreateAt();
+        this.likeCount = feed.getLikeCount();
     }
 
 }

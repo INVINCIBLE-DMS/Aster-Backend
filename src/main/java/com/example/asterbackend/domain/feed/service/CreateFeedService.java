@@ -27,7 +27,7 @@ public class CreateFeedService {
                 Feed.builder()
                         .content(request.getContent())
                         .user(user)
-                        .writeTime(now)
+                        .createAt(now)
                         .build());
     }
 
