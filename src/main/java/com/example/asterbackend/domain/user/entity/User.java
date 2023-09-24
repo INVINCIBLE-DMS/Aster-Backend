@@ -5,8 +5,6 @@ import com.example.asterbackend.domain.user.entity.type.Sex;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -16,21 +14,21 @@ import javax.validation.constraints.Size;
 public class User {
 
     @Id
-    @Size(min = 1, max = 15)
+    @Column(name = "nickname", nullable = false, length = 20)
     private String nickname;
 
-    @NotNull
-    @Size(min = 2, max = 4)
+    @Column(name = "username", nullable = false, length = 4)
     private String username;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Column(name = "sex", nullable = false)
     private Sex sex;
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Column(name = "part", nullable = false)
     private Part part;
 
+    @Column(name = "candy", nullable = false)
     private int candy = 0;
 
 }
