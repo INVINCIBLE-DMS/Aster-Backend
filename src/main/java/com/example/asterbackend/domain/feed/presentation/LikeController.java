@@ -11,9 +11,9 @@ public class LikeController {
 
     private final AddLikeService addLikeService;
 
-    @PostMapping("/{FeedId}")
-    public void addLike(@PathVariable Long FeedId) {
-        addLikeService.addLike(FeedId);
+    @PostMapping("/{feedId}")
+    public void addLike(@PathVariable Long feedId) {
+        addLikeService.addLike(feedId);
     }
 
 }

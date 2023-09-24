@@ -15,11 +15,11 @@ public class Like {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nickname")
+    @Column(name = "nickname", nullable = false)
     private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Feed_id")
+    @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
 
 }
