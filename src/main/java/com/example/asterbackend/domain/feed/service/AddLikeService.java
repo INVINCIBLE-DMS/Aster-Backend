@@ -35,7 +35,7 @@ public class AddLikeService {
 
             likeRepository.save(
                     Like.builder()
-                            .Feed(feed)
+                            .feed(feed)
                             .nickname(user.getNickname())
                             .build());
         }
