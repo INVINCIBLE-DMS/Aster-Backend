@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LikeRepository extends JpaRepository<Like, Long> {
     boolean existsByBoardIdAndNickname(Long boardId, String nickname);
+
+    void deleteByBoardIdAndNickname(Long boardId, String nickname);
 }
