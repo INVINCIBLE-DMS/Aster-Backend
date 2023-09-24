@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/auth").permitAll()
-                .antMatchers("/board/**").authenticated()
+                .antMatchers("/Feed/**").authenticated()
                 .anyRequest().permitAll()
 
                 .and()

@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.board.presentation.dto.request;
+package com.example.asterbackend.domain.feed.presentation.dto.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class CreateBoardRequest {
+public class CreateFeedRequest {
 
     private String content;
 

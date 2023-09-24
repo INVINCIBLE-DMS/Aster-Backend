@@ -1,19 +1,17 @@
-package com.example.asterbackend.domain.board.entity;
+package com.example.asterbackend.domain.feed.entity;
 
 import com.example.asterbackend.domain.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Board {
+public class Feed {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,9 +29,6 @@ public class Board {
 
     @Column(name = "like_count", nullable = false)
     private int likeCount = 0;
-
-    @OneToMany(mappedBy = "board")
-    private List<Like> likeList = new ArrayList<>();
 
     public void updateTitleAndContent(String content) {
         this.content = content;

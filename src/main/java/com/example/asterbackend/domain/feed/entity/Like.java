@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.board.entity;
+package com.example.asterbackend.domain.feed.entity;
 
 import lombok.*;
 
@@ -19,7 +19,7 @@ public class Like {
     private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "board_id")
-    private Board board;
+    @JoinColumn(name = "Feed_id")
+    private Feed Feed;
 
 }

@@ -23,8 +23,8 @@ public enum ErrorCode {
     EMAIL_MATCHED(409,"email matched"),
     NOT_AUTHENTICATED(401, "NotAuthenticated"),
 
-    //board
-    BOARD_NOT_FOUND(404, "Board not found"),
+    //Feed
+    Feed_NOT_FOUND(404, "Feed not found"),
 
     // general
     BAD_REQUEST(400, "Bad request"),
