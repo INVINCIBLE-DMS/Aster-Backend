@@ -31,7 +31,7 @@ public class User {
     @Column
     private Part part;
 
-    private Long candy;
+    private int candy = 0;
 
 }
 
