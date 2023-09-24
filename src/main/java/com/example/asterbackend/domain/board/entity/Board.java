@@ -43,4 +43,8 @@ public class Board {
         likeCount++;
     }
 
+    public void cancelLike() {
+        likeCount--;
+    }
+
 }
