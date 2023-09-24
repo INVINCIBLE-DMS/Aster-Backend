@@ -4,7 +4,6 @@ import com.example.asterbackend.domain.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
@@ -18,22 +17,17 @@ public class Board {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_nickname")
-    @NotNull
     private User user;
 
-    @NotNull
-    private String title;
-
-    @NotNull
+    @Column(name = "content", nullable = false, length = 200)
     private String content;
 
-    @NotNull
+    @Column(name = "write_time", nullable = false)
     private LocalDateTime writeTime;
 
-    public void updateTitleAndContent(String title, String content) {
-        this.title = title;
+    public void updateTitleAndContent(String content) {
         this.content = content;
     }
 
