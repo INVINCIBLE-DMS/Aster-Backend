@@ -24,13 +24,20 @@ public class AddLikeService {
 
         User user = userFacade.getCurrentUser();
 
-        board.addLike();
+        if (likeRepository.existsByBoardIdAndNickname(boardId, user.getNickname())) {
+            board.addLike();
 
-        likeRepository.save(
-                Like.builder()
-                        .board(board)
-                        .nickname(user.getNickname())
-                        .build());
+            likeRepository.deleteByBoardIdAndNickname(boardId, user.getNickname());
+        }
+        else {
+            board.cancelLike();
+
+            likeRepository.save(
+                    Like.builder()
+                            .board(board)
+                            .nickname(user.getNickname())
+                            .build());
+        }
     }
 
 }
