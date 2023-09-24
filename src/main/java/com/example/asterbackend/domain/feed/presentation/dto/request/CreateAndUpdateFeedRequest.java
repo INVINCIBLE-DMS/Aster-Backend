@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class CreateFeedRequest {
+public class CreateAndUpdateFeedRequest {
     private String content;
 }
