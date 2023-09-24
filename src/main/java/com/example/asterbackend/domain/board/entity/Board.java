@@ -27,8 +27,15 @@ public class Board {
     @Column(name = "write_time", nullable = false)
     private LocalDateTime writeTime;
 
+    @Column(name = "like_count", nullable = false)
+    private int likeCount = 0;
+
     public void updateTitleAndContent(String content) {
         this.content = content;
+    }
+
+    public void addLike() {
+        likeCount++;
     }
 
 }
