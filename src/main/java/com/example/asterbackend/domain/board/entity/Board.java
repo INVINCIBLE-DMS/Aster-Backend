@@ -5,6 +5,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,6 +31,9 @@ public class Board {
 
     @Column(name = "like_count", nullable = false)
     private int likeCount = 0;
+
+    @OneToMany(mappedBy = "board")
+    private List<Like> likeList = new ArrayList<>();
 
     public void updateTitleAndContent(String content) {
         this.content = content;
