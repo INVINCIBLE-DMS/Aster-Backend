@@ -14,9 +14,12 @@ public class BoardListResponse {
 
     private LocalDateTime writeTime;
 
+    private int likeCount;
+
     public BoardListResponse(Board board) {
         this.content = board.getContent();
         this.writeTime = board.getWriteTime();
+        this.likeCount = board.getLikeCount();
     }
 
 }
