@@ -29,8 +29,7 @@ public class Feed {
     @Column(name = "write_time", nullable = false)
     private LocalDateTime createAt;
 
-    @OneToMany(mappedBy = "board")
-    @JoinColumn(name = "comment_list")
+    @OneToMany(mappedBy = "feed")
     private List<Comment> commentList;
 
     @Column(name = "like_count", nullable = false)
