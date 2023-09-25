@@ -35,10 +35,6 @@ public class Feed {
     @Column(name = "like_count", nullable = false)
     private int likeCount = 0;
 
-    public void updateTitleAndContent(String content) {
-        this.content = content;
-    }
-
     public void addComment(Comment comment) {
         commentList.add(comment);
     }
