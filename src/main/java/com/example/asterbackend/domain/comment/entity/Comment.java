@@ -19,6 +19,9 @@ public class Comment {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "is_update", nullable = false)
+    private boolean isUpdate = false;
+
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
