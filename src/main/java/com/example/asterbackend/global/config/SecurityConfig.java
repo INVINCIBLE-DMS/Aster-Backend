@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/auth").permitAll()
-                .antMatchers("/feed/**").authenticated()
+                .antMatchers("/feed/**", "/auth/**").authenticated()
                 .anyRequest().permitAll()
 
                 .and()
