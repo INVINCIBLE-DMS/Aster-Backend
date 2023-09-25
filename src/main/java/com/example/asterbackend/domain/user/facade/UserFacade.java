@@ -26,7 +26,5 @@ public class UserFacade {
 
         return userRepository.findByNickname(nickname)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
-
-
     }
 }
