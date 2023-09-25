@@ -15,8 +15,8 @@ public class CommentController {
     private final CreateCommentService createCommentService;
 
     @PostMapping("/{feedId}")
-    public void createComment(@RequestBody @Valid CreateAndUpdateCommentRequest request, @PathVariable Long feedId) {
-        createCommentService.createComment(request, feedId);
+    public void createComment(@PathVariable Long feedId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+        createCommentService.createComment(feedId, request);
     }
 
 }
