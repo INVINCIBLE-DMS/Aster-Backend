@@ -39,6 +39,10 @@ public class Feed {
         commentList.add(comment);
     }
 
+    public void deleteComment(Comment comment) {
+        commentList.remove(comment);
+    }
+
     public void addLike() {
         likeCount++;
     }
