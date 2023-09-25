@@ -29,4 +29,8 @@ public class Comment {
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
 
+    public void updateContent(String content) {
+        this.content = content;
+    }
+
 }
