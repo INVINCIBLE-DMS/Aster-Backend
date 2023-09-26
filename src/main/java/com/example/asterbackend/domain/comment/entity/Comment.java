@@ -22,7 +22,7 @@ public class Comment {
     @Column(name = "is_update", nullable = false)
     private boolean isUpdate = false;
 
-    @Column(name = "nickname", nullable = false)
+    @Column(name = "user_nickname", nullable = false)
     private String nickname;
 
     @ManyToOne(fetch = FetchType.EAGER)
