@@ -25,7 +25,7 @@ public class Comment {
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
 
