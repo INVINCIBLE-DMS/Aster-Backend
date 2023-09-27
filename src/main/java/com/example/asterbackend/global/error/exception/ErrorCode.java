@@ -24,7 +24,10 @@ public enum ErrorCode {
     NOT_AUTHENTICATED(401, "NotAuthenticated"),
 
     //Feed
-    Feed_NOT_FOUND(404, "Feed not found"),
+    FEED_NOT_FOUND(404, "Feed not found"),
+
+    //Comment
+    COMMENT_NOT_FOUND(404, "Comment not found"),
 
     // general
     BAD_REQUEST(400, "Bad request"),
