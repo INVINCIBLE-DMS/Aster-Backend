@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.comment.presentation;
 
-import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCommentResponse;
 import com.example.asterbackend.domain.comment.service.CreateCommentService;

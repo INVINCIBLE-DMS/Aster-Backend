@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.comment.presentation.response;
+package com.example.asterbackend.domain.comment.presentation;
 
 import com.example.asterbackend.domain.comment.service.AddCommentLikeService;
 import lombok.RequiredArgsConstructor;
