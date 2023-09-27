@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.comment.service;
 
-import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCommentResponse;
 import com.example.asterbackend.domain.comment.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;

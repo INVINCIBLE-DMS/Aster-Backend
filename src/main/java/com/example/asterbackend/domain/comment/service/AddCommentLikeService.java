@@ -21,7 +21,7 @@ public class AddCommentLikeService {
     private final CommentLikeRepository commentLikeRepository;
 
     @Transactional
-    public void addLike(Long commentId) {
+    public void addCommentLike(Long commentId) {
         Comment comment = commentFacade.currentComment(commentId);
 
         User user = userFacade.getCurrentUser();
