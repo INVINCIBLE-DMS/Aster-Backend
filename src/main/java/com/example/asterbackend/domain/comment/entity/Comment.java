@@ -29,6 +29,9 @@ public class Comment {
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
 
+    @Column(name = "comment_like_count", nullable = false)
+    private int commentLikeCount = 0;
+
     public void updateContent(String content) {
         this.content = content;
         this.isUpdate = true;
