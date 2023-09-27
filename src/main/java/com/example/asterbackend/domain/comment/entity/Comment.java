@@ -22,7 +22,7 @@ public class Comment {
     @Column(name = "is_update", nullable = false)
     private boolean isUpdate = false;
 
-    @Column(name = "user_nickname", nullable = false)
+    @Column(name = "nickname", nullable = false)
     private String nickname;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -31,6 +31,7 @@ public class Comment {
 
     public void updateContent(String content) {
         this.content = content;
+        this.isUpdate = true;
     }
 
 }
