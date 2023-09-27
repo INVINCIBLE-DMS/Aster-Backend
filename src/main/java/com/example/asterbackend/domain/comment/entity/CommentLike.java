@@ -19,7 +19,7 @@ public class CommentLike {
     private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "comment_id", nullable = false)
+    @JoinColumn(name = "comment_id", nullable = false)
     private Comment comment;
 
 }
