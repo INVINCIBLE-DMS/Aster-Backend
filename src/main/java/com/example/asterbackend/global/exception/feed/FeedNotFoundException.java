@@ -9,7 +9,7 @@ public class FeedNotFoundException extends BusinessException {
     public static final BusinessException EXCEPTION = new FeedNotFoundException();
 
     public FeedNotFoundException() {
-        super(ErrorCode.Feed_NOT_FOUND);
+        super(ErrorCode.FEED_NOT_FOUND);
     }
 
 }
