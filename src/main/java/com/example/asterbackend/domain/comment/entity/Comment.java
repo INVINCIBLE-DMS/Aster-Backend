@@ -37,4 +37,12 @@ public class Comment {
         this.isUpdate = true;
     }
 
+    public void addCommentLike(Comment comment) {
+        comment.commentLikeCount++;
+    }
+
+    public void cancelCommentLike(Comment comment) {
+        comment.commentLikeCount--;
+    }
+
 }
