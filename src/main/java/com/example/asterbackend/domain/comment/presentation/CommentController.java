@@ -30,9 +30,9 @@ public class CommentController {
         updateCommentService.updateComment(commentId, request);
     }
 
-    @DeleteMapping("/{feedId}")
-    public void deleteComment(@PathVariable Long feedId) {
-        deleteCommentService.deleteComment(feedId);
+    @DeleteMapping("/{commentId}")
+    public void deleteComment(@PathVariable Long commentId) {
+        deleteCommentService.deleteComment(commentId);
     }
 
 }

@@ -19,14 +19,8 @@ public class DeleteCommentService {
 
     private final FeedFacade feedFacade;
 
-    public void deleteComment(Long feedId) {
-        User user = userFacade.getCurrentUser();
-        Feed feed = feedFacade.currentFeed(feedId);
-
-        Comment comment = commentRepository.findByFeedIdAndNickname(feedId, user.getNickname());
-
-        commentRepository.delete(comment);
-        feed.deleteComment(comment);
+    public void deleteComment(Long commentId) {
+        commentRepository.deleteById(commentId);
     }
 
 }
