@@ -1,8 +1,8 @@
 package com.example.asterbackend.domain.comment.service;
 
 import com.example.asterbackend.domain.comment.entity.Comment;
+import com.example.asterbackend.domain.comment.facade.CommentFacade;
 import com.example.asterbackend.domain.comment.repository.CommentRepository;
-import com.example.asterbackend.global.exception.comment.CommentNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,10 @@ public class DeleteCommentService {
 
     private final CommentRepository commentRepository;
 
+    private final CommentFacade commentFacade;
+
     public void deleteComment(Long commentId) {
-        Comment comment = commentRepository.findById(commentId)
-                        .orElseThrow(()-> CommentNotFoundException.EXCEPTION);
+        Comment comment = commentFacade.currentComment(commentId);
 
         comment.getFeed().deleteComment(comment);
 

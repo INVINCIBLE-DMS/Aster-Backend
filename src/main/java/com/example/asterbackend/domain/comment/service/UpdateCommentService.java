@@ -1,9 +1,8 @@
 package com.example.asterbackend.domain.comment.service;
 
 import com.example.asterbackend.domain.comment.entity.Comment;
+import com.example.asterbackend.domain.comment.facade.CommentFacade;
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
-import com.example.asterbackend.domain.comment.repository.CommentRepository;
-import com.example.asterbackend.global.exception.comment.CommentNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,12 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class UpdateCommentService {
 
-    private final CommentRepository commentRepository;
+    private final CommentFacade commentFacade;
 
     @Transactional
     public void updateComment(Long commentId, CreateAndUpdateCommentRequest request) {
-        Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(()-> CommentNotFoundException.EXCEPTION);
+        Comment comment = commentFacade.currentComment(commentId);
 
         comment.updateContent(request.getContent());
     }
