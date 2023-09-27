@@ -25,9 +25,9 @@ public class CommentController {
         createCommentService.createComment(feedId, request);
     }
 
-    @PatchMapping("/{feedId}")
-    public void updateComment(@PathVariable Long feedId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
-        updateCommentService.updateComment(feedId, request);
+    @PatchMapping("/{commentId}")
+    public void updateComment(@PathVariable Long commentId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+        updateCommentService.updateComment(commentId, request);
     }
 
     @DeleteMapping("/{feedId}")

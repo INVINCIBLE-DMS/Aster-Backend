@@ -5,6 +5,7 @@ import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpd
 import com.example.asterbackend.domain.comment.repository.CommentRepository;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
+import com.example.asterbackend.global.exception.comment.CommentNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,10 +19,9 @@ public class UpdateCommentService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void updateComment(Long feedId, CreateAndUpdateCommentRequest request) {
-        User user = userFacade.getCurrentUser();
-
-        Comment comment = commentRepository.findByFeedIdAndNickname(feedId, user.getNickname());
+    public void updateComment(Long commentId, CreateAndUpdateCommentRequest request) {
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(()-> CommentNotFoundException.EXCEPTION);
 
         comment.updateContent(request.getContent());
     }
