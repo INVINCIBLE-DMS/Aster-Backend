@@ -20,8 +20,6 @@ public class Survey {
 
     private String content;
 
-    private
-
     private String nickname;
 
 }
