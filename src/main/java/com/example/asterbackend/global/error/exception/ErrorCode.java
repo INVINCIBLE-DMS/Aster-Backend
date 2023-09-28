@@ -31,7 +31,10 @@ public enum ErrorCode {
 
     // general
     BAD_REQUEST(400, "Bad request"),
-    INTERNAL_SERVER_ERROR(500, "Internal server error");
+    INTERNAL_SERVER_ERROR(500, "Internal server error"),
+
+    //survey
+    SURVEY_NOT_FOUND(404, "Survey not found");
 
     private final int statusCode;
     private final String message;
