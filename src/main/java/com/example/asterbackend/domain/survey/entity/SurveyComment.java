@@ -28,4 +28,9 @@ public class SurveyComment {
     @JoinColumn(name = "survey_id", nullable = false)
     private Survey survey;
 
+    public void updateContent(String content) {
+        this.content = content;
+        this.isUpdate = true;
+    }
+
 }
