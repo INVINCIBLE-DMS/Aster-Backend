@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.survey.entity;
 
-import com.example.asterbackend.domain.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,14 +15,13 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "content", nullable = false, length = 50)
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nickname")
-    private User user;
+    @Column(name = "nickname", nullable = false)
+    private String nickname;
 
-    private String agree;
-
+    @Column(name = "agree_cnt", nullable = false)
     private int agreeCnt = 0;
 
     public void addAgree() {
