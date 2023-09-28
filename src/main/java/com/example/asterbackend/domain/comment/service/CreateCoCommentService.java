@@ -35,7 +35,7 @@ public class CreateCoCommentService {
                 .build();
 
         coCommentRepository.save(cocomment);
-        comment.addComment(cocomment);
+        comment.addCoComment(cocomment);
     }
 
 }
