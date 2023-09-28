@@ -17,6 +17,8 @@ public class MyInfoResponse {
 
     private String nickname;
 
+    private String studentId;
+
     @Enumerated(EnumType.STRING)
     private Part part;
 
@@ -26,6 +28,7 @@ public class MyInfoResponse {
     public MyInfoResponse(User user) {
         username = user.getUsername();
         nickname = user.getNickname();
+        studentId = user.getStudentId();
         part = user.getPart();
         sex = user.getSex();
     }

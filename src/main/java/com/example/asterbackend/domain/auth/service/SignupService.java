@@ -25,6 +25,7 @@ public class SignupService {
         User user = User.builder()
                 .username(request.getUsername())
                 .nickname(request.getNickname())
+                .studentId(request.getStudentId())
                 .sex(request.getSex())
                 .part(request.getPart())
                 .build();
