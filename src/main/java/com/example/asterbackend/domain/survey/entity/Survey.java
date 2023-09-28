@@ -1,11 +1,9 @@
 package com.example.asterbackend.domain.survey.entity;
 
+import com.example.asterbackend.domain.user.entity.User;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -20,6 +18,20 @@ public class Survey {
 
     private String content;
 
-    private String nickname;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nickname")
+    private User user;
+
+    private String agree;
+
+    private int agreeCnt = 0;
+
+    public void addAgree() {
+        agreeCnt++;
+    }
+
+    public void cancelAgree(){
+        agreeCnt--;
+    }
 
 }
