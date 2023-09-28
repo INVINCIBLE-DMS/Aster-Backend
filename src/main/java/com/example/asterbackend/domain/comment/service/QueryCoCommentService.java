@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.comment.service;
 
 import com.example.asterbackend.domain.comment.presentation.response.QueryCoCommentResponse;
-import com.example.asterbackend.domain.comment.presentation.response.QueryCommentResponse;
 import com.example.asterbackend.domain.comment.repository.CoCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
