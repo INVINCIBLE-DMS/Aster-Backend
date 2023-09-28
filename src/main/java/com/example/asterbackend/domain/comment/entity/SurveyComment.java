@@ -1,5 +1,6 @@
-package com.example.asterbackend.domain.survey.entity;
+package com.example.asterbackend.domain.comment.entity;
 
+import com.example.asterbackend.domain.survey.entity.Survey;
 import lombok.*;
 
 import javax.persistence.*;

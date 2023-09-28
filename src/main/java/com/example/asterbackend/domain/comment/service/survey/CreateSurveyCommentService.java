@@ -1,10 +1,10 @@
-package com.example.asterbackend.domain.survey.service;
+package com.example.asterbackend.domain.comment.service.survey;
 
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.survey.entity.Survey;
-import com.example.asterbackend.domain.survey.entity.SurveyComment;
+import com.example.asterbackend.domain.comment.entity.SurveyComment;
 import com.example.asterbackend.domain.survey.facade.SurveyFacade;
-import com.example.asterbackend.domain.survey.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.comment.repository.SurveyCommentRepository;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;

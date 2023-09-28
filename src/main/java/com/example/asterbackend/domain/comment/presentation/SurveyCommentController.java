@@ -1,11 +1,11 @@
-package com.example.asterbackend.domain.survey.presentation;
+package com.example.asterbackend.domain.comment.presentation;
 
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
-import com.example.asterbackend.domain.survey.presentation.dto.response.SurveyCommentResponse;
-import com.example.asterbackend.domain.survey.service.CreateSurveyCommentService;
-import com.example.asterbackend.domain.survey.service.DeleteSurveyCommentService;
-import com.example.asterbackend.domain.survey.service.QuerySurveyCommentService;
-import com.example.asterbackend.domain.survey.service.UpdateSurveyCommentService;
+import com.example.asterbackend.domain.comment.presentation.response.SurveyCommentResponse;
+import com.example.asterbackend.domain.comment.service.survey.CreateSurveyCommentService;
+import com.example.asterbackend.domain.comment.service.survey.DeleteSurveyCommentService;
+import com.example.asterbackend.domain.comment.service.survey.QuerySurveyCommentService;
+import com.example.asterbackend.domain.comment.service.survey.UpdateSurveyCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

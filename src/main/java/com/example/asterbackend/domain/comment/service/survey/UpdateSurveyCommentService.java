@@ -1,8 +1,8 @@
-package com.example.asterbackend.domain.survey.service;
+package com.example.asterbackend.domain.comment.service.survey;
 
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
-import com.example.asterbackend.domain.survey.entity.SurveyComment;
-import com.example.asterbackend.domain.survey.facade.SurveyCommentFacade;
+import com.example.asterbackend.domain.comment.entity.SurveyComment;
+import com.example.asterbackend.domain.comment.facade.SurveyCommentFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

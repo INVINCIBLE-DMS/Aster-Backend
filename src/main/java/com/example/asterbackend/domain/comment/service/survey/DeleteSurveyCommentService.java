@@ -1,6 +1,6 @@
-package com.example.asterbackend.domain.survey.service;
+package com.example.asterbackend.domain.comment.service.survey;
 
-import com.example.asterbackend.domain.survey.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.comment.repository.SurveyCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
