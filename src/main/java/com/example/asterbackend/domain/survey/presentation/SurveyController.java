@@ -17,7 +17,7 @@ public class SurveyController {
 
     private final CreateSurveyService createSurveyService;
 
-    @PostMapping("/create")
+    @PostMapping()
     public void createSurvey(@RequestBody @Valid CreateSurveyRequest request) {
         createSurveyService.createSurvey(request);
     }
