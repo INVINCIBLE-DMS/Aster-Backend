@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.survey.entity;
 
+import com.example.asterbackend.domain.survey.entity.type.SurveyType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class Survey {
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
+    @Column(name = "survey_type", nullable = false)
+    private SurveyType surveyType;
+
     @Column(name = "agree_cnt", nullable = false)
     private int agreeCnt = 0;
 
@@ -36,7 +40,7 @@ public class Survey {
         agreeCnt++;
     }
 
-    public void cancelAgree(){
+    public void cancelAgree() {
         agreeCnt--;
     }
 
