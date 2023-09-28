@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.comment.service;
+package com.example.asterbackend.domain.comment.service.cocomment;
 
 import com.example.asterbackend.domain.comment.repository.CoCommentRepository;
 import lombok.RequiredArgsConstructor;

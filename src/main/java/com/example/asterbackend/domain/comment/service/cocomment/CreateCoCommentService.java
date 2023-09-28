@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.comment.service;
+package com.example.asterbackend.domain.comment.service.cocomment;
 
 import com.example.asterbackend.domain.comment.entity.CoComment;
 import com.example.asterbackend.domain.comment.entity.Comment;
