@@ -2,9 +2,9 @@ package com.example.asterbackend.domain.comment.presentation;
 
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCoCommentResponse;
-import com.example.asterbackend.domain.comment.service.CreateCoCommentService;
-import com.example.asterbackend.domain.comment.service.DeleteCoCommentService;
-import com.example.asterbackend.domain.comment.service.QueryCoCommentService;
+import com.example.asterbackend.domain.comment.service.cocomment.CreateCoCommentService;
+import com.example.asterbackend.domain.comment.service.cocomment.DeleteCoCommentService;
+import com.example.asterbackend.domain.comment.service.cocomment.QueryCoCommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
