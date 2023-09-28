@@ -22,7 +22,7 @@ public class CreateSurveyService {
         surveyRepository.save(
                 Survey.builder()
                         .content(request.getContent())
-                        .user(user)
+                        .nickname(user.getNickname())
                         .build());
 
     }
