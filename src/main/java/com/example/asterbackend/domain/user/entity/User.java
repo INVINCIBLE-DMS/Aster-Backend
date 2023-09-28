@@ -20,6 +20,9 @@ public class User {
     @Column(name = "username", nullable = false, length = 4)
     private String username;
 
+    @Column(name = "student_id", nullable = false, length = 4)
+    private String studentId;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "sex", nullable = false)
     private Sex sex;
