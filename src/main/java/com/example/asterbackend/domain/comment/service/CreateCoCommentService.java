@@ -5,9 +5,6 @@ import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.facade.CommentFacade;
 import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.repository.CoCommentRepository;
-import com.example.asterbackend.domain.comment.repository.CommentRepository;
-import com.example.asterbackend.domain.feed.entity.Feed;
-import com.example.asterbackend.domain.feed.facade.FeedFacade;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
@@ -35,7 +32,6 @@ public class CreateCoCommentService {
                 .build();
 
         coCommentRepository.save(cocomment);
-        comment.addCoComment(cocomment);
     }
 
 }

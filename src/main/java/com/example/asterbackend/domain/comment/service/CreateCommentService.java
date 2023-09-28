@@ -32,7 +32,6 @@ public class CreateCommentService {
                 .build();
 
         commentRepository.save(comment);
-        feed.addComment(comment);
     }
 
 }

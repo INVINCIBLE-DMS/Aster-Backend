@@ -29,19 +29,8 @@ public class Feed {
     @Column(name = "write_time", nullable = false)
     private LocalDateTime createAt;
 
-    @OneToMany(mappedBy = "feed")
-    private List<Comment> commentList;
-
     @Column(name = "like_count", nullable = false)
     private int likeCount = 0;
-
-    public void addComment(Comment comment) {
-        commentList.add(comment);
-    }
-
-    public void deleteComment(Comment comment) {
-        commentList.remove(comment);
-    }
 
     public void addLike() {
         likeCount++;
