@@ -18,11 +18,19 @@ public class Survey {
     @Column(name = "content", nullable = false, length = 50)
     private String content;
 
+    @Column(name = "is_update", nullable = false)
+    private boolean isUpdate = false;
+
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
     @Column(name = "agree_cnt", nullable = false)
     private int agreeCnt = 0;
+
+    public void updateSurvey(String content) {
+        this.content = content;
+        this.isUpdate = true;
+    }
 
     public void addAgree() {
         agreeCnt++;
