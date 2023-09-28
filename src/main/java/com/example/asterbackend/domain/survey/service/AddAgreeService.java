@@ -2,8 +2,10 @@ package com.example.asterbackend.domain.survey.service;
 
 import com.example.asterbackend.domain.survey.entity.Agree;
 import com.example.asterbackend.domain.survey.entity.Survey;
+import com.example.asterbackend.domain.survey.entity.SurveyStorage;
 import com.example.asterbackend.domain.survey.facade.SurveyFacade;
 import com.example.asterbackend.domain.survey.repository.AgreeRepository;
+import com.example.asterbackend.domain.survey.repository.SurveyStorageRepository;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +19,7 @@ public class AddAgreeService {
     private final UserFacade userFacade;
     private final SurveyFacade surveyFacade;
     private final AgreeRepository agreeRepository;
+    private final SurveyStorageRepository surveyStorageRepository;
 
     @Transactional
     public void addAgree(Long surveyId){
@@ -39,6 +42,12 @@ public class AddAgreeService {
                             .survey(survey)
                             .build());
         }
-
+        if(survey.getAgreeCnt()>=5) {
+            surveyStorageRepository.save(
+                    SurveyStorage.builder()
+                            .content(survey.getContent())
+                            .surveyType(survey.getSurveyType())
+                            .build());
+        }
     }
 }
