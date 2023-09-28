@@ -4,6 +4,7 @@ import com.example.asterbackend.domain.feed.entity.Feed;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -28,6 +29,9 @@ public class Comment {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
+
+    @OneToMany(mappedBy = "comment")
+    private List<CoComment> coCommentList;
 
     @Column(name = "comment_like_count", nullable = false)
     private int commentLikeCount = 0;
