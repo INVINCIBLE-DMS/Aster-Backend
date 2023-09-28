@@ -10,6 +10,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class FeedListResponse {
 
+    private Long id;
+
     private String content;
 
     private LocalDateTime createAt;
@@ -17,6 +19,7 @@ public class FeedListResponse {
     private int likeCount;
 
     public FeedListResponse(Feed feed) {
+        this.id = feed.getId();
         this.content = feed.getContent();
         this.createAt = feed.getCreateAt();
         this.likeCount = feed.getLikeCount();
