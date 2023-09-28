@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class DeleteCoCommentService {
     private final CoCommentRepository coCommentRepository;
 
-    public void deleteComment(Long coCommentId) {
+    public void deleteCoComment(Long coCommentId) {
         coCommentRepository.deleteById(coCommentId);
     }
 }
