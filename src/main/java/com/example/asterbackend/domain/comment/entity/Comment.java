@@ -41,6 +41,14 @@ public class Comment {
         this.isUpdate = true;
     }
 
+    public void addCoComment(CoComment cocomment) {
+        coCommentList.add(cocomment);
+    }
+
+    public void deleteCoComment(CoComment cocomment) {
+        coCommentList.remove(cocomment);
+    }
+
     public void addCommentLike(Comment comment) {
         comment.commentLikeCount++;
     }
