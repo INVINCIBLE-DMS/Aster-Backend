@@ -22,15 +22,14 @@ public class SignupService {
             throw UserExistsException.EXCEPTION;
         }
 
-        User user = User.builder()
-                .username(request.getUsername())
-                .nickname(request.getNickname())
-                .studentId(request.getStudentId())
-                .sex(request.getSex())
-                .part(request.getPart())
-                .build();
-
-        userRepository.save(user);
+        userRepository.save(
+                User.builder()
+                        .nickname(request.getNickname())
+                        .username(request.getUsername())
+                        .studentId(request.getStudentId())
+                        .sex(request.getSex())
+                        .part(request.getPart())
+                        .build());;
 
         return jwtTokenProvider.receiveToken(request.getNickname());
     }

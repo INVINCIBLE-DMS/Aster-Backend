@@ -25,13 +25,12 @@ public class CreateCoCommentService {
 
         User user = userFacade.getCurrentUser();
 
-        CoComment cocomment = CoComment.builder()
-                .content(request.getContent())
-                .nickname(user.getNickname())
-                .comment(comment)
-                .build();
-
-        coCommentRepository.save(cocomment);
+        coCommentRepository.save(
+                CoComment.builder()
+                        .content(request.getContent())
+                        .nickname(user.getNickname())
+                        .comment(comment)
+                        .build());
     }
 
 }

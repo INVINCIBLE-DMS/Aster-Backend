@@ -25,13 +25,12 @@ public class CreateCommentService {
 
         User user = userFacade.getCurrentUser();
 
-        Comment comment = Comment.builder()
-                .content(request.getContent())
-                .nickname(user.getNickname())
-                .feed(feed)
-                .build();
-
-        commentRepository.save(comment);
+        commentRepository.save(
+                Comment.builder()
+                        .content(request.getContent())
+                        .nickname(user.getNickname())
+                        .feed(feed)
+                        .build());
     }
 
 }
