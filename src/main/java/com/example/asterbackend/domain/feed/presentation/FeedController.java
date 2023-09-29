@@ -33,7 +33,7 @@ public class FeedController {
     }
 
     @DeleteMapping("/{feedId}")
-    public void removeFeed(@PathVariable Long feedId) {
+    public void deleteFeed(@PathVariable Long feedId) {
         deleteFeedService.deleteFeed(feedId);
     }
 
