@@ -10,6 +10,8 @@ public class SurveyListResponse {
 
     private Long id;
 
+    private String title;
+
     private String content;
 
     private int agreeCnt;
@@ -17,6 +19,7 @@ public class SurveyListResponse {
     public SurveyListResponse(Survey survey) {
         this.id = survey.getId();
         this.content = survey.getContent();
+        this.title = survey.getTitle();
         this.agreeCnt = survey.getAgreeCnt();
     }
 }
