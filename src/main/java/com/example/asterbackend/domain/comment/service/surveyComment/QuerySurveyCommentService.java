@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.comment.service.survey;
+package com.example.asterbackend.domain.comment.service.surveyComment;
 
 import com.example.asterbackend.domain.comment.presentation.response.SurveyCommentResponse;
 import com.example.asterbackend.domain.comment.repository.SurveyCommentRepository;
