@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class CreateSurveyRequest {
+public class SurveyRequest {
 
     private String content;
 

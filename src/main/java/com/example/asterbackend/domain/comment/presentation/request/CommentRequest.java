@@ -6,6 +6,6 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class CreateAndUpdateCommentRequest {
+public class CommentRequest {
     private String content;
 }
