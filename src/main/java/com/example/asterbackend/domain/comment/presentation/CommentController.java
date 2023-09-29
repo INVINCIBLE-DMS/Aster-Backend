@@ -1,5 +1,7 @@
 package com.example.asterbackend.domain.comment.presentation;
 
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
+import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCommentResponse;
 import com.example.asterbackend.domain.comment.service.comment.CreateCommentService;
 import com.example.asterbackend.domain.comment.service.comment.DeleteCommentService;
@@ -26,8 +28,8 @@ public class CommentController {
     private final DeleteCommentService deleteCommentService;
 
     @PostMapping("/{feedId}")
-    public void createComment(@PathVariable Long feedId, @RequestBody @Valid SurveyRequest request) {
-        createCommentService.createComment(feedId, request);
+    public void createComment(@PathVariable Long feedId, @RequestBody @Valid CommentRequest commentRequest) {
+        createCommentService.createComment(feedId, commentRequest);
     }
 
     @GetMapping("/{feedId}")

@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.comment.presentation;
 
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCoCommentResponse;
 import com.example.asterbackend.domain.comment.service.cocomment.CreateCoCommentService;
 import com.example.asterbackend.domain.comment.service.cocomment.DeleteCoCommentService;
@@ -23,8 +24,8 @@ public class CoCommentController {
     private final DeleteCoCommentService deleteCoCommentService;
 
     @PostMapping("/{commentId}")
-    public void createCoComment(@PathVariable Long commentId, @RequestBody @Valid SurveyRequest request) {
-        createCoCommentService.createCoComment(commentId, request);
+    public void createCoComment(@PathVariable Long commentId, @RequestBody @Valid CommentRequest commentRequest) {
+        createCoCommentService.createCoComment(commentId, commentRequest);
     }
 
     @GetMapping("/{commentId}")

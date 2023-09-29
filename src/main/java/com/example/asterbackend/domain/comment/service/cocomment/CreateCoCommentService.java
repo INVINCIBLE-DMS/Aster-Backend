@@ -3,6 +3,8 @@ package com.example.asterbackend.domain.comment.service.cocomment;
 import com.example.asterbackend.domain.comment.entity.CoComment;
 import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.facade.CommentFacade;
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
+import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.repository.CoCommentRepository;
 import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.user.entity.User;
@@ -20,14 +22,14 @@ public class CreateCoCommentService {
 
     private final UserFacade userFacade;
 
-    public void createCoComment(Long commentId, SurveyRequest request) {
+    public void createCoComment(Long commentId, CommentRequest commentRequest) {
         Comment comment = commentFacade.currentComment(commentId);
 
         User user = userFacade.getCurrentUser();
 
         coCommentRepository.save(
                 CoComment.builder()
-                        .content(request.getContent())
+                        .content(commentRequest.getContent())
                         .nickname(user.getNickname())
                         .comment(comment)
                         .build());

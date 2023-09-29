@@ -20,7 +20,7 @@ public class CreateCommentService {
 
     private final UserFacade userFacade;
 
-    public void createComment(Long feedId, SurveyRequest request) {
+    public void createComment(Long feedId, Comment request) {
         Feed feed = feedFacade.currentFeed(feedId);
 
         User user = userFacade.getCurrentUser();
