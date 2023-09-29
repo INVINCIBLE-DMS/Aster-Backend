@@ -3,8 +3,8 @@ package com.example.asterbackend.domain.comment.service.cocomment;
 import com.example.asterbackend.domain.comment.entity.CoComment;
 import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.facade.CommentFacade;
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.repository.CoCommentRepository;
+import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class CreateCoCommentService {
 
     private final UserFacade userFacade;
 
-    public void createCoComment(Long commentId, CreateAndUpdateCommentRequest request) {
+    public void createCoComment(Long commentId, SurveyRequest request) {
         Comment comment = commentFacade.currentComment(commentId);
 
         User user = userFacade.getCurrentUser();

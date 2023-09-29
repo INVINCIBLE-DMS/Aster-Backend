@@ -1,10 +1,10 @@
 package com.example.asterbackend.domain.comment.presentation;
 
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCoCommentResponse;
 import com.example.asterbackend.domain.comment.service.cocomment.CreateCoCommentService;
 import com.example.asterbackend.domain.comment.service.cocomment.DeleteCoCommentService;
 import com.example.asterbackend.domain.comment.service.cocomment.QueryCoCommentService;
+import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +23,7 @@ public class CoCommentController {
     private final DeleteCoCommentService deleteCoCommentService;
 
     @PostMapping("/{commentId}")
-    public void createCoComment(@PathVariable Long commentId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+    public void createCoComment(@PathVariable Long commentId, @RequestBody @Valid SurveyRequest request) {
         createCoCommentService.createCoComment(commentId, request);
     }
 
