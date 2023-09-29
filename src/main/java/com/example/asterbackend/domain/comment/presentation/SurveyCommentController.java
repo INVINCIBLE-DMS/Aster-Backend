@@ -1,11 +1,11 @@
 package com.example.asterbackend.domain.comment.presentation;
 
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.SurveyCommentResponse;
 import com.example.asterbackend.domain.comment.service.surveyComment.CreateSurveyCommentService;
 import com.example.asterbackend.domain.comment.service.surveyComment.DeleteSurveyCommentService;
 import com.example.asterbackend.domain.comment.service.surveyComment.QuerySurveyCommentService;
 import com.example.asterbackend.domain.comment.service.surveyComment.UpdateSurveyCommentService;
+import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +26,7 @@ public class SurveyCommentController {
     private final DeleteSurveyCommentService deleteSurveyCommentService;
 
     @PostMapping("/{surveyId}")
-    public void createSurveyComment(@PathVariable Long surveyId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+    public void createSurveyComment(@PathVariable Long surveyId, @RequestBody @Valid SurveyRequest request) {
         createSurveyCommentService.createSurveyComment(surveyId, request);
     }
 
@@ -36,7 +36,7 @@ public class SurveyCommentController {
     }
 
     @PatchMapping("/{surveyCommentId}")
-    public void updateSurveyComment(@PathVariable Long surveyCommentId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+    public void updateSurveyComment(@PathVariable Long surveyCommentId, @RequestBody @Valid SurveyRequest request) {
         updateSurveyCommentService.updateSurveyComment(surveyCommentId, request);
     }
 

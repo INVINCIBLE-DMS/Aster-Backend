@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.survey.presentation;
 
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
-import com.example.asterbackend.domain.survey.presentation.dto.request.CreateSurveyRequest;
+import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.survey.presentation.dto.response.SurveyListResponse;
 import com.example.asterbackend.domain.survey.service.CreateSurveyService;
 import com.example.asterbackend.domain.survey.service.DeleteSurveyService;
@@ -27,7 +26,7 @@ public class SurveyController {
     private final DeleteSurveyService deleteSurveyService;
 
     @PostMapping()
-    public void createSurvey(@RequestBody @Valid CreateSurveyRequest request) {
+    public void createSurvey(@RequestBody @Valid SurveyRequest request) {
         createSurveyService.createSurvey(request);
     }
 
@@ -37,7 +36,7 @@ public class SurveyController {
     }
 
     @PatchMapping("/{surveyId}")
-    public void updateSurvey(@PathVariable Long surveyId, @RequestBody @Valid CreateAndUpdateCommentRequest request) {
+    public void updateSurvey(@PathVariable Long surveyId, @RequestBody @Valid SurveyRequest request) {
         updateSurveyService.updateSurvey(surveyId, request);
     }
 

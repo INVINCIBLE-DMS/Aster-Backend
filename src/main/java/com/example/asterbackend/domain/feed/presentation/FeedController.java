@@ -1,6 +1,6 @@
 package com.example.asterbackend.domain.feed.presentation;
 
-import com.example.asterbackend.domain.feed.presentation.dto.request.CreateFeedRequest;
+import com.example.asterbackend.domain.feed.presentation.dto.request.FeedRequest;
 import com.example.asterbackend.domain.feed.presentation.dto.response.FeedListResponse;
 import com.example.asterbackend.domain.feed.service.CreateFeedService;
 import com.example.asterbackend.domain.feed.service.DeleteFeedService;
@@ -23,7 +23,7 @@ public class FeedController {
     private final DeleteFeedService deleteFeedService;
 
     @PostMapping()
-    public void createFeed(@RequestBody @Valid CreateFeedRequest request) {
+    public void createFeed(@RequestBody @Valid FeedRequest request) {
         createFeedService.createFeed(request);
     }
 
@@ -33,7 +33,7 @@ public class FeedController {
     }
 
     @DeleteMapping("/{feedId}")
-    public void removeFeed(@PathVariable Long feedId) {
+    public void deleteFeed(@PathVariable Long feedId) {
         deleteFeedService.deleteFeed(feedId);
     }
 

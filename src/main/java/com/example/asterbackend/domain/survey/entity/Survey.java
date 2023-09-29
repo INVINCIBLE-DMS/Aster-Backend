@@ -16,6 +16,9 @@ public class Survey {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "title", nullable = false, length = 50)
+    private String title;
+
     @Column(name = "content", nullable = false, length = 50)
     private String content;
 
@@ -31,7 +34,8 @@ public class Survey {
     @Column(name = "agree_cnt", nullable = false)
     private int agreeCnt = 0;
 
-    public void updateSurvey(String content) {
+    public void updateSurvey(String content, String title) {
+        this.title = title;
         this.content = content;
         this.isUpdate = true;
     }

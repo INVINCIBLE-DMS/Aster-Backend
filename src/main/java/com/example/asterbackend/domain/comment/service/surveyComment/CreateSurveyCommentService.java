@@ -1,10 +1,10 @@
 package com.example.asterbackend.domain.comment.service.surveyComment;
 
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.survey.entity.Survey;
 import com.example.asterbackend.domain.comment.entity.SurveyComment;
 import com.example.asterbackend.domain.survey.facade.SurveyFacade;
 import com.example.asterbackend.domain.comment.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class CreateSurveyCommentService {
 
     private final UserFacade userFacade;
 
-    public void createSurveyComment(Long surveyId, CreateAndUpdateCommentRequest request) {
+    public void createSurveyComment(Long surveyId, SurveyRequest request) {
         Survey survey = surveyFacade.currentSurvey(surveyId);
 
         User user = userFacade.getCurrentUser();
