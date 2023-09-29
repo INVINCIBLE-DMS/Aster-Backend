@@ -15,7 +15,7 @@ public class UpdateSurveyService {
     public void updateSurvey(Long surveyId, SurveyRequest request) {
         Survey survey = surveyFacade.currentSurvey(surveyId);
 
-        survey.updateSurvey(request.getTitle());
+        survey.updateSurvey(request.getContent(),request.getTitle());
     }
 
 }

@@ -34,7 +34,7 @@ public class Survey {
     @Column(name = "agree_cnt", nullable = false)
     private int agreeCnt = 0;
 
-    public void updateSurvey(String content) {
+    public void updateSurvey(String content, String title) {
         this.title = title;
         this.content = content;
         this.isUpdate = true;
