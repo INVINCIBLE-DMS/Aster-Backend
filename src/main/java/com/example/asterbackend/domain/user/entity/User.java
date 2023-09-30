@@ -46,6 +46,10 @@ public class User {
     @Column(name = "decision_type_score", nullable = false)
     private int decisionTypeScore = 0;
 
+    public void addSurveyCandy() {
+        this.candy+=200;
+    }
+
     public void addSocialTypeScore(int score) {
         this.socialTypeScore+=score;
     }

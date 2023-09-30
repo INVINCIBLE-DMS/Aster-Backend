@@ -45,6 +45,8 @@ public class AnswerSurveyService {
             else if(request.getAnswerType() == AnswerType.DISAGREE)user.addDecisionTypeScore(-5);
             else if(request.getAnswerType() == AnswerType.STRONGLY_DISAGREE)user.addDecisionTypeScore(-10);
         }
+
+        if(request.isLast())user.addSurveyCandy();
     }
 
 }
