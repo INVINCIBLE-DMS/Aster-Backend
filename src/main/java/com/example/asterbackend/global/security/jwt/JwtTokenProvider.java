@@ -1,8 +1,6 @@
 package com.example.asterbackend.global.security.jwt;
 
-import com.example.asterbackend.domain.auth.entity.RefreshToken;
 import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
-import com.example.asterbackend.domain.auth.respository.RefreshTokenRepository;
 import com.example.asterbackend.global.exception.token.ExpiredTokenException;
 import com.example.asterbackend.global.exception.token.InvalidTokenException;
 import com.example.asterbackend.global.security.auth.CustomUserDetailsService;
@@ -28,8 +26,6 @@ public class JwtTokenProvider {
 
     private final CustomUserDetailsService customUserDetailsService;
 
-    private final RefreshTokenRepository refreshTokenRepository;
-
     // access token 생성
     public String createAccessToken(String userId) {
 
@@ -42,28 +38,6 @@ public class JwtTokenProvider {
                 .setExpiration(new Date(now.getTime() + jwtProperties.getAccessExpiration() * 1000))
                 .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecret())
                 .compact();
-    }
-
-    // refresh token 생성
-    public String createRefreshToken(String userId) {
-
-        Date now = new Date();
-
-        String refreshToken = Jwts.builder()
-                .claim("type", "refresh")
-                .setIssuedAt(now)
-                .setExpiration(new Date(now.getTime() + jwtProperties.getRefreshExpiration() * 1000))
-                .signWith(SignatureAlgorithm.HS256, jwtProperties.getSecret())
-                .compact();
-
-        refreshTokenRepository.save(
-                RefreshToken.builder()
-                        .userId(userId)
-                        .token(refreshToken)
-                        .timeToLive(jwtProperties.getRefreshExpiration())
-                        .build());
-
-        return refreshToken;
     }
 
     // 토큰에 담겨있는 userId로 SpringSecurity Authentication 정보를 반환하는 메서드
@@ -92,7 +66,6 @@ public class JwtTokenProvider {
         return TokenResponse
                 .builder()
                 .accessToken(createAccessToken(nickname))
-                .refreshToken(createRefreshToken(nickname))
                 .build();
     }
 

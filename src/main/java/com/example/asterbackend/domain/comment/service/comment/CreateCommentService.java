@@ -5,7 +5,6 @@ import com.example.asterbackend.domain.comment.presentation.request.CommentReque
 import com.example.asterbackend.domain.comment.repository.CommentRepository;
 import com.example.asterbackend.domain.feed.entity.Feed;
 import com.example.asterbackend.domain.feed.facade.FeedFacade;
-import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.user.entity.User;
 import com.example.asterbackend.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;

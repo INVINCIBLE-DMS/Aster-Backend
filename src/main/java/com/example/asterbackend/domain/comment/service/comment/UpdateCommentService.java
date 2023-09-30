@@ -3,7 +3,6 @@ package com.example.asterbackend.domain.comment.service.comment;
 import com.example.asterbackend.domain.comment.entity.Comment;
 import com.example.asterbackend.domain.comment.facade.CommentFacade;
 import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
-import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
