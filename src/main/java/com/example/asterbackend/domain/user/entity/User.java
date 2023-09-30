@@ -34,4 +34,16 @@ public class User {
     @Column(name = "candy", nullable = false)
     private int candy = 0;
 
+    @Column(name = "social_type_score", nullable = false)
+    private int socialTypeScore = 0;
+
+    @Column(name = "knowledge_type_score", nullable = false)
+    private int knowledgeTypeScore = 0;
+
+    @Column(name = "emotion_type_score", nullable = false)
+    private int emotionTypeScore = 0;
+
+    @Column(name = "decision_type_score", nullable = false)
+    private int decisionTypeScore = 0;
+
 }
