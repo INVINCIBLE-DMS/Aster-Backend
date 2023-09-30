@@ -25,7 +25,7 @@ public class AuthController {
         return signupService.signup(request);
     }
 
-    @GetMapping()
+    @GetMapping
     public MyInfoResponse getMyInfo() {
         return myInfoService.getMyInfo();
     }
