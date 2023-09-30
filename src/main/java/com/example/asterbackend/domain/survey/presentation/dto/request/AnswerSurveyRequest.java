@@ -14,4 +14,6 @@ public class AnswerSurveyRequest {
 
     private AnswerType answerType;
 
+    private boolean isLast;
+
 }
