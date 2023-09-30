@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SurveyRequest {
 
-    private String title;
-
     private String content;
 
     private SurveyType surveyType;
+
 }

@@ -35,4 +35,3 @@ public class User {
     private int candy = 0;
 
 }
-
