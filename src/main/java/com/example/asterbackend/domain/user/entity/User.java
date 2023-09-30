@@ -46,4 +46,20 @@ public class User {
     @Column(name = "decision_type_score", nullable = false)
     private int decisionTypeScore = 0;
 
+    public void addSocialTypeScore(int score) {
+        this.socialTypeScore+=5;
+    }
+
+    public void addKnowledgeTypeScore(int score) {
+        this.socialTypeScore+=5;
+    }
+
+    public void addEmotionTypeScore(int score) {
+        this.socialTypeScore+=5;
+    }
+
+    public void addDecisionTypeScore(int score) {
+        this.socialTypeScore+=5;
+    }
+
 }
