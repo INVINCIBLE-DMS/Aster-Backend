@@ -1,12 +1,9 @@
 package com.example.asterbackend.domain.survey.service;
 
-import com.example.asterbackend.domain.survey.entity.Survey;
-import com.example.asterbackend.domain.survey.repository.SurveyRepository;
-import com.example.asterbackend.global.exception.survey.SurveyNotFoundException;
+import com.example.asterbackend.domain.survey.entity.SurveyStorage;
+import com.example.asterbackend.domain.survey.repository.SurveyStorageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
@@ -14,11 +11,11 @@ public class QueryNewSurveyService {
 
    // private final Random random;
 
-    private final SurveyRepository surveyRepository;
+    private final SurveyStorageRepository surveyStorageRepository;
 
-    public Survey queryNewSurvey(Long surveyId) {
-        return surveyRepository.findById(surveyId)
-                .orElseThrow(()-> SurveyNotFoundException.EXCEPTION);
+    public SurveyStorage queryNewSurvey(Long surveyId) {
+        return surveyStorageRepository.findById(surveyId)
+                .orElseThrow();
     }
 
 }
