@@ -59,13 +59,6 @@ dependencies {
     //querydsl
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
-
-    annotationProcessor(
-            "javax.persistence:javax.persistence-api",
-            "javax.annotation:jsr250-api",
-            "com.querydsl:querydsl-apt:${queryDslVersion}:jpa"
-    )
-    annotationProcessor 'javax.annotation:jsr250-api:1.0'
 }
 
 tasks.named('test') {
@@ -73,20 +66,21 @@ tasks.named('test') {
 }
 
 //querydsl
-apply plugin: 'com.ewerk.gradle.plugins.querydsl'
-
-def queryDslSourceDir = 'src/main/generated'
+def querydslDir = "$buildDir/generated/querydsl"
 
 querydsl {
     jpa = true
-    querydslSourcesDir = queryDslSourceDir
+    querydslSourcesDir = querydslDir
 }
 sourceSets {
-    main.java.srcDir queryDslSourceDir
+    main.java.srcDir querydslDir
+}
+compileQuerydsl{
+    options.annotationProcessorPath = configurations.querydsl
 }
 configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
     querydsl.extendsFrom compileClasspath
-}
-compileQuerydsl {
-    options.annotationProcessorPath = configurations.querydsl
 }
