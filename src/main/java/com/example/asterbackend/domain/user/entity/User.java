@@ -47,19 +47,19 @@ public class User {
     private int decisionTypeScore = 0;
 
     public void addSocialTypeScore(int score) {
-        this.socialTypeScore+=5;
+        this.socialTypeScore+=score;
     }
 
     public void addKnowledgeTypeScore(int score) {
-        this.socialTypeScore+=5;
+        this.socialTypeScore+=score;
     }
 
     public void addEmotionTypeScore(int score) {
-        this.socialTypeScore+=5;
+        this.socialTypeScore+=score;
     }
 
     public void addDecisionTypeScore(int score) {
-        this.socialTypeScore+=5;
+        this.socialTypeScore+=score;
     }
 
 }
