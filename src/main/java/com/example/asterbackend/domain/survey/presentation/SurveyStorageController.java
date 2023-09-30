@@ -1,7 +1,9 @@
 package com.example.asterbackend.domain.survey.presentation;
 
 import com.example.asterbackend.domain.survey.entity.SurveyStorage;
+import com.example.asterbackend.domain.survey.presentation.dto.request.AnswerSurveyRequest;
 import com.example.asterbackend.domain.survey.presentation.dto.request.SurveyRequest;
+import com.example.asterbackend.domain.survey.service.AnswerSurveyService;
 import com.example.asterbackend.domain.survey.service.QueryNewSurveyService;
 import com.example.asterbackend.domain.survey.service.SaveSurveyStorageService;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,8 @@ public class SurveyStorageController {
 
     private final QueryNewSurveyService queryNewSurveyService;
 
+    private final AnswerSurveyService answerSurveyService;
+
     @PostMapping()
     public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
         saveSurveyStorageService.saveSurveyStorage(request);
@@ -27,6 +31,11 @@ public class SurveyStorageController {
     @GetMapping()
     public List<SurveyStorage> queryNewSurvey() {
         return queryNewSurveyService.queryNewSurvey();
+    }
+
+    @PutMapping()
+    public void answerSurvey(@RequestBody @Valid AnswerSurveyRequest request) {
+        answerSurveyService.answerSurvey(request);
     }
 
 }
