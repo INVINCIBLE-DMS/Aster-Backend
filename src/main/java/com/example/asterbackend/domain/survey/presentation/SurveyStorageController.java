@@ -24,7 +24,7 @@ public class SurveyStorageController {
         saveSurveyStorageService.saveSurveyStorage(request);
     }
 
-    @GetMapping("/new")
+    @GetMapping()
     public List<SurveyStorage> queryNewSurvey() {
         return queryNewSurveyService.queryNewSurvey();
     }
