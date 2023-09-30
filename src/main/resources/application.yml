@@ -18,7 +18,7 @@ jwt:
   header: Authorization
   prefix: Bearer
   secret: lhjljlasndflasjdkfasdkfnasdasjidkflajsdkfahsdfjkafewfawefwaefeawfw
-  accessExpiration: 3600
+  accessExpiration: 604800
   refreshExpiration: 271000
 
 server:
