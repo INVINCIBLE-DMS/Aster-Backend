@@ -16,7 +16,7 @@ public class QueryNewSurveyService {
 
     private final SurveyStorageRepository surveyStorageRepository;
 
-    public List<SurveyStorage> queryNewSurvey(Long surveyId) {
+    public List<SurveyStorage> queryNewSurvey() {
         List<SurveyStorage> surveyList = new ArrayList<>();
 
         surveyList.addAll(surveyStorageRepository.findEnumSurvey(SOCIAL_TYPE));
