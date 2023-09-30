@@ -1,6 +1,7 @@
 package com.example.asterbackend.domain.comment.service.comment;
 
 import com.example.asterbackend.domain.comment.entity.Comment;
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
 import com.example.asterbackend.domain.comment.repository.CommentRepository;
 import com.example.asterbackend.domain.feed.entity.Feed;
 import com.example.asterbackend.domain.feed.facade.FeedFacade;
@@ -20,7 +21,7 @@ public class CreateCommentService {
 
     private final UserFacade userFacade;
 
-    public void createComment(Long feedId, Comment request) {
+    public void createComment(Long feedId, CommentRequest request) {
         Feed feed = feedFacade.currentFeed(feedId);
 
         User user = userFacade.getCurrentUser();

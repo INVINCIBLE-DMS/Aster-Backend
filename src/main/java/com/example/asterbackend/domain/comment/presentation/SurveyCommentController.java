@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.comment.presentation;
 
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.SurveyCommentResponse;
 import com.example.asterbackend.domain.comment.service.surveyComment.CreateSurveyCommentService;
 import com.example.asterbackend.domain.comment.service.surveyComment.DeleteSurveyCommentService;
@@ -26,7 +27,7 @@ public class SurveyCommentController {
     private final DeleteSurveyCommentService deleteSurveyCommentService;
 
     @PostMapping("/{surveyId}")
-    public void createSurveyComment(@PathVariable Long surveyId, @RequestBody @Valid SurveyRequest request) {
+    public void createSurveyComment(@PathVariable Long surveyId, @RequestBody @Valid CommentRequest request) {
         createSurveyCommentService.createSurveyComment(surveyId, request);
     }
 

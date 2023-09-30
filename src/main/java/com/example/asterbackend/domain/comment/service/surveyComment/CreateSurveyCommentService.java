@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.comment.service.surveyComment;
 
+import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
 import com.example.asterbackend.domain.survey.entity.Survey;
 import com.example.asterbackend.domain.comment.entity.SurveyComment;
 import com.example.asterbackend.domain.survey.facade.SurveyFacade;
@@ -20,7 +21,7 @@ public class CreateSurveyCommentService {
 
     private final UserFacade userFacade;
 
-    public void createSurveyComment(Long surveyId, SurveyRequest request) {
+    public void createSurveyComment(Long surveyId, CommentRequest request) {
         Survey survey = surveyFacade.currentSurvey(surveyId);
 
         User user = userFacade.getCurrentUser();

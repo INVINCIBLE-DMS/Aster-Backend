@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.comment.presentation;
 
 import com.example.asterbackend.domain.comment.presentation.request.CommentRequest;
-import com.example.asterbackend.domain.comment.presentation.request.CreateAndUpdateCommentRequest;
 import com.example.asterbackend.domain.comment.presentation.response.QueryCommentResponse;
 import com.example.asterbackend.domain.comment.service.comment.CreateCommentService;
 import com.example.asterbackend.domain.comment.service.comment.DeleteCommentService;
@@ -38,8 +37,8 @@ public class CommentController {
     }
 
     @PatchMapping("/{commentId}")
-    public void updateComment(@PathVariable Long commentId, @RequestBody @Valid SurveyRequest request) {
-        updateCommentService.updateComment(commentId, request);
+    public void updateComment(@PathVariable Long commentId, @RequestBody @Valid CommentRequest commentRequest) {
+        updateCommentService.updateComment(commentId, commentRequest);
     }
 
     @DeleteMapping("/{commentId}")
