@@ -8,7 +8,7 @@ import com.example.asterbackend.domain.admin.survey.repository.AgreeRepository;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyRepository;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyStorageRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
-import com.example.asterbackend.domain.user.user.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.service.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.user.facade;
+package com.example.asterbackend.domain.user.user.service.facade;
 
 
 import com.example.asterbackend.domain.user.user.entity.User;
