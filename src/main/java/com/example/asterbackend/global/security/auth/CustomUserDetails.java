@@ -1,6 +1,6 @@
 package com.example.asterbackend.global.security.auth;
 
-import com.example.asterbackend.domain.user.entity.User;
+import com.example.asterbackend.domain.user.user.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

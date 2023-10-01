@@ -1,7 +1,7 @@
 package com.example.asterbackend.global.security.auth;
 
-import com.example.asterbackend.domain.user.entity.User;
-import com.example.asterbackend.domain.user.repository.UserRepository;
+import com.example.asterbackend.domain.user.user.entity.User;
+import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;

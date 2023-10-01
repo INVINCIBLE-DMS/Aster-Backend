@@ -1,6 +1,6 @@
 package com.example.asterbackend.global.security.jwt;
 
-import com.example.asterbackend.domain.auth.presentation.dto.response.TokenResponse;
+import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.global.exception.token.ExpiredTokenException;
 import com.example.asterbackend.global.exception.token.InvalidTokenException;
 import com.example.asterbackend.global.security.auth.CustomUserDetailsService;
