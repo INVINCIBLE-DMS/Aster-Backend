@@ -19,7 +19,8 @@ jwt:
   prefix: Bearer
   secret: lhjljlasndflasjdkfasdkfnasdasjidkflajsdkfahsdfjkafewfawefwaefeawfw
   accessExpiration: 604800
-
+key:
+  secretKey: ${SECRET_KEY}
 server:
   port: 8080
 
