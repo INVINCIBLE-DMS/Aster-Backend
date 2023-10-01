@@ -1,6 +1,6 @@
-package com.example.asterbackend.domain.user.comment.repository;
+package com.example.asterbackend.domain.admin.comment.repository;
 
-import com.example.asterbackend.domain.user.comment.entity.SurveyComment;
+import com.example.asterbackend.domain.admin.comment.entity.SurveyComment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

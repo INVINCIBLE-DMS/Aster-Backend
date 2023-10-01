@@ -1,8 +1,8 @@
-package com.example.asterbackend.domain.user.comment.service.surveyComment;
+package com.example.asterbackend.domain.admin.comment.service.surveyComment;
 
 import com.example.asterbackend.domain.user.comment.presentation.request.CommentRequest;
-import com.example.asterbackend.domain.user.comment.entity.SurveyComment;
-import com.example.asterbackend.domain.user.comment.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.admin.comment.entity.SurveyComment;
+import com.example.asterbackend.domain.admin.comment.repository.SurveyCommentRepository;
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
 import com.example.asterbackend.domain.admin.survey.facade.SurveyFacade;
 import com.example.asterbackend.domain.user.user.entity.User;

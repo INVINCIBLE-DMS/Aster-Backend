@@ -1,7 +1,7 @@
-package com.example.asterbackend.domain.user.comment.facade;
+package com.example.asterbackend.domain.admin.comment.facade;
 
-import com.example.asterbackend.domain.user.comment.entity.SurveyComment;
-import com.example.asterbackend.domain.user.comment.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.admin.comment.entity.SurveyComment;
+import com.example.asterbackend.domain.admin.comment.repository.SurveyCommentRepository;
 import com.example.asterbackend.global.exception.comment.CommentNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.comment.entity;
+package com.example.asterbackend.domain.admin.comment.entity;
 
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
 import lombok.*;
