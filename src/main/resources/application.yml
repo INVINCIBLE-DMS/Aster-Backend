@@ -23,4 +23,14 @@ key:
   secretKey: ${SECRET_KEY}
 server:
   port: 8080
-
+cloud:
+  aws:
+    credentials:
+      accessKey: ${ACCESS-KEY:AKIA472XLIA4MZWDJ2YB}
+      secretKey: ${SECRET-KEY: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}
+    s3:
+      bucket: ${BUCKET:kangsunbucket}
+    region:
+      static: ${STATIC:ap-northeast-2}
+  stack:
+    auto: false
