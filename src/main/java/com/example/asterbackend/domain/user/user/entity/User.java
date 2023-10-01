@@ -46,6 +46,9 @@ public class User {
     @Column(name = "decision_type_score", nullable = false)
     private int decisionTypeScore = 0;
 
+    @Column(name = "profile_image")
+    private String profileImageUrl;
+
     public void addSurveyCandy() {
         this.candy+=200;
     }
@@ -66,4 +69,7 @@ public class User {
         this.socialTypeScore+=score;
     }
 
+    public void profileUpload(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
 }
