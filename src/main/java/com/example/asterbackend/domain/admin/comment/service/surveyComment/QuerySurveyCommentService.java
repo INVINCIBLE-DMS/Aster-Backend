@@ -1,7 +1,7 @@
-package com.example.asterbackend.domain.user.comment.service.surveyComment;
+package com.example.asterbackend.domain.admin.comment.service.surveyComment;
 
-import com.example.asterbackend.domain.user.comment.presentation.response.SurveyCommentResponse;
-import com.example.asterbackend.domain.user.comment.repository.SurveyCommentRepository;
+import com.example.asterbackend.domain.admin.comment.presentation.dto.SurveyCommentResponse;
+import com.example.asterbackend.domain.admin.comment.repository.SurveyCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

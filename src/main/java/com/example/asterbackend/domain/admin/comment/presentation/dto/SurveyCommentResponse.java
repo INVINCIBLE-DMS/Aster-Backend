@@ -1,6 +1,6 @@
-package com.example.asterbackend.domain.user.comment.presentation.response;
+package com.example.asterbackend.domain.admin.comment.presentation.dto;
 
-import com.example.asterbackend.domain.user.comment.entity.SurveyComment;
+import com.example.asterbackend.domain.admin.comment.entity.SurveyComment;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

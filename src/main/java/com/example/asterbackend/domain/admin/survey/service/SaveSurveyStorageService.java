@@ -3,8 +3,6 @@ package com.example.asterbackend.domain.admin.survey.service;
 import com.example.asterbackend.domain.admin.survey.entity.SurveyStorage;
 import com.example.asterbackend.domain.user.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyStorageRepository;
-import com.example.asterbackend.domain.user.user.entity.User;
-import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
