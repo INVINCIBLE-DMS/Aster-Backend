@@ -19,7 +19,6 @@ jwt:
   prefix: Bearer
   secret: lhjljlasndflasjdkfasdkfnasdasjidkflajsdkfahsdfjkafewfawefwaefeawfw
   accessExpiration: 604800
-  refreshExpiration: 271000
 
 server:
   port: 8080
