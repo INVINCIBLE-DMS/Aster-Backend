@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.admin.survey.service;
 
+import com.example.asterbackend.domain.admin.survey.repository.SurveyRepository;
 import com.example.asterbackend.domain.user.survey.entity.Agree;
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
 import com.example.asterbackend.domain.admin.survey.entity.SurveyStorage;
@@ -20,6 +21,7 @@ public class AddAgreeService {
     private final SurveyFacade surveyFacade;
     private final AgreeRepository agreeRepository;
     private final SurveyStorageRepository surveyStorageRepository;
+    private final SurveyRepository surveyRepository;
 
     @Transactional
     public void addAgree(Long surveyId){
@@ -48,6 +50,8 @@ public class AddAgreeService {
                             .content(survey.getContent())
                             .surveyType(survey.getSurveyType())
                             .build());
+
+            surveyRepository.delete(survey);
         }
     }
 }
