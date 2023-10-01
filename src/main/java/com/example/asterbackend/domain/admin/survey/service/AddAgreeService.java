@@ -1,6 +1,6 @@
 package com.example.asterbackend.domain.admin.survey.service;
 
-import com.example.asterbackend.domain.user.survey.entity.Agree;
+import com.example.asterbackend.domain.admin.survey.entity.Agree;
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
 import com.example.asterbackend.domain.admin.survey.entity.SurveyStorage;
 import com.example.asterbackend.domain.admin.survey.facade.SurveyFacade;
