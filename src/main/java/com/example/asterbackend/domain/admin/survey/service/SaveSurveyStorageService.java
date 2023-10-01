@@ -13,17 +13,13 @@ import org.springframework.stereotype.Service;
 public class SaveSurveyStorageService {
 
     private final SurveyStorageRepository surveyStorageRepository;
-    private final UserFacade userFacade;
 
     public void saveSurveyStorage(SurveyRequest request) {
-
-        User user = userFacade.getCurrentUser();
-
         surveyStorageRepository.save(
                 SurveyStorage.builder()
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
-                        .build()
-        );
+                        .build());
     }
+
 }
