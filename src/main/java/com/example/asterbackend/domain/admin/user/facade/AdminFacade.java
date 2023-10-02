@@ -26,5 +26,5 @@ public class AdminFacade {
         return adminRepository.findByUsername(nickname)
                 .orElseThrow(()->UserNotFoundException.EXCEPTION);
     }
-    
+
 }
