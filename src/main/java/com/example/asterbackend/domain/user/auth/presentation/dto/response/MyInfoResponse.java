@@ -19,6 +19,8 @@ public class MyInfoResponse {
 
     private String studentId;
 
+    private String profileImageUrl;
+
     @Enumerated(EnumType.STRING)
     private Part part;
 
@@ -29,6 +31,7 @@ public class MyInfoResponse {
         username = user.getUsername();
         nickname = user.getNickname();
         studentId = user.getStudentId();
+        profileImageUrl = user.getProfileImageUrl();
         part = user.getPart();
         sex = user.getSex();
     }
