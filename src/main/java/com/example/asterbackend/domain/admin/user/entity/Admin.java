@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.admin.auth;
+package com.example.asterbackend.domain.admin.user.entity;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
