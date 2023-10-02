@@ -14,6 +14,8 @@ public class FeedListResponse {
 
     private String content;
 
+    private String feedImage;
+
     private LocalDateTime createAt;
 
     private int likeCount;
@@ -21,6 +23,7 @@ public class FeedListResponse {
     public FeedListResponse(Feed feed) {
         this.id = feed.getId();
         this.content = feed.getContent();
+        this.feedImage = feed.getFeedImageUrl();
         this.createAt = feed.getCreateAt();
         this.likeCount = feed.getLikeCount();
     }

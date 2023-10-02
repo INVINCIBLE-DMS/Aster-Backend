@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ProfileUploadService {
 
     private final UserFacade userFacade;
-    private final S3Util s3Facade;
+    private final S3Util s3Util;
 
     @Transactional
     public void profileUpload(MultipartFile profileImage) throws IOException {
@@ -25,10 +25,10 @@ public class ProfileUploadService {
 
         if(user.getProfileImageUrl() != null && !user.getProfileImageUrl().isEmpty()){
             profileImageUrl = user.getProfileImageUrl();
-            s3Facade.deleteFile(profileImageUrl.split("/")[3]);
+            s3Util.deleteFile(profileImageUrl.split("/")[3]);
         }
 
-        profileImageUrl = s3Facade.upload(profileImage);
+        profileImageUrl = s3Util.upload(profileImage);
 
         user.profileUpload(profileImageUrl);
 

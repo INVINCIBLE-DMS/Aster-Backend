@@ -7,6 +7,7 @@ import com.example.asterbackend.domain.user.feed.service.DeleteFeedService;
 import com.example.asterbackend.domain.user.feed.service.QueryFeedListService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -23,8 +24,10 @@ public class FeedController {
     private final DeleteFeedService deleteFeedService;
 
     @PostMapping()
-    public void createFeed(@RequestBody @Valid FeedRequest request) {
-        createFeedService.createFeed(request);
+    public void createFeed(
+            @RequestPart("content") FeedRequest request,
+            @RequestPart(value = "image", required = false) MultipartFile multipartFile) {
+        createFeedService.createFeed(request, multipartFile);
     }
 
     @GetMapping()
