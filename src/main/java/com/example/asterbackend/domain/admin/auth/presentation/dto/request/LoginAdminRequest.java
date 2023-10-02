@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class AdminLoginRequest {
+public class LoginAdminRequest {
     private String username;
 
     private String secretKey;

@@ -1,6 +1,6 @@
 package com.example.asterbackend.domain.admin.auth.service;
 
-import com.example.asterbackend.domain.admin.auth.presentation.dto.request.AdminLoginRequest;
+import com.example.asterbackend.domain.admin.auth.presentation.dto.request.LoginAdminRequest;
 import com.example.asterbackend.domain.admin.user.repository.AdminRepository;
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.global.exception.user.NotAdminException;
@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AdminLoginService {
+public class LoginAdminService {
 
     private final AdminRepository adminRepository;
 
     private final JwtTokenProvider jwtTokenProvider;
 
-    public TokenResponse login(AdminLoginRequest request) {
+    public TokenResponse login(LoginAdminRequest request) {
         adminRepository.findByUsername(request.getUsername())
                         .orElseThrow(()-> NotAdminException.EXCEPTION);
 
