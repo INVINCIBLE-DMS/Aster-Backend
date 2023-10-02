@@ -6,7 +6,7 @@ import com.example.asterbackend.domain.admin.comment.repository.SurveyCommentRep
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
 import com.example.asterbackend.domain.admin.survey.facade.SurveyFacade;
 import com.example.asterbackend.domain.user.user.entity.User;
-import com.example.asterbackend.domain.user.user.service.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

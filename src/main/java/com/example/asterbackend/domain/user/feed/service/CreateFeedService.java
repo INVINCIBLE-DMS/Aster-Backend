@@ -4,7 +4,7 @@ import com.example.asterbackend.domain.user.feed.entity.Feed;
 import com.example.asterbackend.domain.user.feed.presentation.dto.request.FeedRequest;
 import com.example.asterbackend.domain.user.feed.repository.FeedRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
-import com.example.asterbackend.domain.user.user.service.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import com.example.asterbackend.infra.util.S3Util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
