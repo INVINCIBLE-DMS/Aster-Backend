@@ -18,14 +18,16 @@ public class LoginAdminService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse login(LoginAdminRequest request) {
-        if(!request.getSecretKey().equals(("${key.secretKey}"))) {
+
+        Admin admin = Admin.builder()
+                .username(request.getUsername())
+                .build();
+
+        if(!request.getSecretKey().equals((admin.getSecretKey()))) {
             throw NotAdminException.EXCEPTION;
         }
 
-        adminRepository.save(
-                Admin.builder()
-                        .username(request.getUsername())
-                        .build());
+        adminRepository.save(admin);
 
         return jwtTokenProvider.receiveToken(request.getUsername());
     }
