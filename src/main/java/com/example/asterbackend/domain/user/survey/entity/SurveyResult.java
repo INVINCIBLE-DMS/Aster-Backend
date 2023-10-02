@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.admin.survey.entity;
+package com.example.asterbackend.domain.user.survey.entity;
 
 import com.example.asterbackend.domain.admin.survey.entity.type.SurveyType;
 import com.example.asterbackend.domain.user.survey.entity.type.AnswerType;
