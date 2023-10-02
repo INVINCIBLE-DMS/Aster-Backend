@@ -21,6 +21,7 @@ public class LoginAdminService {
 
         Admin admin = Admin.builder()
                 .username(request.getUsername())
+                .secretKey(request.getSecretKey())
                 .build();
 
         if(!request.getSecretKey().equals((admin.getSecretKey()))) {
