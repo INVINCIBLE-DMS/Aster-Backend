@@ -8,6 +8,7 @@ import com.example.asterbackend.domain.user.survey.service.QueryNewSurveyService
 import com.example.asterbackend.domain.admin.survey.service.SaveSurveyStorageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -24,8 +25,9 @@ public class SurveyStorageController {
     private final AnswerSurveyService answerSurveyService;
 
     @PostMapping()
-    public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
-        saveSurveyStorageService.saveSurveyStorage(request);
+    public void saveSurveyStorage(@RequestPart("content") SurveyRequest request,
+                                  @RequestPart(value = "image", required = false) MultipartFile surveyImage) {
+        saveSurveyStorageService.saveSurveyStorage(request, surveyImage);
     }
 
     @GetMapping()

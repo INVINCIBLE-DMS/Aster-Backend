@@ -25,6 +25,9 @@ public class Survey {
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
+    @Column(name = "survey_image")
+    private String surveyImageUrl;
+
     @Column(name = "survey_type", nullable = false)
     private SurveyType surveyType;
 
