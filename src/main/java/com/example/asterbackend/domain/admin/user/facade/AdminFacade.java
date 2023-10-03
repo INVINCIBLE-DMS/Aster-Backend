@@ -15,15 +15,15 @@ public class AdminFacade {
 
     private final AdminRepository adminRepository;
 
-    public Admin getCurrentUser() {
+    public Admin getCurrentAdmin() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if(authentication == null || !authentication.isAuthenticated())
             throw new NotAuthenticatedException("인증되지 않은 사용자입니다.");
 
-        String nickname = authentication.getName();
+        String username = authentication.getName();
 
-        return adminRepository.findByUsername(nickname)
+        return adminRepository.findByUsername(username)
                 .orElseThrow(()->UserNotFoundException.EXCEPTION);
     }
 
