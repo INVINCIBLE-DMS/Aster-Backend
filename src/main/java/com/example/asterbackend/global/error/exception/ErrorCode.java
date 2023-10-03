@@ -22,6 +22,7 @@ public enum ErrorCode {
     NOT_ADMIN(403, "Not admin"),
     EMAIL_MATCHED(409,"email matched"),
     NOT_AUTHENTICATED(401, "NotAuthenticated"),
+    CANDY_NOT_ENOUGH(404, "Candy not enough"),
 
     //Feed
     FEED_NOT_FOUND(404, "Feed not found"),

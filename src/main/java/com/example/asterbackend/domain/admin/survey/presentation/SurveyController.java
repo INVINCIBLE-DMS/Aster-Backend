@@ -1,6 +1,7 @@
 package com.example.asterbackend.domain.admin.survey.presentation;
 
 import com.example.asterbackend.domain.admin.survey.service.SaveSurveyStorageService;
+import com.example.asterbackend.domain.user.feed.presentation.dto.request.FeedRequest;
 import com.example.asterbackend.domain.user.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.admin.survey.presentation.dto.SurveyListResponse;
 import com.example.asterbackend.domain.admin.survey.service.CreateSurveyService;
@@ -9,6 +10,7 @@ import com.example.asterbackend.domain.user.survey.service.QuerySurveyService;
 import com.example.asterbackend.domain.admin.survey.service.UpdateSurveyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -28,8 +30,9 @@ public class SurveyController {
     private final DeleteSurveyService deleteSurveyService;
 
     @PostMapping()
-    public void createSurvey(@RequestBody @Valid SurveyRequest request) {
-        createSurveyService.createSurvey(request);
+    public void createSurvey(@RequestPart("content") SurveyRequest request,
+                             @RequestPart(value = "image", required = false) MultipartFile surveyImage) {
+        createSurveyService.createSurvey(request, surveyImage);
     }
 
     @GetMapping()
@@ -48,8 +51,9 @@ public class SurveyController {
     }
 
     @PostMapping("/storage")
-    public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
-        saveSurveyStorageService.saveSurveyStorage(request);
+    public void saveSurveyStorage(@RequestPart("content") SurveyRequest request,
+                                  @RequestPart(value = "image", required = false) MultipartFile surveyImage) {
+        saveSurveyStorageService.saveSurveyStorage(request, surveyImage);
     }
 
 }

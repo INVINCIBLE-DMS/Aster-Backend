@@ -15,6 +15,8 @@ public class SurveyListResponse {
 
     private String nickname;
 
+    private String surveyImageUrl;
+
     private SurveyType surveyType;
 
     private int agreeCnt;
@@ -23,6 +25,7 @@ public class SurveyListResponse {
         this.id = survey.getId();
         this.content = survey.getContent();
         this.nickname = survey.getNickname();
+        this.surveyImageUrl = survey.getSurveyImageUrl();
         this.surveyType = survey.getSurveyType();
         this.agreeCnt = survey.getAgreeCnt();
     }

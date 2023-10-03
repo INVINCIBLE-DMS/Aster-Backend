@@ -1,6 +1,7 @@
-package com.example.asterbackend.domain.admin.survey.entity;
+package com.example.asterbackend.domain.user.survey.entity;
 
 import com.example.asterbackend.domain.admin.survey.entity.type.SurveyType;
+import com.example.asterbackend.domain.user.survey.entity.type.AnswerType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,19 +11,17 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class SurveyStorage {
+public class SurveyResult {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "content", nullable = false, length = 50)
-    private String content;
-
-    @Column(name = "survey_type", nullable = false)
+    @Enumerated(EnumType.STRING)
     private SurveyType surveyType;
 
-    @Column(name = "survey_image")
-    private String surveyImageUrl;
+    @Enumerated(EnumType.STRING)
+    private AnswerType answerType;
 
+    private int surveyTypeScore;
 }

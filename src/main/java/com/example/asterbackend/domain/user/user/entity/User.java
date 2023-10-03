@@ -72,4 +72,9 @@ public class User {
     public void profileUpload(String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
     }
+
+    public void minusCandy() {
+        this.candy-=50;
+    }
+
 }
