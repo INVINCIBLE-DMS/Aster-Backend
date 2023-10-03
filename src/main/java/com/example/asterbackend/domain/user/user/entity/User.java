@@ -1,8 +1,10 @@
 package com.example.asterbackend.domain.user.user.entity;
 
+import com.example.asterbackend.domain.user.user.entity.type.Authority;
 import com.example.asterbackend.domain.user.user.entity.type.Part;
 import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.*;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 
@@ -17,19 +19,23 @@ public class User {
     @Column(name = "nickname", nullable = false, length = 20)
     private String nickname;
 
-    @Column(name = "username", nullable = false, length = 4)
+    @Column(name = "username", length = 4)
     private String username;
 
-    @Column(name = "student_id", nullable = false, length = 4)
+    @Column(name = "student_id", length = 4)
     private String studentId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "sex", nullable = false)
+    @Column(name = "sex")
     private Sex sex;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "part", nullable = false)
+    @Column(name = "part")
     private Part part;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "authority")
+    private Authority authority;
 
     @Column(name = "candy", nullable = false)
     private int candy = 0;
@@ -48,6 +54,9 @@ public class User {
 
     @Column(name = "profile_image")
     private String profileImageUrl;
+
+    @Value("${key.secretKey}")
+    private String secretKey;
 
     public void addSurveyCandy() {
         this.candy+=200;
