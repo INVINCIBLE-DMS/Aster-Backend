@@ -1,10 +1,8 @@
 package com.example.asterbackend.domain.admin.survey.service;
 
 import com.example.asterbackend.domain.admin.survey.entity.Survey;
-import com.example.asterbackend.domain.admin.user.entity.Admin;
-import com.example.asterbackend.domain.admin.user.facade.AdminFacade;
-import com.example.asterbackend.domain.user.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyRepository;
+import com.example.asterbackend.domain.user.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import com.example.asterbackend.infra.util.S3Util;
@@ -22,7 +20,7 @@ public class CreateSurveyService {
 
     public void createSurvey(SurveyRequest request, MultipartFile surveyImage) {
 
-        Admin admin = adminFacade.getCurrentAdmin();
+        User user = userFacade.getCurrentUser();
 
         String surveyImageUrl = s3Util.upload(surveyImage);
 
