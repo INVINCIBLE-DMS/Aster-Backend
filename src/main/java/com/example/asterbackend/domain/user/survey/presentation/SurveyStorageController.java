@@ -26,8 +26,14 @@ public class SurveyStorageController {
 
     @PostMapping()
     public void saveSurveyStorage(@RequestPart("content") SurveyRequest request,
-                                  @RequestPart(value = "image", required = false) MultipartFile surveyImage) {
-        saveSurveyStorageService.saveSurveyStorage(request, surveyImage);
+                                  @RequestPart(value = "image", required = false) MultipartFile surveyImage)
+    {
+        if (surveyImage != null) {
+            saveSurveyStorageService.saveImageSurveyStorage(request, surveyImage);
+        }
+        else {
+            saveSurveyStorageService.saveSurveyStorage(request);
+        }
     }
 
     @GetMapping()

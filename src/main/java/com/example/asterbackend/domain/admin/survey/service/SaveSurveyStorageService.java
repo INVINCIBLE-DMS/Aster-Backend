@@ -15,7 +15,7 @@ public class SaveSurveyStorageService {
     private final SurveyStorageRepository surveyStorageRepository;
     private final S3Util s3Util;
 
-    public void saveSurveyStorage(SurveyRequest request, MultipartFile surveyImage) {
+    public void saveImageSurveyStorage(SurveyRequest request, MultipartFile surveyImage) {
 
         String surveyImageUrl = s3Util.upload(surveyImage);
 
@@ -24,6 +24,15 @@ public class SaveSurveyStorageService {
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
                         .surveyImageUrl(surveyImageUrl)
+                        .build());
+    }
+
+    public void saveSurveyStorage(SurveyRequest request) {
+
+        surveyStorageRepository.save(
+                SurveyStorage.builder()
+                        .content(request.getContent())
+                        .surveyType(request.getSurveyType())
                         .build());
     }
 

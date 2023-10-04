@@ -18,7 +18,7 @@ public class CreateSurveyService {
     private final UserFacade userFacade;
     private final S3Util s3Util;
 
-    public void createSurvey(SurveyRequest request, MultipartFile surveyImage) {
+    public void createImageSurvey(SurveyRequest request, MultipartFile surveyImage) {
 
         User user = userFacade.getCurrentUser();
 
@@ -29,6 +29,19 @@ public class CreateSurveyService {
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
                         .surveyImageUrl(surveyImageUrl)
+                        .nickname(user.getNickname())
+                        .build());
+
+    }
+
+    public void createSurvey(SurveyRequest request) {
+
+        User user = userFacade.getCurrentUser();
+
+        surveyRepository.save(
+                Survey.builder()
+                        .content(request.getContent())
+                        .surveyType(request.getSurveyType())
                         .nickname(user.getNickname())
                         .build());
 
