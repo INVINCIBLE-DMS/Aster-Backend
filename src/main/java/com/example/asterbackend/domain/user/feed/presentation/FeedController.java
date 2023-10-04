@@ -26,8 +26,14 @@ public class FeedController {
     @PostMapping()
     public void createFeed(
             @RequestPart("content") FeedRequest request,
-            @RequestPart(value = "image", required = false) MultipartFile feedImage) {
-        createFeedService.createFeed(request, feedImage);
+            @RequestPart(value = "image", required = false) MultipartFile feedImage)
+    {
+        if (feedImage != null) {
+            createFeedService.createImageFeed(request, feedImage);
+        }
+        else {
+            createFeedService.createFeed(request);
+        }
     }
 
     @GetMapping()

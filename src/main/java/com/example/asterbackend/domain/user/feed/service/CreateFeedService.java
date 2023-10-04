@@ -24,7 +24,7 @@ public class CreateFeedService {
     private final UserFacade userFacade;
 
     @Transactional
-    public void createFeed(FeedRequest request, MultipartFile feedImage) {
+    public void createImageFeed(FeedRequest request, MultipartFile feedImage) {
         LocalDateTime now = LocalDateTime.now();
 
         User user = userFacade.getCurrentUser();
@@ -36,6 +36,20 @@ public class CreateFeedService {
                         .content(request.getContent())
                         .user(user)
                         .feedImageUrl(feedImageUrl)
+                        .createAt(now)
+                        .build());
+    }
+
+    @Transactional
+    public void createFeed(FeedRequest request) {
+        LocalDateTime now = LocalDateTime.now();
+
+        User user = userFacade.getCurrentUser();
+
+        feedRepository.save(
+                Feed.builder()
+                        .content(request.getContent())
+                        .user(user)
                         .createAt(now)
                         .build());
     }
