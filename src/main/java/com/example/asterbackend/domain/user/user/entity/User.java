@@ -1,7 +1,7 @@
 package com.example.asterbackend.domain.user.user.entity;
 
-import com.example.asterbackend.domain.user.user.entity.type.Authority;
 import com.example.asterbackend.domain.user.user.entity.type.Part;
+import com.example.asterbackend.domain.user.user.entity.type.Role;
 import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,8 +34,8 @@ public class User {
     private Part part;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "authority")
-    private Authority authority;
+    @Column(name = "role")
+    private Role role;
 
     @Column(name = "candy", nullable = false)
     private int candy = 0;
