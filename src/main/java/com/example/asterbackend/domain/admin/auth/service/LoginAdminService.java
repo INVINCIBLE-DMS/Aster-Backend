@@ -3,7 +3,7 @@ package com.example.asterbackend.domain.admin.auth.service;
 import com.example.asterbackend.domain.admin.auth.presentation.dto.request.LoginAdminRequest;
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.user.entity.User;
-import com.example.asterbackend.domain.user.user.entity.type.Authority;
+import com.example.asterbackend.domain.user.user.entity.type.Role;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.NotAdminException;
 import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
@@ -23,7 +23,7 @@ public class LoginAdminService {
         User user = User.builder()
                 .nickname(request.getUsername())
                 .secretKey(request.getSecretKey())
-                .authority(Authority.ADMIN)
+                .role(Role.ADMIN)
                 .build();
 
         if(!request.getSecretKey().equals((user.getSecretKey()))) {
