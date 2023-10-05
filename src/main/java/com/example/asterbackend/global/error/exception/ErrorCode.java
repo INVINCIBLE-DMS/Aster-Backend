@@ -23,6 +23,7 @@ public enum ErrorCode {
     EMAIL_MATCHED(409,"email matched"),
     NOT_AUTHENTICATED(401, "NotAuthenticated"),
     CANDY_NOT_ENOUGH(404, "Candy not enough"),
+    NOT_STUDENT(403, "Not student"),
 
     //Feed
     FEED_NOT_FOUND(404, "Feed not found"),
