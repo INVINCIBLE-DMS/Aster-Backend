@@ -1,7 +1,7 @@
 package com.example.asterbackend.domain.user.student.service;
 
-import com.example.asterbackend.domain.user.student.domain.Student;
-import com.example.asterbackend.domain.user.student.domain.repository.StudentRepository;
+import com.example.asterbackend.domain.user.student.entity.Student;
+import com.example.asterbackend.domain.user.student.repository.StudentRepository;
 import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
