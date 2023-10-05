@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.admin.survey.presentation;
 
 import com.example.asterbackend.domain.admin.survey.service.SaveSurveyStorageService;
-import com.example.asterbackend.domain.user.feed.presentation.dto.request.FeedRequest;
 import com.example.asterbackend.domain.user.survey.presentation.dto.request.SurveyRequest;
 import com.example.asterbackend.domain.admin.survey.presentation.dto.SurveyListResponse;
 import com.example.asterbackend.domain.admin.survey.service.CreateSurveyService;
