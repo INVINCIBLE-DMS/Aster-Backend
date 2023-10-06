@@ -16,8 +16,10 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "username", length = 4, nullable = false)
     private String username;
 
+    @Column(name = "student_id", length = 4, nullable = false)
     private int studentId;
 
     @Enumerated(EnumType.STRING)
@@ -28,4 +30,5 @@ public class Student {
         this.username = username;
         this.sex = sex;
     }
+
 }
