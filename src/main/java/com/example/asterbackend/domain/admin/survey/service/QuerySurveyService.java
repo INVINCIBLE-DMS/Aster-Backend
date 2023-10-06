@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.survey.service;
+package com.example.asterbackend.domain.admin.survey.service;
 
 import com.example.asterbackend.domain.admin.survey.presentation.dto.SurveyListResponse;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyRepository;

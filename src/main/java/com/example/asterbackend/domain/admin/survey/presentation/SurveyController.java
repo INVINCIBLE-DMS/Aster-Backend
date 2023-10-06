@@ -5,7 +5,7 @@ import com.example.asterbackend.domain.user.survey.presentation.dto.request.Surv
 import com.example.asterbackend.domain.admin.survey.presentation.dto.SurveyListResponse;
 import com.example.asterbackend.domain.admin.survey.service.CreateSurveyService;
 import com.example.asterbackend.domain.admin.survey.service.DeleteSurveyService;
-import com.example.asterbackend.domain.user.survey.service.QuerySurveyService;
+import com.example.asterbackend.domain.admin.survey.service.QuerySurveyService;
 import com.example.asterbackend.domain.admin.survey.service.UpdateSurveyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

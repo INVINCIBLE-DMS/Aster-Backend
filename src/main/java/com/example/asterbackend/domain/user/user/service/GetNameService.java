@@ -6,7 +6,6 @@ import com.example.asterbackend.domain.user.user.presentation.dto.response.GetNa
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.CandyNotEnoughException;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
-import com.example.asterbackend.infra.util.S3Util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +17,7 @@ public class GetNameService {
 
     private final UserFacade userFacade;
     private final UserRepository userRepository;
+
     @Transactional
     public GetNameResponse getName(String nickname) {
 
@@ -35,4 +35,5 @@ public class GetNameService {
         return new GetNameResponse(user);
 
     }
+
 }
