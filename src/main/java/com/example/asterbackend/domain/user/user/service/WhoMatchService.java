@@ -2,6 +2,7 @@ package com.example.asterbackend.domain.user.user.service;
 
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.presentation.dto.request.WhoMatchRequest;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -15,10 +16,10 @@ public class WhoMatchService {
 
     private final UserFacade userFacade;
 
-    public int whoMatch(String studentId) {
+    public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
 
-        User who = userRepository.findByNickname(studentId)
+        User who = userRepository.findByNickname(request.getStudentId())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
         int socialScore, knowledgeScore, emotionScore, decisionScore;

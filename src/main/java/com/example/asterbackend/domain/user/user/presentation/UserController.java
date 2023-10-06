@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.user.user.presentation;
 
+import com.example.asterbackend.domain.user.user.presentation.dto.request.WhoMatchRequest;
 import com.example.asterbackend.domain.user.user.presentation.dto.response.GetNameResponse;
 import com.example.asterbackend.domain.user.user.service.GetNameService;
 import com.example.asterbackend.domain.user.user.service.ProfileUploadService;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
@@ -34,8 +36,8 @@ public class UserController {
     }
 
     @GetMapping()
-    public int whoMatch(String studentId) {
-        return whoMatchService.whoMatch(studentId);
+    public int whoMatch(@RequestBody @Valid WhoMatchRequest request) {
+        return whoMatchService.whoMatch(request);
     }
 
 }
