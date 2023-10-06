@@ -20,7 +20,7 @@ public class SurveyComment {
     private String content;
 
     @Column(name = "is_update", nullable = false)
-    private boolean isUpdate = false;
+    private boolean isUpdated = false;
 
     @Column(name = "nickname", nullable = false)
     private String nickname;
@@ -31,7 +31,7 @@ public class SurveyComment {
 
     public void updateContent(String content) {
         this.content = content;
-        this.isUpdate = true;
+        this.isUpdated = true;
     }
 
 }

@@ -11,11 +11,11 @@ public class QueryCommentResponse {
 
     private String content;
 
-    private boolean isUpdate;
+    private boolean isUpdated;
 
     public QueryCommentResponse(Comment comment) {
         this.id = comment.getId();
         this.content = comment.getContent();
-        this.isUpdate = comment.isUpdate();
+        this.isUpdated = comment.isUpdated();
     }
 }
