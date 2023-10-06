@@ -1,6 +1,6 @@
 package com.example.asterbackend.domain.user.survey.service;
 
-import com.example.asterbackend.domain.user.survey.entity.type.AnswerType;
+import com.example.asterbackend.domain.user.survey.type.AnswerType;
 import com.example.asterbackend.domain.admin.survey.entity.type.SurveyType;
 import com.example.asterbackend.domain.user.survey.presentation.dto.request.AnswerSurveyRequest;
 import com.example.asterbackend.domain.user.user.entity.User;

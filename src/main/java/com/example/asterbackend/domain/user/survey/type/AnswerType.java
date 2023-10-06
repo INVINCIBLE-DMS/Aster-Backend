@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.survey.entity.type;
+package com.example.asterbackend.domain.user.survey.type;
 
 public enum AnswerType {
     STRONGLY_AGREE,
