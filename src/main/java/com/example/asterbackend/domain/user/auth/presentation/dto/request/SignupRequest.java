@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.user.auth.presentation.dto.request;
 
-import com.example.asterbackend.domain.user.user.entity.type.Part;
 import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -32,7 +31,4 @@ public class SignupRequest {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private Part part;
 }

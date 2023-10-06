@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.user.user.entity;
 
-import com.example.asterbackend.domain.user.user.entity.type.Part;
 import com.example.asterbackend.domain.user.user.entity.type.Role;
 import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.*;
@@ -28,10 +27,6 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "sex")
     private Sex sex;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "part")
-    private Part part;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
