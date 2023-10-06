@@ -29,7 +29,7 @@ public class User {
     private Sex sex;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role")
+    @Column(name = "role", nullable = false)
     private Role role;
 
     @Column(name = "candy", nullable = false)
@@ -47,7 +47,7 @@ public class User {
     @Column(name = "decision_type_score", nullable = false)
     private int decisionTypeScore = 0;
 
-    @Column(name = "profile_image")
+    @Column(name = "profile_image", length = 25)
     private String profileImageUrl;
 
     @Value("${key.secretKey}")
