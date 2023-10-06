@@ -28,6 +28,7 @@ public class Survey {
     @Column(name = "survey_image")
     private String surveyImageUrl;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "survey_type", nullable = false)
     private SurveyType surveyType;
 

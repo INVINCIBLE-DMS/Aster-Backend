@@ -18,13 +18,13 @@ public class Student {
 
     private String username;
 
-    private int classId;
+    private int studentId;
 
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
     public Student(int classId, String username, Sex sex) {
-        this.classId = classId;
+        this.studentId = classId;
         this.username = username;
         this.sex = sex;
     }

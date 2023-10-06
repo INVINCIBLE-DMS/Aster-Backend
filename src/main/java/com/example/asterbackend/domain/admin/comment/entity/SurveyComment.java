@@ -16,7 +16,7 @@ public class SurveyComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "content", nullable = false, length = 50)
+    @Column(name = "content", nullable = false, length = 30)
     private String content;
 
     @Column(name = "is_update", nullable = false)
