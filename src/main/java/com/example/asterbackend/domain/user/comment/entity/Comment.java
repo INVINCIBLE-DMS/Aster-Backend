@@ -19,8 +19,8 @@ public class Comment {
     @Column(name = "content", nullable = false, length = 50)
     private String content;
 
-    @Column(name = "is_update", nullable = false)
-    private boolean isUpdate = false;
+    @Column(name = "is_updated", nullable = false)
+    private boolean isUpdated = false;
 
     @Column(name = "nickname", nullable = false)
     private String nickname;
@@ -34,7 +34,7 @@ public class Comment {
 
     public void updateContent(String content) {
         this.content = content;
-        this.isUpdate = true;
+        this.isUpdated = true;
     }
 
     public void addCommentLike(Comment comment) {

@@ -36,7 +36,7 @@ public class CreateFeedService {
                         .content(request.getContent())
                         .user(user)
                         .feedImageUrl(feedImageUrl)
-                        .createAt(now)
+                        .createdAt(now)
                         .build());
     }
 
@@ -50,7 +50,7 @@ public class CreateFeedService {
                 Feed.builder()
                         .content(request.getContent())
                         .user(user)
-                        .createAt(now)
+                        .createdAt(now)
                         .build());
     }
 

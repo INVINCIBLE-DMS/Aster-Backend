@@ -25,7 +25,7 @@ public class Feed {
     private String content;
 
     @Column(name = "write_time", nullable = false)
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "like_count", nullable = false)
     private int likeCount = 0;
