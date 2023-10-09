@@ -33,7 +33,7 @@ public class Survey {
     private SurveyType surveyType;
 
     @Column(name = "agree_cnt", nullable = false)
-    private int agreeCnt = 0;
+    private int agreeCnt;
 
     public void updateSurvey(String content, SurveyType surveyType) {
         this.surveyType = surveyType;

@@ -28,7 +28,7 @@ public class Feed {
     private LocalDateTime createdAt;
 
     @Column(name = "like_count", nullable = false)
-    private int likeCount = 0;
+    private int likeCount;
 
     @Column(name = "feed_image", length = 25)
     private String feedImageUrl;
