@@ -30,7 +30,7 @@ public class Comment {
     private Feed feed;
 
     @Column(name = "comment_like_count", nullable = false)
-    private int commentLikeCount = 0;
+    private int commentLikeCount;
 
     public void updateContent(String content) {
         this.content = content;

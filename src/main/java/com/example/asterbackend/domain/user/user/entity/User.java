@@ -33,19 +33,19 @@ public class User {
     private Role role;
 
     @Column(name = "candy", nullable = false)
-    private int candy = 0;
+    private int candy;
 
     @Column(name = "social_type_score", nullable = false)
-    private int socialTypeScore = 0;
+    private int socialTypeScore;
 
     @Column(name = "knowledge_type_score", nullable = false)
-    private int knowledgeTypeScore = 0;
+    private int knowledgeTypeScore;
 
     @Column(name = "emotion_type_score", nullable = false)
-    private int emotionTypeScore = 0;
+    private int emotionTypeScore;
 
     @Column(name = "decision_type_score", nullable = false)
-    private int decisionTypeScore = 0;
+    private int decisionTypeScore;
 
     @Column(name = "profile_image", length = 25)
     private String profileImageUrl;
