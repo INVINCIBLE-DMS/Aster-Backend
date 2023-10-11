@@ -25,7 +25,7 @@ public class Survey {
     @Column(name = "nickname", nullable = false)
     private String nickname;
 
-    @Column(name = "survey_image", length = 25)
+    @Column(name = "survey_image")
     private String surveyImageUrl;
 
     @Enumerated(EnumType.STRING)

@@ -47,7 +47,7 @@ public class User {
     @Column(name = "decision_type_score", nullable = false)
     private int decisionTypeScore;
 
-    @Column(name = "profile_image", length = 25)
+    @Column(name = "profile_image")
     private String profileImageUrl;
 
     @Value("${key.secretKey}")

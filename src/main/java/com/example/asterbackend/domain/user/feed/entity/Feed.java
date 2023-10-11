@@ -30,7 +30,7 @@ public class Feed {
     @Column(name = "like_count", nullable = false)
     private int likeCount;
 
-    @Column(name = "feed_image", length = 25)
+    @Column(name = "feed_image")
     private String feedImageUrl;
 
     public void addLike() {
