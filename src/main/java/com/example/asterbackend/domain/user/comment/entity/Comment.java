@@ -16,7 +16,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "content", nullable = false, length = 50)
+    @Column(name = "content", nullable = false, length = 1000)
     private String content;
 
     @Column(name = "is_updated", nullable = false)

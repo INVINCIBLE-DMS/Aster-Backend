@@ -21,7 +21,7 @@ public class Feed {
     @JoinColumn(name = "user_nickname")
     private User user;
 
-    @Column(name = "content", nullable = false, length = 200)
+    @Column(name = "content", nullable = false, length = 1000)
     private String content;
 
     @Column(name = "write_time", nullable = false)
