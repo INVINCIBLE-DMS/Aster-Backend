@@ -37,7 +37,11 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(500, "Internal server error"),
 
     //survey
-    SURVEY_NOT_FOUND(404, "Survey not found");
+    SURVEY_NOT_FOUND(404, "Survey not found"),
+
+    //image
+    IMAGE_UPLOAD_FAIL(400, "Image upload fail"),
+    WRONG_IMAGE(400, "Wrong Image");
 
     private final int statusCode;
     private final String message;

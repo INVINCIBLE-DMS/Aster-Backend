@@ -17,7 +17,7 @@ public class SaveSurveyStorageService {
 
     public void saveImageSurveyStorage(SurveyRequest request, MultipartFile surveyImage) {
 
-        String surveyImageUrl = s3Util.upload(surveyImage);
+        String surveyImageUrl = s3Util.uploadImage(surveyImage);
 
         surveyStorageRepository.save(
                 SurveyStorage.builder()
