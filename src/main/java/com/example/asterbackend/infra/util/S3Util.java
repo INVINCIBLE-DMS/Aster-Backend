@@ -2,17 +2,26 @@ package com.example.asterbackend.infra.util;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.example.asterbackend.infra.exception.ImageUploadFailedException;
+import com.example.asterbackend.infra.exception.WrongImageException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @RequiredArgsConstructor
-@Service
+@Component
 public class S3Util {
 
     @Value("${cloud.aws.s3.bucket}")
@@ -20,29 +29,33 @@ public class S3Util {
 
     private final AmazonS3 amazonS3;
 
-    public String upload(MultipartFile multipartFile){
+    @Transactional
+    public String uploadImage(MultipartFile image) {
+        if (image.isEmpty() || image.getOriginalFilename() == null) {
+            throw ImageUploadFailedException.EXCEPTION;
+        }
 
-
-        String s3FileName = UUID.randomUUID() + "-" + multipartFile.getOriginalFilename();
-
-        ObjectMetadata objectMetadata = new ObjectMetadata();
+        String fileName = UUID.randomUUID() + image.getOriginalFilename();
 
         try {
-            objectMetadata.setContentType("image/jpeg");
-            objectMetadata.setContentLength(multipartFile.getInputStream().available());
-        } catch (IOException e) {
-            throw new IllegalStateException();
+            PutObjectRequest request = new PutObjectRequest(
+                    bucket, fileName, image.getInputStream(), getObjectMetadata(image)
+            ).withCannedAcl(CannedAccessControlList.PublicRead);
+
+            amazonS3.putObject(request);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
 
-        try{
-            amazonS3.putObject(bucket, s3FileName, multipartFile.getInputStream(), objectMetadata);
-        } catch (Exception e){
-            throw new IllegalStateException();
-        }
+        return getFileUrl(fileName);
+    }
 
+    private ObjectMetadata getObjectMetadata(MultipartFile image) {
+        ObjectMetadata objectMetadata = new ObjectMetadata();
+        objectMetadata.setContentLength(image.getSize());
+        objectMetadata.setContentType(image.getContentType());
 
-        return amazonS3.getUrl(bucket, s3FileName).toString();
-
+        return objectMetadata;
     }
 
     public void deleteFile(String fileName) throws IOException{
@@ -54,4 +67,7 @@ public class S3Util {
 
     }
 
+    public String getFileUrl(String fileName) {
+        return amazonS3.getUrl(bucket, fileName).toString();
+    }
 }

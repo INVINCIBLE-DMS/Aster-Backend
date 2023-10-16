@@ -29,7 +29,7 @@ public class CreateFeedService {
 
         User user = userFacade.getCurrentUser();
 
-        String feedImageUrl = s3Util.upload(feedImage);
+        String feedImageUrl = s3Util.uploadImage(feedImage);
 
         feedRepository.save(
                 Feed.builder()

@@ -22,7 +22,7 @@ public class CreateSurveyService {
 
         User user = userFacade.getCurrentUser();
 
-        String surveyImageUrl = s3Util.upload(surveyImage);
+        String surveyImageUrl = s3Util.uploadImage(surveyImage);
 
         surveyRepository.save(
                 Survey.builder()

@@ -28,7 +28,7 @@ public class ProfileUploadService {
             s3Util.deleteFile(profileImageUrl.split("/")[3]);
         }
 
-        profileImageUrl = s3Util.upload(profileImage);
+        profileImageUrl = s3Util.uploadImage(profileImage);
 
         user.profileUpload(profileImageUrl);
 
