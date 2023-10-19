@@ -11,14 +11,11 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class QuerySurveyService {
-
     private final SurveyRepository surveyRepository;
-
     public List<SurveyListResponse> querySurvey() {
         return surveyRepository.findAll()
                 .stream()
                 .map(SurveyListResponse::new)
                 .collect(Collectors.toList());
     }
-
 }

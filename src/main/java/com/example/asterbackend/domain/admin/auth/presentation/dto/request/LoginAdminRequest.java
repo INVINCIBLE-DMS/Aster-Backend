@@ -9,10 +9,8 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class LoginAdminRequest {
-
     @NotNull
     private String username;
-
     @NotNull
     private String secretKey;
 }

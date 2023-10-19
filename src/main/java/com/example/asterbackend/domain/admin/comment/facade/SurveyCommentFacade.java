@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SurveyCommentFacade {
-
     private final SurveyCommentRepository surveyCommentRepository;
 
     public SurveyComment currentSurveyComment(Long surveyCommentId) {

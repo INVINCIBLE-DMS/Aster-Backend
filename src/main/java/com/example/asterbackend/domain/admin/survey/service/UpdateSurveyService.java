@@ -9,13 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class UpdateSurveyService {
-
     private final SurveyFacade surveyFacade;
-
     public void updateSurvey(Long surveyId, SurveyRequest request) {
         Survey survey = surveyFacade.currentSurvey(surveyId);
 
         survey.updateSurvey(request.getContent(), request.getSurveyType());
     }
-
 }

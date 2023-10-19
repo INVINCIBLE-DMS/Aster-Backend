@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class SurveyFacade {
-
     private final SurveyRepository surveyRepository;
-
     public Survey currentSurvey(Long surveyId) {
         return surveyRepository.findById(surveyId)
                 .orElseThrow(()-> SurveyNotFoundException.EXCEPTION);

@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/agree")
 public class AgreeController {
-
     private final AddAgreeService addAgreeService;
-
     @PostMapping("/{surveyId}")
     public void addAgree(@PathVariable Long surveyId) {
         addAgreeService.addAgree(surveyId);

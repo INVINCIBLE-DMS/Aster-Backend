@@ -15,12 +15,10 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 @RequestMapping("/admin")
 public class AdminAuthController {
-
     private final LoginAdminService loginAdminService;
 
     @PostMapping()
     public TokenResponse login(@RequestBody @Valid LoginAdminRequest request) {
         return loginAdminService.login(request);
     }
-
 }

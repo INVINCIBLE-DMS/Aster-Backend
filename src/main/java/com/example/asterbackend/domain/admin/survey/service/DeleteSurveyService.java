@@ -7,11 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DeleteSurveyService {
-
     private final SurveyRepository surveyRepository;
-
     public void deleteSurvey(Long surveyId) {
         surveyRepository.deleteById(surveyId);
     }
-
 }
