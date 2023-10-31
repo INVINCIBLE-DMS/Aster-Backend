@@ -2,7 +2,9 @@ package com.example.asterbackend.domain.user.feed.presentation;
 
 import com.example.asterbackend.domain.user.feed.presentation.dto.request.FeedRequest;
 import com.example.asterbackend.domain.user.feed.presentation.dto.response.FeedListResponse;
+import com.example.asterbackend.domain.user.feed.presentation.dto.response.ImageUrlResponse;
 import com.example.asterbackend.domain.user.feed.service.CreateFeedService;
+import com.example.asterbackend.infra.s3.service.CreateImageService;
 import com.example.asterbackend.domain.user.feed.service.DeleteFeedService;
 import com.example.asterbackend.domain.user.feed.service.QueryFeedListService;
 import lombok.RequiredArgsConstructor;
@@ -24,16 +26,8 @@ public class FeedController {
     private final DeleteFeedService deleteFeedService;
 
     @PostMapping()
-    public void createFeed(
-            @RequestPart("content") FeedRequest request,
-            @RequestPart(value = "image", required = false) MultipartFile feedImage)
-    {
-        if (feedImage != null) {
-            createFeedService.createImageFeed(request, feedImage);
-        }
-        else {
+    public void createFeed(@RequestBody @Valid FeedRequest request) {
             createFeedService.createFeed(request);
-        }
     }
 
     @GetMapping()
