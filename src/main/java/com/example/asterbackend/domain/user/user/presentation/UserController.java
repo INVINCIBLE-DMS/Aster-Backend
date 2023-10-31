@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
-import java.io.IOException;
 
 @RestController
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/profile")
-    public void upload(@RequestPart(required = false, value = "image") MultipartFile profileImage) throws IOException {
+    public void upload(@RequestPart(required = false, value = "image") MultipartFile profileImage){
         profileUploadService.profileUpload(profileImage);
     }
 

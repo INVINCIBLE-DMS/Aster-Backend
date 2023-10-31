@@ -1,7 +1,7 @@
-package com.example.asterbackend.infra.util;
+package com.example.asterbackend.infra.s3.service;
 
 import com.example.asterbackend.domain.user.feed.presentation.dto.response.ImageUrlResponse;
-import com.example.asterbackend.infra.util.S3Util;
+import com.example.asterbackend.infra.s3.util.S3Util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
