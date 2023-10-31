@@ -1,4 +1,4 @@
-package com.example.asterbackend.infra.exception;
+package com.example.asterbackend.infra.s3.exception;
 
 
 import com.example.asterbackend.global.error.exception.BusinessException;
