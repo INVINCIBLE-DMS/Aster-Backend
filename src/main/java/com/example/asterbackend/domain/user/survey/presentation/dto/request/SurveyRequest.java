@@ -17,4 +17,6 @@ public class SurveyRequest {
     @NotNull
     private SurveyType surveyType;
 
+    private String surveyImgUrl;
+
 }

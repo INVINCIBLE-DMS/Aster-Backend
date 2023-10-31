@@ -30,15 +30,8 @@ public class SurveyController {
     private final DeleteSurveyService deleteSurveyService;
 
     @PostMapping()
-    public void createSurvey(@RequestPart("content") SurveyRequest request,
-                             @RequestPart(value = "image", required = false) MultipartFile surveyImage)
-    {
-        if (surveyImage != null) {
-            createSurveyService.createImageSurvey(request, surveyImage);
-        }
-        else {
+    public void createSurvey(@RequestBody @Valid SurveyRequest request) {
             createSurveyService.createSurvey(request);
-        }
     }
 
     @GetMapping()
@@ -57,16 +50,8 @@ public class SurveyController {
     }
 
     @PostMapping("/storage")
-    public void saveSurveyStorage(@RequestPart("content") SurveyRequest request,
-                                  @RequestPart(value = "image", required = false) MultipartFile surveyImage)
-    {
-        if (surveyImage != null) {
-            saveSurveyStorageService.saveImageSurveyStorage(request, surveyImage);
-
-        }
-        else {
-            saveSurveyStorageService.saveSurveyStorage(request);
-        }
+    public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
+        saveSurveyStorageService.saveImageSurveyStorage(request);
     }
 
 }
