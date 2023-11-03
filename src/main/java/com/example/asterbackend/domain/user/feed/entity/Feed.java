@@ -31,7 +31,7 @@ public class Feed {
     private int likeCount;
 
     @Column(name = "feed_image")
-    private String feedImageUrl;
+    private String feedImgUrl;
 
     public void addLike() {
         likeCount++;

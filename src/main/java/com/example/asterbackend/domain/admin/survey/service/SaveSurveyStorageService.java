@@ -18,7 +18,7 @@ public class SaveSurveyStorageService {
                 SurveyStorage.builder()
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
-                        .surveyImageUrl(request.getSurveyImgUrl())
+                        .surveyImgUrl(request.getSurveyImgUrl())
                         .build());
     }
 

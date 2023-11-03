@@ -13,5 +13,5 @@ public class FeedRequest {
     @NotNull
     private String content;
 
-    private String feedImageUrl;
+    private String feedImgUrl;
 }

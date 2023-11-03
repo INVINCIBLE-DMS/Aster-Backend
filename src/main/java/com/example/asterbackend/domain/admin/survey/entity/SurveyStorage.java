@@ -23,6 +23,6 @@ public class SurveyStorage {
     private SurveyType surveyType;
 
     @Column(name = "survey_image")
-    private String surveyImageUrl;
+    private String surveyImgUrl;
 
 }

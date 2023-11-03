@@ -23,7 +23,7 @@ public class CreateSurveyService {
                 Survey.builder()
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
-                        .surveyImageUrl(request.getSurveyImgUrl())
+                        .surveyImgUrl(request.getSurveyImgUrl())
                         .nickname(user.getNickname())
                         .build());
 

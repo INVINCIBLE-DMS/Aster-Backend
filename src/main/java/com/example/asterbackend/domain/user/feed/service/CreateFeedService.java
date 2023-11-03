@@ -29,7 +29,7 @@ public class CreateFeedService {
                 Feed.builder()
                         .content(request.getContent())
                         .user(user)
-                        .feedImageUrl(request.getFeedImageUrl())
+                        .feedImgUrl(request.getFeedImgUrl())
                         .createdAt(now)
                         .build());
     }
