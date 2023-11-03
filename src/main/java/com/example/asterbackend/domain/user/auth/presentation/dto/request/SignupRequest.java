@@ -34,4 +34,6 @@ public class SignupRequest {
     @NotBlank
     private Long birth;
 
+    private String profileImgUrl;
+
 }

@@ -41,6 +41,7 @@ public class SignupService {
                         .sex(request.getSex())
                         .birth(request.getBirth())
                         .role(Role.GENERAL)
+                        .profileImageUrl(request.getProfileImgUrl())
                         .build());
 
         studentRepository.deleteByUsername(request.getUsername());
