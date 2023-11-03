@@ -1,4 +1,4 @@
-package com.example.asterbackend.domain.user.auth.service;
+package com.example.asterbackend.domain.user.user.service;
 
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.MyInfoResponse;
 import com.example.asterbackend.domain.user.user.entity.User;
