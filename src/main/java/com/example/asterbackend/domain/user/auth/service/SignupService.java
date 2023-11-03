@@ -39,6 +39,7 @@ public class SignupService {
                         .username(request.getUsername())
                         .studentId(request.getStudentId())
                         .sex(request.getSex())
+                        .birth(request.getBirth())
                         .role(Role.GENERAL)
                         .build());
 

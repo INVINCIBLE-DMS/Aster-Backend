@@ -31,4 +31,7 @@ public class SignupRequest {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
+    @NotBlank
+    private Long birth;
+
 }
