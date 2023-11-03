@@ -30,7 +30,7 @@ public class MyInfoResponse {
         nickname = user.getNickname();
         studentId = user.getStudentId();
         birth = user.getBirth();
-        profileImageUrl = user.getProfileImageUrl();
+        profileImageUrl = user.getProfileImgUrl();
         sex = user.getSex();
     }
 }

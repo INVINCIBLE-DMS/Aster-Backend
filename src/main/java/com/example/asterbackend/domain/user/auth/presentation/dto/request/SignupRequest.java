@@ -31,7 +31,7 @@ public class SignupRequest {
     @Enumerated(EnumType.STRING)
     private Sex sex;
 
-    @NotBlank
+    @NotNull
     private Long birth;
 
     private String profileImgUrl;
