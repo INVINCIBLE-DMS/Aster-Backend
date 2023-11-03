@@ -28,6 +28,9 @@ public class User {
     @Column(name = "sex")
     private Sex sex;
 
+    @Column(name = "birth")
+    private Long birth;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
