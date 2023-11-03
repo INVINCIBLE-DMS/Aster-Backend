@@ -17,9 +17,9 @@ public class CreateImageService {
 
     public ImageUrlResponse createImage(MultipartFile multipartFiles) {
 
-        String feedImgUrl = s3Util.uploadImage(multipartFiles);
+        String imageUrl = s3Util.uploadImage(multipartFiles);
 
-        return new ImageUrlResponse(feedImgUrl);
+        return new ImageUrlResponse(imageUrl);
     }
 
 }
