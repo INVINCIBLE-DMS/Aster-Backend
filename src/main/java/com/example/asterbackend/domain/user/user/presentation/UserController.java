@@ -33,7 +33,7 @@ public class UserController {
         return whoMatchService.whoMatch(request);
     }
 
-    @GetMapping
+    @GetMapping("my-info")
     public MyInfoResponse getMyInfo() {
         return myInfoService.getMyInfo();
     }
