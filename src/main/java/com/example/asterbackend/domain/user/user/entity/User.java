@@ -51,7 +51,7 @@ public class User {
     private int decisionTypeScore;
 
     @Column(name = "profile_image")
-    private String profileImageUrl;
+    private String profileImgUrl;
 
     @Value("${key.secretKey}")
     private String secretKey;
@@ -74,10 +74,6 @@ public class User {
 
     public void addDecisionTypeScore(int score) {
         this.socialTypeScore+=score;
-    }
-
-    public void profileUpload(String profileImageUrl) {
-        this.profileImageUrl = profileImageUrl;
     }
 
     public void minusCandy() {
