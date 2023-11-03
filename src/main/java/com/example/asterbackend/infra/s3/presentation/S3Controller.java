@@ -1,9 +1,7 @@
 package com.example.asterbackend.infra.s3.presentation;
 
 import com.example.asterbackend.domain.user.feed.presentation.dto.response.ImageUrlResponse;
-import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import com.example.asterbackend.infra.s3.service.CreateImageService;
-import com.example.asterbackend.infra.s3.util.S3Util;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

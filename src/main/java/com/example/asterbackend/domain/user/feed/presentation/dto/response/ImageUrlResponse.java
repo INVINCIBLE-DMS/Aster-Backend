@@ -9,5 +9,5 @@ import java.util.List;
 @AllArgsConstructor
 public class ImageUrlResponse {
 
-    private String feedImageUrl;
+    private String ImageUrl;
 }
