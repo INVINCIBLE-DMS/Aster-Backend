@@ -18,6 +18,8 @@ public class MyInfoResponse {
 
     private String studentId;
 
+    private Long birth;
+
     private String profileImageUrl;
 
     @Enumerated(EnumType.STRING)
@@ -27,6 +29,7 @@ public class MyInfoResponse {
         username = user.getUsername();
         nickname = user.getNickname();
         studentId = user.getStudentId();
+        birth = user.getBirth();
         profileImageUrl = user.getProfileImageUrl();
         sex = user.getSex();
     }
