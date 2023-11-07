@@ -21,7 +21,7 @@ public class LoginAdminService {
     public TokenResponse login(LoginAdminRequest request) {
 
         User user = User.builder()
-                .nickname(request.getUsername())
+                .username(request.getUsername())
                 .secretKey(request.getSecretKey())
                 .role(Role.ADMIN)
                 .build();

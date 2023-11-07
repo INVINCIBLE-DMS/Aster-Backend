@@ -28,7 +28,7 @@ public class CreateSurveyCommentService {
         surveyCommentRepository.save(
                 SurveyComment.builder()
                         .content(request.getContent())
-                        .nickname(user.getNickname())
+                        .studentId(request.getContent())
                         .survey(survey)
                         .build());
     }
