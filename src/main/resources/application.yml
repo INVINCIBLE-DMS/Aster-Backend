@@ -34,3 +34,4 @@ cloud:
       static: ${STATIC:ap-northeast-2}
   stack:
     auto: false
+test
