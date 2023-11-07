@@ -26,17 +26,17 @@ public class AddCommentLikeService {
 
         User user = userFacade.getCurrentUser();
 
-        if (commentLikeRepository.existsByCommentIdAndNickname(commentId, user.getNickname())) {
+        if (commentLikeRepository.existsByCommentIdAndStudentId(commentId, user.getStudentId())) {
             comment.cancelCommentLike(comment);
 
-            commentLikeRepository.deleteByCommentIdAndNickname(commentId, user.getNickname());
+            commentLikeRepository.deleteByCommentIdAndStudentId(commentId, user.getStudentId());
         }
         else {
             comment.addCommentLike(comment);
 
             commentLikeRepository.save(
                     CommentLike.builder()
-                            .nickname(user.getNickname())
+                            .studentId(user.getStudentId())
                             .comment(comment)
                             .build());
         }

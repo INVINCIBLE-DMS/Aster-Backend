@@ -16,7 +16,7 @@ public class CommentLike {
     private Long id;
 
     @Column(name = "student_id", nullable = false)
-    private String student_id;
+    private String studentId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "comment_id", nullable = false)
