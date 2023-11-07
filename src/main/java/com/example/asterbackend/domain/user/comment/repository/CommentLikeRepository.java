@@ -4,7 +4,7 @@ import com.example.asterbackend.domain.user.comment.entity.CommentLike;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CommentLikeRepository extends JpaRepository<CommentLike, Long> {
-    boolean existsByCommentIdAndNickname(Long commentId, String nickname);
+    boolean existsByCommentIdAndStudentId(Long commentId, String studentId);
 
-    void deleteByCommentIdAndNickname(Long commentId, String nickname);
+    void deleteByCommentIdAndStudentId(Long commentId, String studentId);
 }
