@@ -22,9 +22,9 @@ public class UserFacade {
         if(authentication == null || !authentication.isAuthenticated())
             throw new NotAuthenticatedException("인증되지 않은 사용자입니다.");
 
-        String nickname = authentication.getName();
+        String studentId = authentication.getName();
 
-        return userRepository.findByNickname(nickname)
+        return userRepository.findByStudentId(studentId)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
 }
