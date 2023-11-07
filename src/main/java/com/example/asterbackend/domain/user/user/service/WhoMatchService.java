@@ -19,7 +19,7 @@ public class WhoMatchService {
     public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
 
-        User who = userRepository.findByNickname(request.getStudentId())
+        User who = userRepository.findByStudentId(request.getStudentId())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
         int socialScore, knowledgeScore, emotionScore, decisionScore;
