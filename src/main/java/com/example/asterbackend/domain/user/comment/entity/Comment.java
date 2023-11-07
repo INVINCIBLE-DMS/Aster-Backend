@@ -22,8 +22,8 @@ public class Comment {
     @Column(name = "is_updated", nullable = false)
     private boolean isUpdated = false;
 
-    @Column(name = "nickname", nullable = false)
-    private String nickname;
+    @Column(name = "student_id", nullable = false)
+    private String studentId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
