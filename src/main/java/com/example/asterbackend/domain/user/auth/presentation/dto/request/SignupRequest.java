@@ -20,19 +20,8 @@ public class SignupRequest {
     private String username;
 
     @NotBlank
-    @Size(min = 1, max = 15, message = "nickname은 1글자 이상, 15글자 이하여야 합니다.")
-    private String nickname;
-
-    @NotBlank
     @Size(min = 4, max = 4,message = "studentId은 4글자여야 합니다.")
     private String studentId;
-
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private Sex sex;
-
-    @NotNull
-    private Long birth;
 
     private String profileImgUrl;
 

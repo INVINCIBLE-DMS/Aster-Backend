@@ -14,23 +14,13 @@ public class MyInfoResponse {
 
     private String username;
 
-    private String nickname;
-
     private String studentId;
-
-    private Long birth;
 
     private String profileImageUrl;
 
-    @Enumerated(EnumType.STRING)
-    private Sex sex;
-
     public MyInfoResponse(User user) {
         username = user.getUsername();
-        nickname = user.getNickname();
         studentId = user.getStudentId();
-        birth = user.getBirth();
         profileImageUrl = user.getProfileImgUrl();
-        sex = user.getSex();
     }
 }

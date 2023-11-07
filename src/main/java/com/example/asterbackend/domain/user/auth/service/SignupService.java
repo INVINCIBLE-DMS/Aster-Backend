@@ -25,27 +25,24 @@ public class SignupService {
 
     @Transactional
     public TokenResponse signup(SignupRequest request) {
-        if(!studentRepository.findByUsername(request.getUsername()).isPresent()) {
+        if(!studentRepository.findByStudentId(request.getStudentId()).isPresent()) {
             throw NotStudentException.EXCEPTION;
         }
 
-        if (userRepository.findByNickname(request.getNickname()).isPresent()) {
+        if(userRepository.findByStudentId(request.getStudentId()).isPresent()) {
             throw UserExistsException.EXCEPTION;
         }
 
         userRepository.save(
                 User.builder()
-                        .nickname(request.getNickname())
                         .username(request.getUsername())
                         .studentId(request.getStudentId())
-                        .sex(request.getSex())
-                        .birth(request.getBirth())
                         .role(Role.GENERAL)
                         .profileImgUrl(request.getProfileImgUrl())
                         .build());
 
-        studentRepository.deleteByUsername(request.getUsername());
-        return jwtTokenProvider.receiveToken(request.getNickname());
+        studentRepository.deleteByStudentId(request.getStudentId());
+        return jwtTokenProvider.receiveToken(request.getStudentId());
     }
 
 }
