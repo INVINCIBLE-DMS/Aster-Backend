@@ -26,17 +26,17 @@ public class AddLikeService {
 
         User user = userFacade.getCurrentUser();
 
-        if (likeRepository.existsByFeedIdAndNickname(feedId, user.getNickname())) {
+        if (likeRepository.existsByFeedIdAndStudentId(feedId, user.getStudentId())) {
             feed.cancelLike();
 
-            likeRepository.deleteByFeedIdAndNickname(feedId, user.getNickname());
+            likeRepository.deleteByFeedIdAndStudentId(feedId, user.getStudentId());
         }
         else {
             feed.addLike();
 
             likeRepository.save(
                     Like.builder()
-                            .nickname(user.getNickname())
+                            .studentId(user.getStudentId())
                             .feed(feed)
                             .build());
         }

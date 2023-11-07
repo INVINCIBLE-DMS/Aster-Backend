@@ -18,7 +18,7 @@ public class Feed {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_nickname")
+    @JoinColumn(name = "student_id")
     private User user;
 
     @Column(name = "content", nullable = false, length = 1000)

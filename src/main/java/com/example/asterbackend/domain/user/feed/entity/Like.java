@@ -15,8 +15,8 @@ public class Like {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nickname", nullable = false)
-    private String nickname;
+    @Column(name = "student_id", nullable = false)
+    private String studentId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)

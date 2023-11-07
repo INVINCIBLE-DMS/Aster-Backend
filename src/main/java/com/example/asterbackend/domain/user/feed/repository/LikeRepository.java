@@ -4,7 +4,7 @@ import com.example.asterbackend.domain.user.feed.entity.Like;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LikeRepository extends JpaRepository<Like, Long> {
-    boolean existsByFeedIdAndNickname(Long feedId, String nickname);
+    boolean existsByFeedIdAndStudentId(Long feedId, String studentId);
 
-    void deleteByFeedIdAndNickname(Long feedId, String nickname);
+    void deleteByFeedIdAndStudentId(Long feedId, String studentId);
 }
