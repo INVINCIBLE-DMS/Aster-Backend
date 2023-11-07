@@ -1,14 +1,10 @@
 package com.example.asterbackend.domain.user.auth.presentation.dto.request;
 
-import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Getter

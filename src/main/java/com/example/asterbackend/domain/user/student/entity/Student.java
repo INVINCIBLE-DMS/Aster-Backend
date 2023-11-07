@@ -1,6 +1,5 @@
 package com.example.asterbackend.domain.user.student.entity;
 
-import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,14 +12,11 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "student_id", length = 4, nullable = false)
+    private int studentId;
 
     @Column(name = "username", length = 4, nullable = false)
     private String username;
-
-    @Column(name = "student_id", length = 4, nullable = false)
-    private int studentId;
 
     @Enumerated(EnumType.STRING)
     private Sex sex;

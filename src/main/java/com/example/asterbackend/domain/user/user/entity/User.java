@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.user.user.entity;
 
 import com.example.asterbackend.domain.user.user.entity.type.Role;
-import com.example.asterbackend.domain.user.user.entity.type.Sex;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
