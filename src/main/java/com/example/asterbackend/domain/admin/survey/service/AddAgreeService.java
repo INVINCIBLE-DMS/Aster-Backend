@@ -29,10 +29,10 @@ public class AddAgreeService {
 
         User user = userFacade.getCurrentUser();
 
-        if (agreeRepository.existsBySurveyIdAndNickname(surveyId, user.getNickname())) {
+        if (agreeRepository.existsBySurveyIdAndStudentId(surveyId, user.getStudentId())) {
             survey.cancelAgree();
 
-            agreeRepository.deleteBySurveyIdAndNickname(surveyId, user.getNickname());
+            agreeRepository.deleteBySurveyIdAndStudentId(surveyId, user.getStudentId());
 
         }
         else {
@@ -40,7 +40,7 @@ public class AddAgreeService {
 
             agreeRepository.save(
                     Agree.builder()
-                            .nickname(user.getNickname())
+                            .studentId(user.getStudentId())
                             .survey(survey)
                             .build());
         }

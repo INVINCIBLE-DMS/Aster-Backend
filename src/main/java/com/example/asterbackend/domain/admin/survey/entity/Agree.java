@@ -15,7 +15,8 @@ public class Agree {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nickname;
+    @Column(name = "student_id", nullable = false)
+    private String studentId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id", nullable = false)
