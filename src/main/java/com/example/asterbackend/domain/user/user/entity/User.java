@@ -14,9 +14,6 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @Column(name = "nickname", length = 20)
-    private String nickname;
-
     @Column(name = "username", length = 4)
     private String username;
 
@@ -24,18 +21,8 @@ public class User {
     private String studentId;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "sex")
-    private Sex sex;
-
-    @Column(name = "birth")
-    private Long birth;
-
-    @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
-
-    @Column(name = "candy", nullable = false)
-    private int candy;
 
     @Column(name = "social_type_score", nullable = false)
     private int socialTypeScore;
@@ -55,10 +42,6 @@ public class User {
     @Value("${key.secretKey}")
     private String secretKey;
 
-    public void addSurveyCandy() {
-        this.candy+=200;
-    }
-
     public void addSocialTypeScore(int score) {
         this.socialTypeScore+=score;
     }
@@ -73,10 +56,6 @@ public class User {
 
     public void addDecisionTypeScore(int score) {
         this.socialTypeScore+=score;
-    }
-
-    public void minusCandy() {
-        this.candy-=50;
     }
 
 }
