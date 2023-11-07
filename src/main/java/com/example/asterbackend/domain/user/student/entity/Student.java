@@ -18,13 +18,4 @@ public class Student {
     @Column(name = "username", length = 4, nullable = false)
     private String username;
 
-    @Enumerated(EnumType.STRING)
-    private Sex sex;
-
-    public Student(int classId, String username, Sex sex) {
-        this.studentId = classId;
-        this.username = username;
-        this.sex = sex;
-    }
-
 }
