@@ -28,7 +28,7 @@ public class CreateCoCommentService {
         coCommentRepository.save(
                 CoComment.builder()
                         .content(commentRequest.getContent())
-                        .nickname(user.getNickname())
+                        .studentId(user.getStudentId())
                         .comment(comment)
                         .build());
     }
