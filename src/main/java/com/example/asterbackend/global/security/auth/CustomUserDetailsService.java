@@ -16,7 +16,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String studentId) {
-
         User user = userRepository.findByStudentId(studentId)
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 

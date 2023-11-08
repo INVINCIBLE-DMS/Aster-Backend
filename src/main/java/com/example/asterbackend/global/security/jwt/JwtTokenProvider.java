@@ -27,12 +27,12 @@ public class JwtTokenProvider {
     private final CustomUserDetailsService customUserDetailsService;
 
     // access token 생성
-    public String createAccessToken(String userId) {
+    public String createAccessToken(String studentId) {
 
         Date now = new Date();
 
         return Jwts.builder()
-                .setSubject(userId)
+                .setSubject(studentId)
                 .claim("type", "access")
                 .setIssuedAt(now)
                 .setExpiration(new Date(now.getTime() + jwtProperties.getAccessExpiration() * 1000))
@@ -61,11 +61,11 @@ public class JwtTokenProvider {
         }
     }
 
-    public TokenResponse receiveToken(String nickname) {
+    public TokenResponse receiveToken(String studentId) {
 
         return TokenResponse
                 .builder()
-                .accessToken(createAccessToken(nickname))
+                .accessToken(createAccessToken(studentId))
                 .build();
     }
 

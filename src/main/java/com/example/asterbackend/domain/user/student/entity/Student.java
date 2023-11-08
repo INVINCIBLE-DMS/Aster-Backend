@@ -13,7 +13,7 @@ public class Student {
 
     @Id
     @Column(name = "student_id", length = 4, nullable = false)
-    private int studentId;
+    private String studentId;
 
     @Column(name = "username", length = 4, nullable = false)
     private String username;
