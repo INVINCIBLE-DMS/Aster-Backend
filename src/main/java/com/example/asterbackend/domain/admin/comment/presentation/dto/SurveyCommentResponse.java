@@ -11,11 +11,14 @@ public class SurveyCommentResponse {
 
     private String content;
 
+    private String username;
+
     private boolean isUpdated;
 
     public SurveyCommentResponse(SurveyComment surveyComment) {
         this.id = surveyComment.getId();
         this.content = surveyComment.getContent();
+        this.username = surveyComment.getUsername();
         this.isUpdated = surveyComment.isUpdated();
     }
 }

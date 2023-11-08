@@ -13,7 +13,7 @@ public class SurveyListResponse {
 
     private String content;
 
-    private String studentId;
+    private String username;
 
     private String surveyImgUrl;
 
@@ -24,7 +24,7 @@ public class SurveyListResponse {
     public SurveyListResponse(Survey survey) {
         this.id = survey.getId();
         this.content = survey.getContent();
-        this.studentId = survey.getStudentId();
+        this.username = survey.getUsername();
         this.surveyImgUrl = survey.getSurveyImgUrl();
         this.surveyType = survey.getSurveyType();
         this.agreeCnt = survey.getAgreeCnt();

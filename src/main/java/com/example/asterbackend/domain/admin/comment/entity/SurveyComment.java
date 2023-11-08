@@ -22,8 +22,8 @@ public class SurveyComment {
     @Column(name = "is_update", nullable = false)
     private boolean isUpdated = false;
 
-    @Column(name = "student_id", nullable = false)
-    private String studentId;
+    @Column(name = "username", nullable = false)
+    private String username;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id", nullable = false)

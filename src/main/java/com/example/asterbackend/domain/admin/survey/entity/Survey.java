@@ -22,8 +22,8 @@ public class Survey {
     @Column(name = "is_update", nullable = false)
     private boolean isUpdate = false;
 
-    @Column(name = "student_id", nullable = false)
-    private String studentId;
+    @Column(name = "username", nullable = false)
+    private String username;
 
     @Column(name = "survey_image")
     private String surveyImgUrl;
