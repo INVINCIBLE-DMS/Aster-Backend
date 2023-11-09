@@ -13,7 +13,7 @@ public record CustomUserDetails(User user) implements UserDetails {
 
     @Override
     public String getUsername() {
-        return Integer.toString(user.getStudentId());
+        return user.getStudentId();
     }
 
     public Collection<? extends GrantedAuthority> getAuthorities() {

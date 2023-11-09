@@ -24,7 +24,7 @@ public class CreateSurveyService {
                         .content(request.getContent())
                         .surveyType(request.getSurveyType())
                         .surveyImgUrl(request.getSurveyImgUrl())
-                        .studentId(user.getStudentId())
+                        .username(user.getUsername())
                         .build());
 
     }

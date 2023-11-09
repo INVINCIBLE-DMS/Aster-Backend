@@ -40,7 +40,7 @@ public class AddAgreeService {
 
             agreeRepository.save(
                     Agree.builder()
-                            .studentId(user.getStudentId())
+                            .username(user.getUsername())
                             .survey(survey)
                             .build());
         }
