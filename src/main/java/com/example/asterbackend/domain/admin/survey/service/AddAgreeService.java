@@ -18,9 +18,13 @@ import org.springframework.transaction.annotation.Transactional;
 public class AddAgreeService {
 
     private final UserFacade userFacade;
+
     private final SurveyFacade surveyFacade;
+
     private final AgreeRepository agreeRepository;
+
     private final SurveyStorageRepository surveyStorageRepository;
+
     private final SurveyRepository surveyRepository;
 
     @Transactional
