@@ -9,6 +9,8 @@ import com.example.asterbackend.domain.admin.survey.repository.SurveyRepository;
 import com.example.asterbackend.domain.admin.survey.repository.SurveyStorageRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.repository.UserRepository;
+import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,8 @@ public class AddAgreeService {
 
     private final UserFacade userFacade;
 
+    private final UserRepository userRepository;
+
     private final SurveyFacade surveyFacade;
 
     private final AgreeRepository agreeRepository;
@@ -28,15 +32,17 @@ public class AddAgreeService {
     private final SurveyRepository surveyRepository;
 
     @Transactional
-    public void addAgree(Long surveyId){
+    public void addAgree(Long surveyId, String username){
         Survey survey = surveyFacade.currentSurvey(surveyId);
 
-        User user = userFacade.getCurrentUser();
+       //User user = userFacade.getCurrentUser();
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
-        if (agreeRepository.existsBySurveyIdAndStudentId(surveyId, user.getStudentId())) {
+        if (agreeRepository.existsBySurveyIdAndUsername(surveyId, user.getUsername())) {
             survey.cancelAgree();
 
-            agreeRepository.deleteBySurveyIdAndStudentId(surveyId, user.getStudentId());
+            agreeRepository.deleteBySurveyIdAndUsername(surveyId, user.getUsername());
 
         }
         else {

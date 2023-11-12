@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AgreeController {
     private final AddAgreeService addAgreeService;
     @PostMapping("/{surveyId}")
-    public void addAgree(@PathVariable Long surveyId) {
-        addAgreeService.addAgree(surveyId);
+    public void addAgree(@PathVariable Long surveyId, String username) {
+        addAgreeService.addAgree(surveyId, username);
     }
 }
