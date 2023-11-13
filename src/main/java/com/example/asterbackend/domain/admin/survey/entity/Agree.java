@@ -21,5 +21,4 @@ public class Agree {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id", nullable = false)
     private Survey survey;
-
 }
