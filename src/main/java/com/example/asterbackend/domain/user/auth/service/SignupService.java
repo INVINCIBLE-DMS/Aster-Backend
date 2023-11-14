@@ -25,7 +25,7 @@ public class SignupService {
 
     @Transactional
     public TokenResponse signup(SignupRequest request) {
-        if(!studentRepository.findByStudentId(request.getStudentId()).isPresent()) {
+        if(!studentRepository.findByStudentIdAndUsername(request.getStudentId(), request.getUsername()).isPresent()) {
             throw NotStudentException.EXCEPTION;
         }
 
