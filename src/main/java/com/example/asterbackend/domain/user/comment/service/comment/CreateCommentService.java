@@ -28,7 +28,7 @@ public class CreateCommentService {
         commentRepository.save(
                 Comment.builder()
                         .content(request.getContent())
-                        .studentId(user.getStudentId())
+                        .user(user)
                         .feed(feed)
                         .build());
     }
