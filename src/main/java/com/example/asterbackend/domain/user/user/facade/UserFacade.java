@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class UserFacade {
+public class    UserFacade {
 
     private final UserRepository userRepository;
 
@@ -23,6 +23,8 @@ public class UserFacade {
             throw new NotAuthenticatedException("인증되지 않은 사용자입니다.");
 
         String studentId = authentication.getName();
+        System.out.println(studentId);
+
 
         return userRepository.findByStudentId(studentId)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);

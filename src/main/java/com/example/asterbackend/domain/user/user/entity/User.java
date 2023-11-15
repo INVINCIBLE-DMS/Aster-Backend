@@ -14,11 +14,11 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @Column(name = "username", length = 4)
-    private String username;
-
     @Column(name = "student_id", length = 4)
     private String studentId;
+
+    @Column(name = "username", length = 4)
+    private String username;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
