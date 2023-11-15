@@ -1,6 +1,7 @@
 package com.example.asterbackend.domain.user.comment.entity;
 
 import com.example.asterbackend.domain.user.feed.entity.Feed;
+import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,8 +23,9 @@ public class Comment {
     @Column(name = "is_updated", nullable = false)
     private boolean isUpdated = false;
 
-    @Column(name = "student_id", nullable = false)
-    private String studentId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "student_id", nullable = false)
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
