@@ -31,6 +31,7 @@ public enum ErrorCode {
 
     //Comment
     COMMENT_NOT_FOUND(404, "Comment not found"),
+    NOT_WRITER(403, "Not writer"),
 
     // general
     BAD_REQUEST(400, "Bad request"),
