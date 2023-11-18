@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.user.user.entity;
 
+import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
 import com.example.asterbackend.domain.user.user.entity.type.Role;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     private Role role;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "class_number")
+    private SchoolClass schoolClass;
 
     @Column(name = "social_type_score", nullable = false)
     private int socialTypeScore;
