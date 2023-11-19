@@ -9,13 +9,11 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MyInfoService {
-
     private final UserFacade userFacade;
-
+    
     public MyInfoResponse getMyInfo() {
         User user = userFacade.getCurrentUser();
 
         return new MyInfoResponse(user);
     }
-
 }
