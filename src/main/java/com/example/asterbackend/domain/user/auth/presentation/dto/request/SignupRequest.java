@@ -19,6 +19,9 @@ public class SignupRequest {
     @Size(min = 4, max = 4,message = "studentId은 4글자여야 합니다.")
     private String studentId;
 
+    @NotBlank
+    private Long schoolClassId;
+
     private String profileImgUrl;
 
 }

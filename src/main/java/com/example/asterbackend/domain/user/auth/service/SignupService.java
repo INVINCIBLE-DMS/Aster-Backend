@@ -2,6 +2,8 @@ package com.example.asterbackend.domain.user.auth.service;
 
 import com.example.asterbackend.domain.user.auth.presentation.dto.request.SignupRequest;
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
+import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
+import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
 import com.example.asterbackend.domain.user.student.repository.StudentRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.entity.type.Role;
@@ -23,6 +25,8 @@ public class SignupService {
 
     private final JwtTokenProvider jwtTokenProvider;
 
+    private final SchoolClassFacade schoolClassFacade;
+
     @Transactional
     public TokenResponse signup(SignupRequest request) {
         if(!studentRepository.findByStudentIdAndUsername(request.getStudentId(), request.getUsername()).isPresent()) {
@@ -33,11 +37,14 @@ public class SignupService {
             throw UserExistsException.EXCEPTION;
         }
 
+        SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(request.getSchoolClassId());
+
         userRepository.save(
                 User.builder()
                         .username(request.getUsername())
                         .studentId(request.getStudentId())
                         .role(Role.GENERAL)
+                        .schoolClass(schoolClass)
                         .profileImgUrl(request.getProfileImgUrl())
                         .build());
 
