@@ -25,6 +25,7 @@ public enum ErrorCode {
     CANDY_NOT_ENOUGH(404, "Candy not enough"),
     NOT_STUDENT(403, "Not student"),
     WRITER_MISMATCH(403, "Writer mismatched"),
+    SCHOOL_CLASS_NOT_FOUND(404, "School class not found"),
 
     //Feed
     FEED_NOT_FOUND(404, "Feed not found"),
