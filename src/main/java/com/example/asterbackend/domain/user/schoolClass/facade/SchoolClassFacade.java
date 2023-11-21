@@ -12,9 +12,8 @@ public class SchoolClassFacade {
 
     private final SchoolClassRepository schoolClassRepository;
 
-    public SchoolClass currentSchoolClass(Long SchoolClassId) {
-        return schoolClassRepository.findById(SchoolClassId)
+    public SchoolClass currentSchoolClass(Long grade, Long classNumber) {
+        return schoolClassRepository.findSchoolClassByGradeAndClassNumber(grade, classNumber)
                 .orElseThrow(()-> FeedNotFoundException.EXCEPTION);
     }
-
 }
