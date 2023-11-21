@@ -14,9 +14,14 @@ import javax.persistence.Id;
 public class SchoolClass {
 
     @Id
+    @Column(name = "grade")
+    private Long grade;
+
+    @Id
     @Column(name = "class_number")
     private Long classNumber;
 
     @Column(name = "candy_count")
     private int candyCount;
+
 }

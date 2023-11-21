@@ -37,7 +37,7 @@ public class SignupService {
             throw UserExistsException.EXCEPTION;
         }
 
-        SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(request.getSchoolClassId());
+        SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(request.getGrade(), request.getSchoolClassId());
 
         userRepository.save(
                 User.builder()

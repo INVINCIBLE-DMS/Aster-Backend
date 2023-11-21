@@ -20,6 +20,9 @@ public class SignupRequest {
     private String studentId;
 
     @NotBlank
+    private Long grade;
+
+    @NotBlank
     private Long schoolClassId;
 
     private String profileImgUrl;
