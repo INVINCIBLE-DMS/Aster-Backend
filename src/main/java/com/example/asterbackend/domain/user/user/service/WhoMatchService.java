@@ -1,9 +1,12 @@
 package com.example.asterbackend.domain.user.user.service;
 
+import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
+import com.example.asterbackend.domain.user.schoolClass.repository.SchoolClassRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import com.example.asterbackend.domain.user.user.presentation.dto.request.WhoMatchRequest;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
+import com.example.asterbackend.global.exception.user.SchoolClassNotFoundException;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,11 +19,21 @@ public class WhoMatchService {
 
     private final UserFacade userFacade;
 
+    private final SchoolClassRepository schoolClassRepository;
+
     public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
 
         User who = userRepository.findByStudentId(request.getStudentId())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
+
+        Long grade = Long.parseLong(request.getStudentId().substring(0, 1));
+        Long classNumber = Long.parseLong(request.getStudentId().substring(1, 2));
+
+        SchoolClass schoolClass = schoolClassRepository.findSchoolClassByGradeAndClassNumber(grade, classNumber)
+                .orElseThrow(()-> SchoolClassNotFoundException.EXCEPTION);
+
+        schoolClass.addCandy100();
 
         int socialScore, knowledgeScore, emotionScore, decisionScore;
 
