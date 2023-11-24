@@ -1,6 +1,7 @@
 package com.example.asterbackend.domain.user.user.service;
 
 import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
+import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
 import com.example.asterbackend.domain.user.schoolClass.repository.SchoolClassRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
@@ -19,7 +20,7 @@ public class WhoMatchService {
 
     private final UserFacade userFacade;
 
-    private final SchoolClassRepository schoolClassRepository;
+    private final SchoolClassFacade schoolClassFacade;
 
     public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
@@ -30,8 +31,7 @@ public class WhoMatchService {
         Long grade = Long.parseLong(who.getStudentId().substring(0, 1));
         Long classNumber = Long.parseLong(who.getStudentId().substring(1, 2));
 
-        SchoolClass schoolClass = schoolClassRepository.findSchoolClassByGradeAndClassNumber(grade, classNumber)
-                .orElseThrow(()-> SchoolClassNotFoundException.EXCEPTION);
+        SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(grade, classNumber);
 
         schoolClass.addCandy100();
 
