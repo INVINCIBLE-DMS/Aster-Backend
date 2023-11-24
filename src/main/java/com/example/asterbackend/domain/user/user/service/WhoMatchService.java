@@ -24,11 +24,11 @@ public class WhoMatchService {
     public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
 
-        User who = userRepository.findByStudentId(request.getStudentId())
+        User who = userRepository.findByStudentId(request.getUsername())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
-        Long grade = Long.parseLong(request.getStudentId().substring(0, 1));
-        Long classNumber = Long.parseLong(request.getStudentId().substring(1, 2));
+        Long grade = Long.parseLong(who.getStudentId().substring(0, 1));
+        Long classNumber = Long.parseLong(who.getStudentId().substring(1, 2));
 
         SchoolClass schoolClass = schoolClassRepository.findSchoolClassByGradeAndClassNumber(grade, classNumber)
                 .orElseThrow(()-> SchoolClassNotFoundException.EXCEPTION);
