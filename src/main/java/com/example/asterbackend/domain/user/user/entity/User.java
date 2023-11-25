@@ -26,7 +26,10 @@ public class User {
     private Role role;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "class_number")
+    @JoinColumns({
+            @JoinColumn(name = "grade", referencedColumnName = "grade"),
+            @JoinColumn(name = "class_number", referencedColumnName = "class_number")
+    })
     private SchoolClass schoolClass;
 
     @Column(name = "social_type_score", nullable = false)
