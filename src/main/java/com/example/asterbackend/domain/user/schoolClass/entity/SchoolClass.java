@@ -2,11 +2,10 @@ package com.example.asterbackend.domain.user.schoolClass.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@IdClass(SchoolClassId.class)
 @Getter
 @Builder
 @AllArgsConstructor
