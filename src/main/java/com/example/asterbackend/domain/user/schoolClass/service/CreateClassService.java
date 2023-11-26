@@ -35,5 +35,6 @@ public class CreateClassService {
         schoolClassList.add(new SchoolClass(3L, 3L, 0));
         schoolClassList.add(new SchoolClass(3L, 4L, 0));
 
+        schoolClassRepository.saveAll(schoolClassList);
     }
 }
