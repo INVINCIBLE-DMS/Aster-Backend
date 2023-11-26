@@ -25,7 +25,7 @@ public class WhoMatchService {
     public int whoMatch(WhoMatchRequest request) {
         User user = userFacade.getCurrentUser();
 
-        User who = userRepository.findByStudentId(request.getUsername())
+        User who = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
         Long grade = Long.parseLong(who.getStudentId().substring(0, 1));
