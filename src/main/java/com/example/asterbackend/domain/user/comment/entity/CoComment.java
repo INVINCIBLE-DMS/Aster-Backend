@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.user.comment.entity;
 
+import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,8 +19,9 @@ public class CoComment {
     @Column(name = "content", nullable = false, length = 1000)
     private String content;
 
-    @Column(name = "student_id", nullable = false)
-    private String studentId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "student_id", nullable = false)
+    private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "comment_id", nullable = false)
