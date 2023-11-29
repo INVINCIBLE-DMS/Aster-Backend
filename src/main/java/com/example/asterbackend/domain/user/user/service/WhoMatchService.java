@@ -33,7 +33,7 @@ public class WhoMatchService {
 
             SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(grade, classNumber);
 
-            schoolClass.addCandy100();
+            schoolClass.addCandy(100);
         }
 
         int socialScore, knowledgeScore, emotionScore, decisionScore;

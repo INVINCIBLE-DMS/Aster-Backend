@@ -36,7 +36,7 @@ public class BothMatchService {
 
             SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(grade, classNumber);
 
-            schoolClass.addCandy100();
+            schoolClass.addCandy(100);
         }
 
         if(me.getStudentId().substring(0, 1).equals(user2.getStudentId().substring(0,1))) return 0;
@@ -46,7 +46,7 @@ public class BothMatchService {
 
             SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(grade, classNumber);
 
-            schoolClass.addCandy100();
+            schoolClass.addCandy(100);
         }
 
         int socialScore, knowledgeScore, emotionScore, decisionScore;

@@ -36,7 +36,7 @@ public class CreateFeedService {
         SchoolClass schoolClass = schoolClassRepository.findSchoolClassByGradeAndClassNumber(grade, classNumber)
                 .orElseThrow(()-> SchoolClassNotFoundException.EXCEPTION);
 
-        schoolClass.addCandy50();
+        schoolClass.addCandy(50);
 
         feedRepository.save(
                 Feed.builder()

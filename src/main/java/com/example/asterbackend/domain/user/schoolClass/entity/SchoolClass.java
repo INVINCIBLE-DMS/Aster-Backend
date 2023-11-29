@@ -23,12 +23,8 @@ public class SchoolClass {
     @Column(name = "candy_count")
     private int candyCount;
 
-    public void addCandy100() {
-        this.candyCount+=100;
-    }
-
-    public void addCandy50() {
-        this.candyCount+=50;
+    public void addCandy(int candy) {
+        this.candyCount+=candy;
     }
 
 }
