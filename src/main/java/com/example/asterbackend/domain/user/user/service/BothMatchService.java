@@ -49,7 +49,6 @@ public class BothMatchService {
             schoolClass.addCandy100();
         }
 
-
         int socialScore, knowledgeScore, emotionScore, decisionScore;
 
         socialScore = 100 - Math.abs(user1.getSocialTypeScore() - user2.getSocialTypeScore());
@@ -59,4 +58,5 @@ public class BothMatchService {
 
         return (socialScore + knowledgeScore + emotionScore + decisionScore)/4;
     }
+
 }
