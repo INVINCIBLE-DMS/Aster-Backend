@@ -19,27 +19,33 @@ public class QueryNewSurveyService {
     public List<SurveyStorage> queryNewSurvey() {
         List<SurveyStorage> surveyList = new ArrayList<>();
 
-        SurveyStorage randomSocialSurvey = getRandomSurvey(SurveyType.SOCIAL_TYPE);
-        SurveyStorage randomKnowledgeSurvey = getRandomSurvey(SurveyType.KNOWLEDGE_TYPE);
-        SurveyStorage randomEmotionSurvey = getRandomSurvey(SurveyType.EMOTION_TYPE);
-        SurveyStorage randomDecisionSurvey = getRandomSurvey(SurveyType.DECISION_TYPE);
+        List<SurveyStorage> randomSocialSurvey = getRandomSurvey(SurveyType.SOCIAL_TYPE);
+        List<SurveyStorage> randomKnowledgeSurvey = getRandomSurvey(SurveyType.KNOWLEDGE_TYPE);
+        List<SurveyStorage> randomEmotionSurvey = getRandomSurvey(SurveyType.EMOTION_TYPE);
+        List<SurveyStorage> randomDecisionSurvey = getRandomSurvey(SurveyType.DECISION_TYPE);
 
-        surveyList.add(randomSocialSurvey);
-        surveyList.add(randomKnowledgeSurvey);
-        surveyList.add(randomEmotionSurvey);
-        surveyList.add(randomDecisionSurvey);
+        surveyList.addAll(randomSocialSurvey);
+        surveyList.addAll(randomKnowledgeSurvey);
+        surveyList.addAll(randomEmotionSurvey);
+        surveyList.addAll(randomDecisionSurvey);
 
         return surveyList;
     }
 
-    private SurveyStorage getRandomSurvey(SurveyType surveyType) {
-        // 해당 타입의 모든 설문조사를 조회
+    private List<SurveyStorage> getRandomSurvey(SurveyType surveyType) {
+        // 해당 타입의 모든 설문을 조회
         List<SurveyStorage> surveysOfType = surveyStorageRepository.findEnumSurvey(surveyType);
+        List<SurveyStorage> randomSurveys = new ArrayList<>();
 
-        // 랜덤하게 선택
+        // 랜덤으로 설문 4개 반환
         Random random = new Random();
-        int randomIndex = random.nextInt(surveysOfType.size());
-        return surveysOfType.get(randomIndex);
+        for(int i=0;i<4;i++) {
+            SurveyStorage randomSurvey = surveysOfType.get(random.nextInt());
+            if(randomSurveys.contains(randomSurvey))continue;;
+            randomSurveys.add(randomSurvey);
+        }
+
+        return randomSurveys;
     }
 
 }
