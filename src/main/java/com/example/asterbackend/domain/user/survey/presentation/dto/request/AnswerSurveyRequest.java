@@ -18,7 +18,4 @@ public class AnswerSurveyRequest {
     @NotNull
     private AnswerType answerType;
 
-    @NotNull
-    private boolean isLast;
-
 }
