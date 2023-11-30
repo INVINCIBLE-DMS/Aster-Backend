@@ -27,7 +27,7 @@ public class CustomSurveyStorageRepositoryImpl implements CustomSurveyStorageRep
         Collections.shuffle(surveys);
 
         return surveys.stream()
-                .limit(3)
+                .limit(4)
                 .collect(Collectors.toList());
     }
 
