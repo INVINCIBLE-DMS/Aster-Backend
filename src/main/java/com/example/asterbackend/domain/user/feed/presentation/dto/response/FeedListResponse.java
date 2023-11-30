@@ -17,19 +17,22 @@ public class FeedListResponse {
 
     private String feedImgUrl;
 
-    private User user;
-
     private LocalDateTime createdAt;
 
     private int likeCount;
+
+    private String username;
+
+    private String profileImgUrl;
 
     public FeedListResponse(Feed feed) {
         this.id = feed.getId();
         this.content = feed.getContent();
         this.feedImgUrl = feed.getFeedImgUrl();
-        this.user = feed.getUser();
         this.createdAt = feed.getCreatedAt();
         this.likeCount = feed.getLikeCount();
+        this.username = feed.getUser().getUsername();
+        this.feedImgUrl = feed.getUser().getProfileImgUrl();
     }
 
 }
