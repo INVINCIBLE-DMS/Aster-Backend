@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .antMatchers("/auth").permitAll()
                 .antMatchers("/survey/**", "/survey-comment/**").hasRole("ADMIN")
-                .antMatchers("/feed/**", "/auth/**", "/comment/**").authenticated()
+                .antMatchers("/feed/**", "/comment/**", "/user/**", "/survey-storage/**", "/co-comment/**", "/like/**", "/comment-like/**").authenticated()
                 .anyRequest().permitAll()
 
                 .and()
