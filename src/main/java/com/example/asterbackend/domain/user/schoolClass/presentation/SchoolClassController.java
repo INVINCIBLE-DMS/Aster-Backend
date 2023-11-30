@@ -24,7 +24,7 @@ public class SchoolClassController {
         createClassService.createAllClass();
     }
     
-    @GetMapping
+    @GetMapping()
     public List<SchoolClass> getRank() {
         return getRankService.getRank();
     }
