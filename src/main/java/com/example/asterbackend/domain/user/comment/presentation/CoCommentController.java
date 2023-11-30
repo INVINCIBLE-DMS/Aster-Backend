@@ -32,9 +32,9 @@ public class CoCommentController {
         return queryCoCommentService.queryCoComment(commentId);
     }
 
-    @DeleteMapping("/{coCommentId}")
-    public void deleteCoComment(@PathVariable Long coCommentId) {
-        deleteCoCommentService.deleteCoComment(coCommentId);
+    @DeleteMapping("/{commentId}")
+    public void deleteCoComment(@PathVariable Long commentId) {
+        deleteCoCommentService.deleteCoComment(commentId);
     }
 
 }
