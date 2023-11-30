@@ -12,11 +12,14 @@ public class QueryCoCommentResponse {
 
     private String content;
 
-    private User user;
+    private String username;
+
+    private String profileImgUrl;
 
     public QueryCoCommentResponse(CoComment cocomment) {
         this.id = cocomment.getId();
         this.content = cocomment.getContent();
-        this.user = cocomment.getUser();
+        this.username = cocomment.getUser().getUsername();
+        this.profileImgUrl = cocomment.getUser().getProfileImgUrl();
     }
 }

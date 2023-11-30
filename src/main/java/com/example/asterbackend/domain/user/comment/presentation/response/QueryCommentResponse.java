@@ -10,16 +10,22 @@ import lombok.Getter;
 public class QueryCommentResponse {
     private Long id;
 
-    private User user;
-
     private String content;
+
+    private int commentLikeCount;
 
     private boolean isUpdated;
 
+    private String username;
+
+    private String profileImgUrl;
+
     public QueryCommentResponse(Comment comment) {
         this.id = comment.getId();
-        this.user = comment.getUser();
         this.content = comment.getContent();
+        this.commentLikeCount = comment.getCommentLikeCount();
         this.isUpdated = comment.isUpdated();
+        this.username = comment.getUser().getUsername();
+        this.profileImgUrl = comment.getUser().getProfileImgUrl();
     }
 }
