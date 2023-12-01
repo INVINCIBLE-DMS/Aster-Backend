@@ -13,6 +13,8 @@ public class QueryCommentResponse {
 
     private Long feedId;
 
+    private String feedTitle;
+
     private String feedContent;
 
     private String feedImgUrl;
@@ -39,6 +41,7 @@ public class QueryCommentResponse {
 
     public QueryCommentResponse(Comment comment) {
         this.feedId  = comment.getFeed().getId();
+        this.feedTitle = comment.getFeed().getTitle();
         this.feedContent = comment.getFeed().getContent();
         this.feedImgUrl = comment.getFeed().getFeedImgUrl();
         this.createdAt = comment.getFeed().getCreatedAt();
