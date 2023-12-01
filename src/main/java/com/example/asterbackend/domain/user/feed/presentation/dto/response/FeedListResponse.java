@@ -13,6 +13,8 @@ public class FeedListResponse {
 
     private Long id;
 
+    private String title;
+
     private String content;
 
     private String feedImgUrl;
@@ -27,6 +29,7 @@ public class FeedListResponse {
 
     public FeedListResponse(Feed feed) {
         this.id = feed.getId();
+        this.title = feed.getTitle();
         this.content = feed.getContent();
         this.feedImgUrl = feed.getFeedImgUrl();
         this.createdAt = feed.getCreatedAt();

@@ -11,6 +11,9 @@ import javax.validation.constraints.NotNull;
 public class FeedRequest {
 
     @NotNull
+    private String title;
+
+    @NotNull
     private String content;
 
     private String feedImgUrl;

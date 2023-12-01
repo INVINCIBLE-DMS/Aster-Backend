@@ -40,6 +40,7 @@ public class CreateFeedService {
 
         feedRepository.save(
                 Feed.builder()
+                        .title(request.getTitle())
                         .content(request.getContent())
                         .user(user)
                         .feedImgUrl(request.getFeedImgUrl())
