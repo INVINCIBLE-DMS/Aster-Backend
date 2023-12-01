@@ -35,7 +35,7 @@ public class FeedListResponse {
         this.createdAt = feed.getCreatedAt();
         this.likeCount = feed.getLikeCount();
         this.username = feed.getUser().getUsername();
-        this.feedImgUrl = feed.getUser().getProfileImgUrl();
+        this.profileImgUrl = feed.getUser().getProfileImgUrl();
     }
 
 }
