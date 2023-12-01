@@ -5,27 +5,52 @@ import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @AllArgsConstructor
 public class QueryCommentResponse {
-    private Long id;
 
-    private String content;
+    private Long feedId;
+
+    private String feedContent;
+
+    private String feedImgUrl;
+
+    private LocalDateTime createdAt;
+
+    private int feedLikeCount;
+
+    private String feedWriter;
+
+    private String feedWriterProfile;
+
+    private Long commentId;
+
+    private String commentContent;
 
     private int commentLikeCount;
 
-    private boolean isUpdated;
+    private boolean commentIsUpdated;
 
-    private String username;
+    private String commentWriter;
 
-    private String profileImgUrl;
+    private String commentWriterProfile;
 
     public QueryCommentResponse(Comment comment) {
-        this.id = comment.getId();
-        this.content = comment.getContent();
+        this.feedId  = comment.getFeed().getId();
+        this.feedContent = comment.getFeed().getContent();
+        this.feedImgUrl = comment.getFeed().getFeedImgUrl();
+        this.createdAt = comment.getFeed().getCreatedAt();
+        this.feedLikeCount = comment.getFeed().getLikeCount();
+        this.feedWriter = comment.getFeed().getUser().getUsername();
+        this.feedWriterProfile = comment.getFeed().getUser().getProfileImgUrl();
+        this.commentId = comment.getId();
+        this.commentContent = comment.getContent();
         this.commentLikeCount = comment.getCommentLikeCount();
-        this.isUpdated = comment.isUpdated();
-        this.username = comment.getUser().getUsername();
-        this.profileImgUrl = comment.getUser().getProfileImgUrl();
+        this.commentIsUpdated = comment.isUpdated();
+        this.commentWriter = comment.getUser().getUsername();
+        this.commentWriterProfile = comment.getUser().getProfileImgUrl();
+
     }
 }
