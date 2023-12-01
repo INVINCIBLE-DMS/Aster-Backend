@@ -21,6 +21,9 @@ public class Feed {
     @JoinColumn(name = "student_id")
     private User user;
 
+    @Column(name = "title", nullable = false, length = 50)
+    private String title;
+
     @Column(name = "content", nullable = false, length = 1000)
     private String content;
 
