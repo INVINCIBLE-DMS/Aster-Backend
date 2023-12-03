@@ -7,6 +7,7 @@ import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -14,6 +15,7 @@ public class AnswerSurveyService {
 
     private final UserFacade userFacade;
 
+    @Transactional
     public void answerSurvey(AnswerSurveyRequest request) {
         User user = userFacade.getCurrentUser();
 
