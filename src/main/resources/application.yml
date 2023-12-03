@@ -26,11 +26,11 @@ server:
 cloud:
   aws:
     credentials:
-      accessKey: ${ACCESS-KEY:AKIA472XLIA4MZWDJ2YB}
-      secretKey: ${SECRET-KEY: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}
+      accessKey: ${ACCESS_KEY:AKIA472XLIA4MZWDJ2YB}
+      secretKey: ${SECRET_KEY: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}
     s3:
-      bucket: ${BUCKET:kangsunbucket}
+      bucket: kangsunbucket
     region:
-      static: ${STATIC:ap-northeast-2}
+      static: ap-northeast-2
   stack:
     auto: false
