@@ -8,8 +8,11 @@ permissions:
   contents: read
 
 jobs:
-  build:
 
+  build:
+    permissions:
+      id-token: write
+      contents: read
     runs-on: ubuntu-latest
 
     steps:
@@ -24,14 +27,12 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build -x test
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
+      - name: Deploy to xquare
+        uses: team-xquare/xquare-deployment-action@master
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: Build the Docker image
-        run: docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/aster-server
-
-      - name: Docker Push
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/aster-server
+          environment: prod
+          access_key: ${{ secrets.ACCESS_KEY }}
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          build_args: | 
+            DB_USERNAME=${{ secrets.DB_USERNAME }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
