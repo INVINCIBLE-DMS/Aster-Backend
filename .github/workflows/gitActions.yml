@@ -33,6 +33,10 @@ jobs:
           environment: prod
           access_key: ${{ secrets.ACCESS_KEY }}
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          build_args: | 
+          build_args: |
+            DB_URL=${{ secrets.DB_URL }}
             DB_USERNAME=${{ secrets.DB_USERNAME }}
             DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            ACCESS_KEY=${{ secrets.ACCESS_KEY }}
+            SECRET_KEY=${{ secrets.SECRET_KEY }}
+            
