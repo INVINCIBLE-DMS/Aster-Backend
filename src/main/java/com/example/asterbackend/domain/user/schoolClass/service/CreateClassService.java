@@ -37,4 +37,5 @@ public class CreateClassService {
 
         schoolClassRepository.saveAll(schoolClassList);
     }
+    
 }
