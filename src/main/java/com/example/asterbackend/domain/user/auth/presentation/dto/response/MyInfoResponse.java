@@ -16,7 +16,7 @@ public class MyInfoResponse {
     private String studentId;
 
     private String profileImageUrl;
-    
+
     public MyInfoResponse(User user) {
         username = user.getUsername();
         studentId = user.getStudentId();

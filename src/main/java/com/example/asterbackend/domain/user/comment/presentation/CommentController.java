@@ -20,7 +20,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/comment")
+@RequestMapping("/aster/comment")
 public class CommentController {
 
     private final CreateCommentService createCommentService;

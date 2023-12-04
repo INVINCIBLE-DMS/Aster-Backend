@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/survey-storage")
+@RequestMapping("/aster/survey-storage")
 public class SurveyStorageController {
 
     private final SaveSurveyStorageService saveSurveyStorageService;

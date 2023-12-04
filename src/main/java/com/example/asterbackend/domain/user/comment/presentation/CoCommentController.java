@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/co-comment")
+@RequestMapping("/aster/co-comment")
 public class CoCommentController {
 
     private final CreateCoCommentService createCoCommentService;
