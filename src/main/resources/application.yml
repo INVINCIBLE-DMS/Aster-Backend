@@ -20,7 +20,7 @@ jwt:
   secret: lhjljlasndflasjdkfasdkfnasdasjidkflajsdkfahsdfjkafewfawefwaefeawfw
   accessExpiration: 604800
 key:
-  secretKey: ${SECRET_KEY}
+  secretKey: ${STUDENT_SECRET_KEY}
 server:
   port: 8080
 cloud:

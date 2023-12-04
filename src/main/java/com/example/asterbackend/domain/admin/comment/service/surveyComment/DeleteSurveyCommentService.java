@@ -13,5 +13,5 @@ public class DeleteSurveyCommentService {
     public void deleteSurveyComment(Long surveyCommentId) {
         surveyCommentRepository.deleteById(surveyCommentId);
     }
-    
+
 }

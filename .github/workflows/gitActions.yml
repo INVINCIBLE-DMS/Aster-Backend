@@ -31,7 +31,7 @@ jobs:
         uses: team-xquare/xquare-deployment-action@master
         with:
           environment: prod
-          access_key: ${{ secrets.ACCESS_KEY }}
+          access_key: ${{ secrets.ACCESS_TOKEN }}
           github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           build_args: |
             DB_URL=${{ secrets.DB_URL }}
