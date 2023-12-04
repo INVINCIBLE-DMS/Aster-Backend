@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/school-class")
+@RequestMapping("aster/school-class")
 public class SchoolClassController {
 
     private final CreateClassService createClassService;
