@@ -14,9 +14,12 @@ public class MyInfoResponse {
 
     private String profileImageUrl;
 
+    private String test;
+
     public MyInfoResponse(User user) {
         username = user.getUsername();
         studentId = user.getStudentId();
         profileImageUrl = user.getProfileImgUrl();
+        test = user.getUsername();
     }
 }
