@@ -14,7 +14,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/user")
+@RequestMapping("/aster/user")
 public class UserController {
 
     private final WhoMatchService whoMatchService;
