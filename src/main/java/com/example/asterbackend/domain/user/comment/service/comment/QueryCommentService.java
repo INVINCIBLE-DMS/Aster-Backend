@@ -29,9 +29,9 @@ public class QueryCommentService {
     public FeedAndCommentsResponse queryComment(Long feedId) {
         Feed feed = feedFacade.currentFeed(feedId);
 
-        String currentUserId = userFacade.getUser();
+        String studentId = userFacade.getStudentId();
 
-        boolean isLiked = likeRepository.existsByFeedAndStudentId(feed, currentUserId);
+        boolean isLiked = likeRepository.existsByFeedAndStudentId(feed, studentId);
 
         FeedListResponse feedResponse = new FeedListResponse(feed,isLiked);
 
