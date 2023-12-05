@@ -1,5 +1,7 @@
 package com.example.asterbackend.domain.user.feed.service;
 
+import com.example.asterbackend.domain.user.comment.repository.CoCommentRepository;
+import com.example.asterbackend.domain.user.comment.repository.CommentRepository;
 import com.example.asterbackend.domain.user.feed.entity.Feed;
 import com.example.asterbackend.domain.user.feed.repository.FeedRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
@@ -17,6 +19,7 @@ import static com.example.asterbackend.global.error.exception.ErrorCode.WRITER_M
 public class DeleteFeedService {
 
     private final FeedRepository feedRepository;
+
     private final UserFacade userFacade;
 
     public void deleteFeed(Long feedId) {
@@ -24,7 +27,7 @@ public class DeleteFeedService {
         User currentUser = userFacade.getCurrentUser();
 
         Feed feed = feedRepository.findById(feedId)
-                        .orElseThrow(()-> FeedNotFoundException.EXCEPTION);
+                .orElseThrow(()-> FeedNotFoundException.EXCEPTION);
 
         if (!currentUser.equals(feed.getUser())) {
             throw WriterMismatchException.EXCEPTION;

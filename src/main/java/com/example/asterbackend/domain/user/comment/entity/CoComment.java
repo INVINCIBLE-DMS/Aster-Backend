@@ -1,5 +1,6 @@
 package com.example.asterbackend.domain.user.comment.entity;
 
+import com.example.asterbackend.domain.user.feed.entity.Feed;
 import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.*;
 
