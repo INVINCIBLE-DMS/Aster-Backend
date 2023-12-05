@@ -11,12 +11,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/aster/image")
+@RequestMapping("/aster")
 public class S3Controller {
 
     private final CreateImageService createImageService;
 
-    @PostMapping
+    @PostMapping("/image")
     public ImageUrlResponse createImage(@RequestPart(value = "image", required = false) MultipartFile multipartFiles) {
         return createImageService.createImage(multipartFiles);
     }
