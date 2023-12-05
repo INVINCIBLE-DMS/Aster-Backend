@@ -25,14 +25,14 @@ public class UserController {
 
     private final DeleteUserService deleteUserService;
 
-    @GetMapping()
-    public int whoMatch(@RequestBody @Valid WhoMatchRequest request) {
-        return whoMatchService.whoMatch(request);
+    @GetMapping("/{username}")
+    public int whoMatch(@PathVariable String username) {
+        return whoMatchService.whoMatch(username);
     }
 
-    @GetMapping("/both")
-    public int bothMatch(@RequestBody @Valid BothMatchRequest request) {
-        return bothMatchService.bothMatch(request);
+    @GetMapping("/both/{username1}/{username2}")
+    public int bothMatch(@PathVariable String username1, @PathVariable String username2) {
+        return bothMatchService.bothMatch(username1, username2);
     }
 
     @GetMapping("/my-info")

@@ -20,10 +20,10 @@ public class WhoMatchService {
 
     private final SchoolClassFacade schoolClassFacade;
 
-    public int whoMatch(WhoMatchRequest request) {
+    public int whoMatch(String username) {
         User me = userFacade.getCurrentUser();
 
-        User user = userRepository.findByUsername(request.getUsername())
+        User user = userRepository.findByUsername(username)
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
         if(me.getStudentId().substring(0, 1).equals(user.getStudentId().substring(0,1))) return 0;

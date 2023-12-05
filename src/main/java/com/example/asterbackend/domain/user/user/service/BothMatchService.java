@@ -20,13 +20,13 @@ public class BothMatchService {
 
     private final SchoolClassFacade schoolClassFacade;
 
-    public int bothMatch(BothMatchRequest request) {
+    public int bothMatch(String username1, String username2) {
         User me = userFacade.getCurrentUser();
 
-        User user1 = userRepository.findByUsername(request.getUsername1())
+        User user1 = userRepository.findByUsername(username1)
                 .orElseThrow(()->UserNotFoundException.EXCEPTION);
 
-        User user2 = userRepository.findByUsername(request.getUsername2())
+        User user2 = userRepository.findByUsername(username2)
                 .orElseThrow(()->UserNotFoundException.EXCEPTION);
 
         if(me.getStudentId().substring(0, 1).equals(user1.getStudentId().substring(0,1))) return 0;
