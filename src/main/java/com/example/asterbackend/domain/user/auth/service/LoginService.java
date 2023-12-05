@@ -3,7 +3,6 @@ package com.example.asterbackend.domain.user.auth.service;
 import com.example.asterbackend.domain.user.auth.presentation.dto.request.LoginRequest;
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
-import com.example.asterbackend.domain.user.student.repository.StudentRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
@@ -16,8 +15,6 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
     private final UserRepository userRepository;
-
-    private final StudentRepository studentRepository;
 
     private final JwtTokenProvider jwtTokenProvider;
 

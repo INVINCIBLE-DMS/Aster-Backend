@@ -4,11 +4,9 @@ import com.example.asterbackend.domain.user.auth.presentation.dto.request.Signup
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
 import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
-import com.example.asterbackend.domain.user.student.repository.StudentRepository;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.entity.type.Role;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
-import com.example.asterbackend.global.exception.user.NotStudentException;
 import com.example.asterbackend.global.exception.user.UserExistsException;
 import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
@@ -21,18 +19,12 @@ public class SignupService {
 
     private final UserRepository userRepository;
 
-    private final StudentRepository studentRepository;
-
     private final JwtTokenProvider jwtTokenProvider;
 
     private final SchoolClassFacade schoolClassFacade;
 
     @Transactional
     public TokenResponse signup(SignupRequest request) {
-        if(!studentRepository.findByStudentIdAndUsername(request.getStudentId(), request.getUsername()).isPresent()) {
-            throw NotStudentException.EXCEPTION;
-        }
-
         if(userRepository.findByStudentId(request.getStudentId()).isPresent()) {
             throw UserExistsException.EXCEPTION;
         }
@@ -48,7 +40,6 @@ public class SignupService {
                         .profileImgUrl(request.getProfileImgUrl())
                         .build());
 
-        studentRepository.deleteByStudentId(request.getStudentId());
         return jwtTokenProvider.receiveToken(request.getStudentId());
     }
 
