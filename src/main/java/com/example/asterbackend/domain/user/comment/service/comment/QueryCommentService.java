@@ -6,6 +6,8 @@ import com.example.asterbackend.domain.user.comment.repository.CommentRepository
 import com.example.asterbackend.domain.user.feed.entity.Feed;
 import com.example.asterbackend.domain.user.feed.facade.FeedFacade;
 import com.example.asterbackend.domain.user.feed.presentation.dto.response.FeedListResponse;
+import com.example.asterbackend.domain.user.feed.repository.LikeRepository;
+import com.example.asterbackend.domain.user.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +22,18 @@ public class QueryCommentService {
 
     private final CommentRepository commentRepository;
 
+    private final LikeRepository likeRepository;
+
+    private final UserFacade userFacade;
+
     public FeedAndCommentsResponse queryComment(Long feedId) {
         Feed feed = feedFacade.currentFeed(feedId);
 
-        FeedListResponse feedResponse = new FeedListResponse(feed);
+        String currentUserId = userFacade.getUser();
+
+        boolean isLiked = likeRepository.existsByFeedAndStudentId(feed, currentUserId);
+
+        FeedListResponse feedResponse = new FeedListResponse(feed,isLiked);
 
         List<QueryCommentResponse> commentList = commentRepository.findAllByFeedId(feedId)
                 .stream()

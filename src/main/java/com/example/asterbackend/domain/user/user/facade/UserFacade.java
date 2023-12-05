@@ -10,6 +10,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class    UserFacade {
@@ -29,4 +31,10 @@ public class    UserFacade {
         return userRepository.findByStudentId(studentId)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
     }
+
+    public String getUser() {
+        return SecurityContextHolder.getContext().getAuthentication().getName();
+
+    }
+
 }

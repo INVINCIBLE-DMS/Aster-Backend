@@ -1,7 +1,6 @@
 package com.example.asterbackend.domain.user.feed.presentation.dto.response;
 
 import com.example.asterbackend.domain.user.feed.entity.Feed;
-import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -27,7 +26,9 @@ public class FeedListResponse {
 
     private String profileImgUrl;
 
-    public FeedListResponse(Feed feed) {
+    private boolean isLiked;
+
+    public FeedListResponse(Feed feed, boolean isLiked) {
         this.id = feed.getId();
         this.title = feed.getTitle();
         this.content = feed.getContent();
@@ -36,6 +37,7 @@ public class FeedListResponse {
         this.likeCount = feed.getLikeCount();
         this.username = feed.getUser().getUsername();
         this.profileImgUrl = feed.getUser().getProfileImgUrl();
+        this.isLiked = isLiked;
     }
 
 }
