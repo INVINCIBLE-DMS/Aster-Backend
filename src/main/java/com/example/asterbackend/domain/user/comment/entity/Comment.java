@@ -5,6 +5,8 @@ import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -23,13 +25,19 @@ public class Comment {
     @Column(name = "is_updated", nullable = false)
     private boolean isUpdated = false;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id", nullable = false)
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "feed_id", nullable = false)
     private Feed feed;
+
+    @OneToMany(mappedBy = "comment", orphanRemoval = true)
+    private List<CoComment> coComment = new ArrayList<>();
+
+    @OneToMany(mappedBy = "comment", orphanRemoval = true)
+    private List<CommentLike> commentLikes = new ArrayList<>();
 
     @Column(name = "comment_like_count", nullable = false)
     private int commentLikeCount;

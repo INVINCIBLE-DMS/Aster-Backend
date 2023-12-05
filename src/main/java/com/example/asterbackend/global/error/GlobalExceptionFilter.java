@@ -29,6 +29,7 @@ public class GlobalExceptionFilter extends OncePerRequestFilter {
             ErrorCode errorCode = e.getErrorCode();
             writerErrorResponse(response, errorCode.getStatusCode(), ErrorResponse.of(errorCode, errorCode.getMessage()));
         } catch (Exception e){
+            e.printStackTrace();
             writerErrorResponse(response, response.getStatus(), ErrorResponse.of(response.getStatus(),e.getMessage()));
         }
     }

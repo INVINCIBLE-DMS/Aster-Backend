@@ -18,6 +18,9 @@ public class AnswerSurveyService {
     @Transactional
     public void answerSurvey(AnswerSurveyRequest request) {
         User user = userFacade.getCurrentUser();
+        if(request.getSurveyType() == null || request.getAnswerType() == null) {
+            throw new IllegalArgumentException("SurveyType and AnswerType must not null");
+        }
 
         if(request.getSurveyType() == SurveyType.SOCIAL_TYPE) {
             if(request.getAnswerType() == AnswerType.NEUTRAL)user.addSocialTypeScore(0);

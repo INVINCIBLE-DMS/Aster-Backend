@@ -1,10 +1,13 @@
 package com.example.asterbackend.domain.user.feed.entity;
 
+import com.example.asterbackend.domain.user.comment.entity.Comment;
 import com.example.asterbackend.domain.user.user.entity.User;
 import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,6 +23,12 @@ public class Feed {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "student_id")
     private User user;
+
+    @OneToMany(mappedBy = "feed", orphanRemoval = true)
+    private List<Comment> comment = new ArrayList<>();
+
+    @OneToMany(mappedBy = "feed", orphanRemoval = true)
+    private List<Like> like = new ArrayList<>();
 
     @Column(name = "title", nullable = false, length = 50)
     private String title;
