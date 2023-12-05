@@ -26,12 +26,12 @@ public class UserController {
     private final DeleteUserService deleteUserService;
 
     @GetMapping()
-    public int whoMatch(@RequestParam String username) {
+    public int whoMatch(@RequestParam("user") String username) {
         return whoMatchService.whoMatch(username);
     }
 
     @GetMapping("/both")
-    public int bothMatch(@RequestParam String username1, @RequestParam String username2) {
+    public int bothMatch(@RequestParam("user1") String username1, @RequestParam("user2") String username2) {
         return bothMatchService.bothMatch(username1, username2);
     }
 
