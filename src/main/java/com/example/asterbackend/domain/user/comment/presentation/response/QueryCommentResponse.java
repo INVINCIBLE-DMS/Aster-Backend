@@ -29,6 +29,6 @@ public class QueryCommentResponse {
         this.commentIsUpdated = comment.isUpdated();
         this.commentWriter = comment.getUser().getUsername();
         this.commentWriterProfile = comment.getUser().getProfileImgUrl();
-        this.isLiked = isLiked();
+        this.isLiked = commentLiked;
     }
 }
