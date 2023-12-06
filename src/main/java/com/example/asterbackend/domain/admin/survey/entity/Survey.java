@@ -25,9 +25,6 @@ public class Survey {
     @Column(name = "username", nullable = false)
     private String username;
 
-    @Column(name = "survey_image")
-    private String surveyImgUrl;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "survey_type", nullable = false)
     private SurveyType surveyType;

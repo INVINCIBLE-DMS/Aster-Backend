@@ -22,7 +22,4 @@ public class SurveyStorage {
     @Column(name = "survey_type", nullable = false)
     private SurveyType surveyType;
 
-    @Column(name = "survey_image")
-    private String surveyImgUrl;
-
 }
