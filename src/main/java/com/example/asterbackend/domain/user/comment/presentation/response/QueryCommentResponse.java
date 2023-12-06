@@ -20,13 +20,15 @@ public class QueryCommentResponse {
 
     private String commentWriterProfile;
 
-    public QueryCommentResponse(Comment comment) {
+    private boolean isLiked;
+
+    public QueryCommentResponse(Comment comment, boolean commentLiked) {
         this.id = comment.getId();
         this.commentContent = comment.getContent();
         this.commentLikeCount = comment.getCommentLikeCount();
         this.commentIsUpdated = comment.isUpdated();
         this.commentWriter = comment.getUser().getUsername();
         this.commentWriterProfile = comment.getUser().getProfileImgUrl();
-
+        this.isLiked = isLiked();
     }
 }
