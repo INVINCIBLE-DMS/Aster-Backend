@@ -2,10 +2,8 @@ package com.example.asterbackend.domain.user.auth.presentation;
 
 import com.example.asterbackend.domain.user.auth.presentation.dto.request.LoginRequest;
 import com.example.asterbackend.domain.user.auth.presentation.dto.request.SignupRequest;
-import com.example.asterbackend.domain.user.auth.presentation.dto.response.MyInfoResponse;
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.TokenResponse;
 import com.example.asterbackend.domain.user.auth.service.LoginService;
-import com.example.asterbackend.domain.user.user.service.MyInfoService;
 import com.example.asterbackend.domain.user.auth.service.SignupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

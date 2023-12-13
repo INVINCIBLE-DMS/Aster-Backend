@@ -30,7 +30,7 @@ public class SurveyStorageController {
 
     @PostMapping()
     public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
-            saveSurveyStorageService.saveImageSurveyStorage(request);
+            saveSurveyStorageService.saveSurveyStorage(request);
     }
 
     @GetMapping()

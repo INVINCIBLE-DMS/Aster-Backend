@@ -12,7 +12,7 @@ public class SaveSurveyStorageService {
 
     private final SurveyStorageRepository surveyStorageRepository;
 
-    public void saveImageSurveyStorage(SurveyRequest request) {
+    public void saveSurveyStorage(SurveyRequest request) {
 
         surveyStorageRepository.save(
                 SurveyStorage.builder()

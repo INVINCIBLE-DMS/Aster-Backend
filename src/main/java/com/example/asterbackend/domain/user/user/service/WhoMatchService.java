@@ -4,7 +4,6 @@ import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
 import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
-import com.example.asterbackend.domain.user.user.presentation.dto.request.WhoMatchRequest;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;

@@ -1,16 +1,12 @@
 package com.example.asterbackend.domain.user.user.presentation;
 
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.MyInfoResponse;
-import com.example.asterbackend.domain.user.user.presentation.dto.request.BothMatchRequest;
-import com.example.asterbackend.domain.user.user.presentation.dto.request.WhoMatchRequest;
 import com.example.asterbackend.domain.user.user.service.BothMatchService;
 import com.example.asterbackend.domain.user.user.service.DeleteUserService;
 import com.example.asterbackend.domain.user.user.service.MyInfoService;
 import com.example.asterbackend.domain.user.user.service.WhoMatchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor

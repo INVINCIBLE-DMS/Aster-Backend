@@ -9,7 +9,6 @@ import com.example.asterbackend.domain.admin.survey.service.QuerySurveyService;
 import com.example.asterbackend.domain.admin.survey.service.UpdateSurveyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -51,7 +50,7 @@ public class SurveyController {
 
     @PostMapping("/storage")
     public void saveSurveyStorage(@RequestBody @Valid SurveyRequest request) {
-        saveSurveyStorageService.saveImageSurveyStorage(request);
+        saveSurveyStorageService.saveSurveyStorage(request);
     }
 
 }
