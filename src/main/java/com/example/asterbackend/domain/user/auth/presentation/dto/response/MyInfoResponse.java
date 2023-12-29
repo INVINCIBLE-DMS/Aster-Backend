@@ -17,9 +17,13 @@ public class MyInfoResponse {
 
     private String profileImageUrl;
 
+    private int classCandyCount;
+
     public MyInfoResponse(User user) {
         username = user.getUsername();
         studentId = user.getStudentId();
         profileImageUrl = user.getProfileImgUrl();
+        classCandyCount = user.getSchoolClass().getCandyCount();
+
     }
 }
