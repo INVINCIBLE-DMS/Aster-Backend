@@ -4,6 +4,7 @@ import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
 import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
+import com.example.asterbackend.domain.user.user.presentation.dto.response.MatchScoreResponse;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class BothMatchService {
 
     private final SchoolClassFacade schoolClassFacade;
 
-    public int bothMatch(String username1, String username2) {
+    public MatchScoreResponse bothMatch(String username1, String username2) {
         User me = userFacade.getCurrentUser();
 
         User user1 = userRepository.findByUsername(username1)
@@ -55,7 +56,7 @@ public class BothMatchService {
         emotionScore = 100 - Math.abs(user1.getEmotionTypeScore() - user2.getEmotionTypeScore());
         decisionScore = 100 - Math.abs(user1.getDecisionTypeScore() - user2.getDecisionTypeScore());
 
-        return (socialScore + knowledgeScore + emotionScore + decisionScore)/4;
+        return new MatchScoreResponse(matchScore);
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.asterbackend.domain.user.user.presentation;
 
 import com.example.asterbackend.domain.user.auth.presentation.dto.response.MyInfoResponse;
+import com.example.asterbackend.domain.user.user.presentation.dto.response.MatchScoreResponse;
 import com.example.asterbackend.domain.user.user.service.BothMatchService;
 import com.example.asterbackend.domain.user.user.service.DeleteUserService;
 import com.example.asterbackend.domain.user.user.service.MyInfoService;
@@ -22,12 +23,12 @@ public class UserController {
     private final DeleteUserService deleteUserService;
 
     @GetMapping()
-    public int whoMatch(@RequestParam("user") String username) {
+    public MatchScoreResponse whoMatch(@RequestParam("user") String username) {
         return whoMatchService.whoMatch(username);
     }
 
     @GetMapping("/both")
-    public int bothMatch(@RequestParam("user1") String username1, @RequestParam("user2") String username2) {
+    public MatchScoreResponse bothMatch(@RequestParam("user1") String username1, @RequestParam("user2") String username2) {
         return bothMatchService.bothMatch(username1, username2);
     }
 

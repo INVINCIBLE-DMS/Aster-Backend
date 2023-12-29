@@ -19,7 +19,7 @@ public class WhoMatchService {
 
     private final SchoolClassFacade schoolClassFacade;
 
-    public int whoMatch(String username) {
+    public MatchScoreResponse whoMatch(String username) {
         User me = userFacade.getCurrentUser();
 
         User user = userRepository.findByUsername(username)
@@ -42,7 +42,7 @@ public class WhoMatchService {
         emotionScore = 100 - Math.abs(me.getEmotionTypeScore() - user.getEmotionTypeScore());
         decisionScore = 100 - Math.abs(me.getDecisionTypeScore() - user.getDecisionTypeScore());
 
-        return (socialScore + knowledgeScore + emotionScore + decisionScore)/4;
+        return new MatchScoreResponse(matchScore);
     }
 
 }
