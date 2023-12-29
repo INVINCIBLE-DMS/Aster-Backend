@@ -29,8 +29,7 @@ public class BothMatchService {
         User user2 = userRepository.findByUsername(username2)
                 .orElseThrow(()->UserNotFoundException.EXCEPTION);
 
-        if(me.getStudentId().substring(0, 1).equals(user1.getStudentId().substring(0,1))) return 0;
-        else {
+        if(!me.getStudentId().substring(0, 1).equals(user1.getStudentId().substring(0,1))) {
             Long grade = Long.parseLong(user1.getStudentId().substring(0, 1));
             Long classNumber = Long.parseLong(user1.getStudentId().substring(1, 2));
 
@@ -39,8 +38,7 @@ public class BothMatchService {
             schoolClass.addCandy(100);
         }
 
-        if(me.getStudentId().substring(0, 1).equals(user2.getStudentId().substring(0,1))) return 0;
-        else {
+        if(!me.getStudentId().substring(0, 1).equals(user2.getStudentId().substring(0,1))) {
             Long grade = Long.parseLong(user2.getStudentId().substring(0, 1));
             Long classNumber = Long.parseLong(user2.getStudentId().substring(1, 2));
 
@@ -49,12 +47,12 @@ public class BothMatchService {
             schoolClass.addCandy(100);
         }
 
-        int socialScore, knowledgeScore, emotionScore, decisionScore;
+        int socialScore = 100 - Math.abs(user1.getSocialTypeScore() - user2.getSocialTypeScore());
+        int knowledgeScore = 100 - Math.abs(user1.getKnowledgeTypeScore() - user2.getKnowledgeTypeScore());
+        int emotionScore = 100 - Math.abs(user1.getEmotionTypeScore() - user2.getEmotionTypeScore());
+        int decisionScore = 100 - Math.abs(user1.getDecisionTypeScore() - user2.getDecisionTypeScore());
 
-        socialScore = 100 - Math.abs(user1.getSocialTypeScore() - user2.getSocialTypeScore());
-        knowledgeScore = 100 - Math.abs(user1.getKnowledgeTypeScore() - user2.getKnowledgeTypeScore());
-        emotionScore = 100 - Math.abs(user1.getEmotionTypeScore() - user2.getEmotionTypeScore());
-        decisionScore = 100 - Math.abs(user1.getDecisionTypeScore() - user2.getDecisionTypeScore());
+        int matchScore = (socialScore + knowledgeScore + emotionScore + decisionScore)/4;
 
         return new MatchScoreResponse(matchScore);
     }
