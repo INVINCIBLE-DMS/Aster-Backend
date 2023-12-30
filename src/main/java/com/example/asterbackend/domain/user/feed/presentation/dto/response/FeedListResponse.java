@@ -28,6 +28,8 @@ public class FeedListResponse {
 
     private boolean isLiked;
 
+    private int commentCount;
+
     public FeedListResponse(Feed feed, boolean isLiked) {
         this.id = feed.getId();
         this.title = feed.getTitle();
@@ -38,6 +40,7 @@ public class FeedListResponse {
         this.username = feed.getUser().getUsername();
         this.profileImgUrl = feed.getUser().getProfileImgUrl();
         this.isLiked = isLiked;
+        this.commentCount = feed.getComment().size();
     }
 
 }
