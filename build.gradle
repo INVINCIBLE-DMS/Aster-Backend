@@ -38,7 +38,7 @@ dependencies {
     // database
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    runtimeOnly("com.mysql:mysql-connector-j")
 
     // web
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -59,11 +59,6 @@ dependencies {
     //querydsl
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
-
-    //websocket
-    implementation 'org.springframework.boot:spring-boot-starter-websocket'
-    implementation 'org.json:json:20210307'
-    
 
     // S3
     implementation 'com.amazonaws:aws-java-sdk-s3:1.12.281'
