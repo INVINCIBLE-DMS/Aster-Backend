@@ -7,7 +7,6 @@ import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.entity.type.Role;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
-import com.example.asterbackend.global.exception.user.UserExistsException;
 import com.example.asterbackend.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,7 +25,7 @@ public class SignupService {
     @Transactional
     public TokenResponse signup(SignupRequest request) {
         if(userRepository.findByStudentId(request.getStudentId()).isPresent()) {
-            throw UserExistsException.EXCEPTION;
+            return jwtTokenProvider.receiveToken(request.getStudentId());
         }
 
         SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(Long.parseLong(request.getStudentId())/1000, Long.parseLong(request.getStudentId())/100%10);
