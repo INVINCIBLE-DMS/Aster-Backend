@@ -26,7 +26,7 @@ public class SignupService {
     @Transactional
     public TokenResponse signup(SignupRequest request) {
         if(userRepository.findByStudentId(request.getStudentId()).isPresent()) {
-            throw UserExistsException.EXCEPTION;
+            return jwtTokenProvider.receiveToken(request.getStudentId());
         }
 
         SchoolClass schoolClass = schoolClassFacade.currentSchoolClass(Long.parseLong(request.getStudentId())/1000, Long.parseLong(request.getStudentId())/100%10);

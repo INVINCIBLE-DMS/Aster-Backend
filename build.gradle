@@ -60,11 +60,6 @@ dependencies {
     implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
     implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
 
-    //websocket
-    implementation 'org.springframework.boot:spring-boot-starter-websocket'
-    implementation 'org.json:json:20210307'
-    
-
     // S3
     implementation 'com.amazonaws:aws-java-sdk-s3:1.12.281'
 }
