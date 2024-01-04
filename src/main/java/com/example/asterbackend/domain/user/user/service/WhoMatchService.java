@@ -4,7 +4,7 @@ import com.example.asterbackend.domain.user.schoolClass.entity.SchoolClass;
 import com.example.asterbackend.domain.user.schoolClass.facade.SchoolClassFacade;
 import com.example.asterbackend.domain.user.user.entity.User;
 import com.example.asterbackend.domain.user.user.facade.UserFacade;
-import com.example.asterbackend.domain.user.user.presentation.dto.response.MatchScoreResponse;
+import com.example.asterbackend.domain.user.user.presentation.dto.response.WhoMatchResponse;
 import com.example.asterbackend.domain.user.user.repository.UserRepository;
 import com.example.asterbackend.global.exception.user.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class WhoMatchService {
 
     private final SchoolClassFacade schoolClassFacade;
 
-    public MatchScoreResponse whoMatch(String username) {
+    public WhoMatchResponse whoMatch(String username) {
         User me = userFacade.getCurrentUser();
 
         User user = userRepository.findByUsername(username)
@@ -43,7 +43,7 @@ public class WhoMatchService {
 
         int matchScore = (socialScore + knowledgeScore + emotionScore + decisionScore)/4;
 
-        return new MatchScoreResponse(matchScore);
+        return new WhoMatchResponse(matchScore, user);
     }
 
 }
